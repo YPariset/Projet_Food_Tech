@@ -3,10 +3,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 4rem;
+    padding: 1rem 10rem 1rem 4rem;
 }
-
-.block-bouton {}
 
 li {
     display: inline;
@@ -19,4 +17,40 @@ li {
 .bouton a {
     padding: 8px 25px;
     border-radius: 20px;
+}
+
+.location-search{
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.adress-input{
+    width: 400px;
+    height: 50px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    outline: none;
+    border: none;
+
+}
+
+.submit-button{
+    height: 50px;
+    margin-left: -5px;
+    outline: none;
+    padding: 2px 15px;
+    background-color: black;
+    color: white;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border: none;
+}
+
+.geolocalisation{
+    width: 400px;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-top: 1px solid lightgrey;
 }
