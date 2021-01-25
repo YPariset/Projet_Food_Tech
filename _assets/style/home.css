@@ -1,0 +1,29 @@
+.section1, .section2, .section3 {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    
+}
+
+img {
+    max-width: 100%;
+}
+
+.section1 {
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+
+.img1 {
+    width: 500px;
+}
+
+.text1 {
+    width: 500px;
+    padding: 30px;
+}
+
+
+
