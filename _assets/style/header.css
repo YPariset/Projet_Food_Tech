@@ -53,4 +53,23 @@ li {
     outline: none;
     border: none;
     border-top: 1px solid lightgrey;
+    background-color: transparent;
+    /*display: none;*/
+}
+.arrow{
+color: white;
+
+}
+.mainTitle{
+    text-align: center;
+    margin-top: 60px;
+}
+
+header{
+    height: 80vh;
+    width: 100%;
+    background:url("/_assets/image/img.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
