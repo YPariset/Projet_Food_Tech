@@ -1,0 +1,22 @@
+#logo-bouton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+}
+
+.block-bouton {}
+
+li {
+    display: inline;
+}
+
+.bouton {
+    margin-right: 20px;
+}
+
+.bouton a {
+    padding: 8px 25px;
+    border-radius: 20px;
+}

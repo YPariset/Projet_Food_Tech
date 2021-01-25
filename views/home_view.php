@@ -8,7 +8,7 @@
 <?php include_once '_includes/header.php'; ?> 
 
 <main >
-	<h1>C'est trop cool</h1>
+	
 
 </main>
 

@@ -1,0 +1,29 @@
+footer {
+    background-color: white;
+}
+
+.flex-footer {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 200px;
+    /* text-align: end; */
+}
+
+#newsletter {
+    border: 1px solid black;
+}
+
+#logo {
+    border: 1px solid black;
+}
+
+#footer_gauche {
+    margin-left: 10%;
+}
+
+#footer_lien {
+    margin-left: 50%;
+}
