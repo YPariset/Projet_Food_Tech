@@ -5,6 +5,7 @@
     <!--- import css files -->
     <link href="_assets/style/style.css" rel="stylesheet">
     <link href="_assets/style/header.css" rel="stylesheet">
+    <link href="_assets/style/header2.css" rel="stylesheet">
 
     <!--- import fonteawesome -->
         <script src="https:use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>  
