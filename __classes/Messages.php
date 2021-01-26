@@ -9,7 +9,7 @@ class Messages{
     *
     * @return string
     */
-    static function msg(string $msg, $Fontcolor, $background){
+    static function alert(string $msg, $Fontcolor, $background){
         return '<p style=background-color:'.$background.';color:'.$Fontcolor.';text-align:center;padding:10px 0">'.$msg.'</p>';
     }
 }

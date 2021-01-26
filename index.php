@@ -4,6 +4,7 @@
 
 //chargement des classes
 require '__classes/autoloader.php';
+include_once '_config/database.php';
 
 if(isset($_GET['page']) AND !empty($_GET['page'])) 
 {
