@@ -11,42 +11,45 @@ session_start();
 global $db;
 
 
+if (isset($_POST['valider'])){
+if(isset($_POST['firstname']) && isset($_POST['password'])){
+
 $firstname = htmlspecialchars($_POST["firstname"]);
 $password = htmlspecialchars($_POST["password"]);
-var_dump($password);
+
+
 
 $req = $db->prepare('SELECT * FROM customer WHERE firstname = :firstname');
 $req->execute(array(
     'firstname' => $firstname, 
     
 ));
-//var_dump($req);
+
 $resultat = $req->fetch();
-//$resultat = $req->rowCount();
-var_dump($resultat);
-
-
-//var_dump($resultat);
+if(!empty($resultat)){
 
 // Comparaison du pass avec la bdd
 $isPassCorrect = password_verify($_POST['password'], $resultat['password']);
-var_dump($isPassCorrect);
 
+}
 //if(password_verify($pass, $))
 
-if (!$resultat){
-    var_dump($resultat);
-    echo "L'identifiant ou le mot de passe est incorrect";
+
+    
+    //echo "L'identifiant ou le mot de passe est incorrect";
 } else {
     if ($isPassCorrect){
         //session_start();
         $_SESSION['id'] = $resultat['id'];
         $_SESSION['firstname'] = $resultat['firstname'];
-        $req->execute();
+      //  $req->execute();
         echo ("Vous etes co !");
     } else {
         echo "L'identifiant ou le mot de passe est incorrect";
     }
+}
+}else{
+    $message_login = Messages::alert('Veuillez remplir tous les champs', 'red', '#fab0aa');
 }
 
 

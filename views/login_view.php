@@ -9,13 +9,16 @@
      <div class="connexion">
           <div id="signup">
                <form action="" method="post" class="signup_identifiant" >
-                    <label id="name" for="name">Name</label>
-               <input type="name" id="name" name="username">
+               <?php if(isset($message_login)){
+                    echo $message_login;
+               } ?>
+               <label id="name" for="name">Name</label>
+               <input type="name" id="name" name="firstname">
                <br>
                <label id="pass" for="pass">Mot de passe</label>
-                    <input type="pass" id="pass" name="pass">
+                    <input type="pass" id="pass" name="password">
                <br>
-               <button class="signup_motdepasse">Se connecter</button>
+               <button class="signup_motdepasse" name="valider">Se connecter</button>
           </form>
           </div>
      </div>
