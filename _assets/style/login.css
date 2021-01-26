@@ -1,0 +1,24 @@
+
+.signup_identifiant{
+    display: flex;
+    flex-direction: row;
+    margin-top: 7em;
+    margin-bottom: 7em;
+}
+
+#name, #pass  {
+    padding-left: 3em;
+}
+
+#name, #pass, .signup_motdepasse{
+    padding: 8px 25px;
+    border-radius: 20px;
+}
+
+.signup_motdepasse{
+    margin-left: 3em;
+}
+
+.signup_identifiant{
+    margin-left: 12em;
+}

@@ -8,6 +8,9 @@
     <link href="_assets/style/header2.css" rel="stylesheet">
     <link href="_assets/style/home.css" rel="stylesheet">
     <link href="_assets/style/footer.css" rel="stylesheet">
+    <link href="_assets/style/inscription.css" rel="stylesheet">
+    <link href="_assets/style/login.css" rel="stylesheet">
+
 
 
     <!--- import fonteawesome -->
