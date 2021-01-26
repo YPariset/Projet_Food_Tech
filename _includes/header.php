@@ -24,8 +24,8 @@
       <div class="location-search" id="location-search">
          <input id="adress-input" class="adress-input" name="adress-input" type="text" placeholder="indiquez votre adresse">
          <button class="submit-button" name="submit-button" type="submit"><span class="arrow"><i class="fas fa-arrow-right"></i></span></button>
-         <button id="geolocalisation" class="geolocalisation" name="geolocalisation" type="submit"><span><i class="fas fa-location-arrow"></i></span> Trouver ma position</button>
       </div>
+      <button id="geolocalisation" class="geolocalisation" name="geolocalisation" type="submit"><span><i class="fas fa-location-arrow"></i></span> Trouver ma position</button>
    
    </div>
    <script>window.addEventListener("load",function(e){

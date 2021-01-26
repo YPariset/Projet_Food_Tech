@@ -111,9 +111,11 @@ li {
     height: 50px;
     outline: none;
     border: none;
-    border-top: 1px solid lightgrey;
     background-color: transparent;
     display: none;
+    margin-left: 470px ;
+    font-size:22px;
+   
 }
 
 .geolocalisation:focus {
