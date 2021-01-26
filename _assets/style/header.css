@@ -60,12 +60,18 @@ li {
     border: 1px solid lightgrey;
     color: white;
     z-index:3;
+    text-decoration: none;
 }
 
 .btnsign:hover,
 .btnlog:hover {
     background-color: #3cb6c9;
+    color: white;
 }
+
+
+    
+
 
 .location-search {
     width: 500px;

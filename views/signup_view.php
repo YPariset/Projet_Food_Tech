@@ -8,7 +8,7 @@
 <?php include_once '_includes/header-banner.php'; ?>  
 
 <div class="container_form">
-<h1 class="mb-1" style="padding-top:120px">Sign Up</h1>
+<h1 class="mb-1" style="padding-top:60px">Sign Up</h1>
 <h2 class="mb-2">Get anything, anytime, anywhere</h2>
 <div class="row mt-4">
     <!-- debut form sign in -->

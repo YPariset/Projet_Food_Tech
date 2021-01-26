@@ -11,6 +11,7 @@
     <link href="_assets/style/inscription.css" rel="stylesheet">
     <link href="_assets/style/login.css" rel="stylesheet">
     <link href="_assets/style/signup.css" rel="stylesheet">
+    <link href="_assets/style/header2.css" rel="stylesheet">
 
 
 
