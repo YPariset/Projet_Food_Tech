@@ -2,7 +2,7 @@
 include_once 'config.php';
 
 try{
-    $db = new PDO('mysql:host='.DATABASE_HOST.';dbname='.DATABASE_NAME.';charset=utf8', DATABASE_USER, DATABASE_PASSWORD);
+    $db = new PDO('mysql:host=localhost;dbname=Alimentation;charset=utf8', 'root', 'root');
 }catch(PDOException $exception){
     echo 'Erreur ' . $exception->getMessage();
 }

@@ -1,19 +1,19 @@
-<?php 
-class Customer{
+<?php
+class Client {
 
-      /*
+    /*
     * recupere toutes les informations clients en BDD
     *
     * @param string $mail
     *
     * @return array
     */
-    public function getDatasClient($mail){
+    public function getDatasClient($email){
         global $db;
 
         $client = $db->prepare('
-            SELECT * FROM client WHERE email = ?');
-        $client->execute(array($mail));
+            SELECT * FROM customer WHERE email = ?');
+        $client->execute(array($email));
         $reqClient = $client->fetch(PDO::FETCH_ASSOC);
         return $reqClient;
     }
@@ -29,7 +29,7 @@ class Customer{
         global $db;
 
         $client = $db->prepare('
-            SELECT * FROM client WHERE firstname = ?');
+            SELECT * FROM customer WHERE firstname = ?');
         $client->execute(array($name));
         $reqClient = $client->fetch(PDO::FETCH_ASSOC);
         return $reqClient;
@@ -43,11 +43,13 @@ class Customer{
     *
     * @return void
     */
-    public function createClient($firstname, $lastname, $email, $password){
+    public function createClient($firstname, $lastname, $email, $password, $street, $zip, $city, $birthday, $dateCreation){
         global $db;
-        $newClient = $db->prepare('
-            INSERT INTO client(firstname, lastname, email, password) VALUES (?, ?, ?, ?)');
-        $newClient->execute(array($firstname, $lastname, $email, $password));
+           $req= " INSERT INTO customer(firstname, lastname, email,  password, street, zip, city, birthday, dateCreation) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+             $newClient = $db->prepare($req);
+        $newClient->execute(array($firstname, $lastname, $email, $password, $street, $zip, $city, $birthday, $dateCreation));
+       
     }
 
     
@@ -62,7 +64,7 @@ class Customer{
         global $db;
 
         $reqDatas = $db->prepare('
-            SELECT * FROM client
+            SELECT * FROM customer
             WHERE email = ?
             AND password = ?
         ');
@@ -83,7 +85,7 @@ class Customer{
         global $db;
 
         $reqDatas = $db->prepare('
-            SELECT * FROM client
+            SELECT * FROM customer
             WHERE email = ? ');
             
         $reqDatas->execute(array($mail));
@@ -99,16 +101,21 @@ class Customer{
     *
     * @return void
     */
-    public function updateClientsDatas($prenom, $nom, $email, $session){
+    public function updateClientsDatas($firstname, $lastname, $email, $password, $streetSign, $zipSign, $citySign, $birthday, $session){
         global $db;
         $update = $db->prepare('
-            UPDATE client
+            UPDATE customer
             SET firstname = ?,
             lastname = ?,
             email = ?
+            password = ?
+            street ?
+            zip ? 
+            city ? 
+            birthday ? 
             WHERE email = ?
             ');
-        $update->execute(array($prenom, $nom, $email, $session));
+        $update->execute(array($firstname, $lastname, $email, $password, $streetSign, $zipSign, $citySign, $birthday, $session));
     }
 
     /*
@@ -122,13 +129,10 @@ class Customer{
         global $db;
 
         $reqDatas = $db->prepare('
-        DELETE FROM client
+        DELETE FROM customer
         WHERE email = ?
     ');
     $reqDatas->execute(array($session));
 
     }
 }
-
-
-
