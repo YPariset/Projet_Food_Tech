@@ -14,7 +14,7 @@ define('PATH', substr($_SERVER['PHP_SELF'], 0, -9)); // pour img, fichiers
 
 //databases
 define('DATABASE_HOST', "localhost");
-define('DATABASE_NAME', "base7reco");
+define('DATABASE_NAME', "Alimentation");
 define('DATABASE_USER', "root");
 define('DATABASE_PASSWORD', "root");
 
