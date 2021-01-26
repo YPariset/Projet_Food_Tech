@@ -7,5 +7,7 @@
 <body style="height:1500vh;">
 <?php include_once '_includes/header2.php'; ?> 
 
+
+<?php include_once '_includes/footer.php'; ?> 
 </body>
 </html>

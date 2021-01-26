@@ -7,5 +7,7 @@
 <body>
 <?php include_once '_includes/header2.php'; ?> 
 
+
+<?php include_once '_includes/footer.php'; ?> 
 </body>
 </html>

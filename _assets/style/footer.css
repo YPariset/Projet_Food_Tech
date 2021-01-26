@@ -1,29 +1,75 @@
 footer {
-    background-color: white;
+    background-color: black;
+    color: white;
+    margin-bottom: -16px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.f-1 {
+    padding-top: 37px;
 }
 
 .flex-footer {
-    border: 1px solid black;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#shopping2 h4 {
+    text-align: center;
+    margin-left: -18px;
+    padding-top: 50px;
+}
+
+#shopping2 ul {
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-end;
-    height: 200px;
-    /* text-align: end; */
+    align-items: flex-start;
+    line-height: 30px;
 }
 
-#newsletter {
-    border: 1px solid black;
+#codeur-barre {
+    padding-top: 0px;
 }
 
-#logo {
-    border: 1px solid black;
+.ligne_seperation {
+    color: white;
 }
 
-#footer_gauche {
-    margin-left: 10%;
+.reseaux-sociaux {
+    border-top: 1px solid white;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding-top: 30px;
+    transition: width 1.5 ease-in-out;
 }
 
-#footer_lien {
-    margin-left: 50%;
+.follow {
+    margin-right: 10px;
+}
+
+.follow:hover {
+    transform: scale(1.2);
+}
+
+.follow1:hover {
+    color: #f542da;
+}
+
+.follow2:hover {
+    color: #f51d28;
+}
+
+.follow3:hover {
+    color: #4594f5;
+}
+
+.follow4:hover {
+    color: #0554b5;
 }

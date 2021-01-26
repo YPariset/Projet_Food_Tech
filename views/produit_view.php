@@ -25,4 +25,5 @@
                 </section>
             </main>
         </div>
+        <?php include_once '_includes/footer.php'; ?> 
     </body>

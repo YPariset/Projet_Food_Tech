@@ -1,6 +1,7 @@
-a{
-    text-decoration:none;
+a {
+    text-decoration: none;
 }
+
 #logo-bouton {
     display: flex;
     flex-direction: row;
@@ -22,32 +23,33 @@ li {
     border-radius: 20px;
 }
 
-.btnsign, .btnlog{
-    border:1px solid lightgrey;
-    color:white;
-}
-.btnsign:hover, .btnlog:hover{
-    background-color:#3cb6c9;
+.btnsign,
+.btnlog {
+    border: 1px solid lightgrey;
+    color: white;
 }
 
+.btnsign:hover,
+.btnlog:hover {
+    background-color: #3cb6c9;
+}
 
-.location-search{
+.location-search {
     width: 500px;
     margin: 0 auto;
     margin-top: 100px;
 }
 
-.adress-input{
+.adress-input {
     width: 400px;
     height: 50px;
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
     outline: none;
     border: none;
-
 }
 
-.submit-button{
+.submit-button {
     height: 50px;
     margin-left: -5px;
     outline: none;
@@ -59,7 +61,12 @@ li {
     border: none;
 }
 
-.geolocalisation{
+.submit-button:focus {
+    outline: none;
+}
+
+.geolocalisation {
+    color: white;
     width: 400px;
     height: 50px;
     outline: none;
@@ -68,21 +75,24 @@ li {
     background-color: transparent;
     /*display: none;*/
 }
-.arrow{
-color: white;
 
+.geolocalisation:focus {
+    outline: none;
 }
-.mainTitle{
+
+.arrow {
+    color: white;
+}
+
+.mainTitle {
     text-align: center;
     margin-top: 60px;
-    color:white;
+    color: white;
 }
 
-.main-header1{
+.main-header1 {
     height: 100vh;
-    background-image:url("../image/img.jpeg");
+    background-image: url("../image/img.jpeg");
     background-position: center;
     background-repeat: no-repeat;
-
-
 }

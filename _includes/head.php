@@ -7,6 +7,8 @@
     <link href="_assets/style/header.css" rel="stylesheet">
     <link href="_assets/style/header2.css" rel="stylesheet">
     <link href="_assets/style/home.css" rel="stylesheet">
+    <link href="_assets/style/footer.css" rel="stylesheet">
+
 
     <!--- import fonteawesome -->
         <script src="https:use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>  
