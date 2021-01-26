@@ -11,7 +11,7 @@ img {
     max-width: 100%;
 }
 
-.section1 {
+.section1, .section2, .section3 {
     margin-top: 100px;
     margin-bottom: 150px;
 }
@@ -20,9 +20,37 @@ img {
     width: 500px;
 }
 
-.text1 {
+.text1, .text2 {
     width: 500px;
     padding: 30px;
+}
+
+.img2{
+    width: 400px;
+}
+
+.text2{
+    margin-top: 7em;
+}
+
+.text3{
+    margin-top: 2em;
+    width: 400px;
+}
+
+.img3 {
+    display: flex;
+    width: 600px;
+    flex-flow: row wrap;
+    
+}
+
+.vignette {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    
+
 }
 
 
