@@ -1,12 +1,54 @@
-.mb-1 {
-    display:flex;
-    justify-content: center;
-    font-size: xx-large;
+.header-small{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1rem 4rem 1rem 4rem;
+        
+    }
+.search button{
+     background-color:transparent;
+     border:none;
+     margin-left:-10px;
+}
+.search input{
+    border:none;
+    border-bottom:1px solid lightgrey;
+    font-size:17px;
+    outline:none;
+}
+.mainNav{
+    margin-left:200px;
+    text-transform:uppercase;
+}
+.mainNav li{
+    margin-right:15px;
+}
+.mainNav li a{
+    text-decoration:none;
+    color:black;
 }
 
-.mb-2  {
-    display:flex;
-    justify-content: center;
-    font-size: large;
-    color: grey;
+.btnHeader{
+    width:80px;
+    text-decoration:none;
+    padding: 5px 15px;
+    border-radius:17px;
+    margin-right:10px;
+    
 }
+.btnhA{
+    border:1px solid lightgrey;
+    color:black;
+    font-size:14px;
+    font-weight:bold;
+
+}
+.btnhB{
+    color:white;
+    background-color:black;
+    font-size:14px;
+    font-weight:bold;
+}
+
+
