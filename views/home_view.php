@@ -43,12 +43,12 @@
                <a class="btn btn-secondary" href="#">Essayez</a>
           </div>
           <div class="img3">
-               <div class="vignette"><img src="_assets/image/carré-de-veau.jpg" alt=""><a href=""></img></div>
-               <div class="vignette"><img src="_assets/image/burger.jpg" alt="" ></img></div>
-               <div class="vignette"><img src="_assets/image/fois_gras.jpg" alt="" ></img></div>
-               <div class="vignette"><img src="_assets/image/homard.jpg" alt="" ></img></div>
-               <div class="vignette"><img src="_assets/image/blanquette.jpg" alt="" ></img></div>
-               <div class="vignette"><img src="_assets/image/sushi.jpg" alt="" ></img></div>
+               <div class="vignette"><a href="#"><img class="vignette-img" src="_assets/image/carré-de-veau.jpg" alt=""></img></a></div>
+               <div class="vignette"><a href="#"><img class="vignette-img" src="_assets/image/burger.jpg" alt="" ></img></a></div>
+               <div class="vignette"><a href="#"><img class="vignette-img" src="_assets/image/fois_gras.jpg" alt="" ></img></a></div>
+               <div class="vignette"><a href="#"><img class="vignette-img" src="_assets/image/homard.jpg" alt="" ></img></a></div>
+               <div class="vignette"><a href="#"><img class="vignette-img" src="_assets/image/blanquette.jpg" alt="" ></img></a></div>
+               <div class="vignette"><a href="#"><img class="vignette-img" src="_assets/image/sushi.jpg" alt="" ></img></a></div>
           </div>
      </div>
      

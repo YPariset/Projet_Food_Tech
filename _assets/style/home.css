@@ -49,8 +49,10 @@ img {
     width: 150px;
     height: 150px;
     margin: 5px;
-    
-
+    transition: width .3s ease-in-out; 
+}
+.vignette-img:hover{
+    transform:scale(1.1);
 }
 
 
