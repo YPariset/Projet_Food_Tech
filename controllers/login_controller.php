@@ -26,31 +26,31 @@ $req->execute(array(
 ));
 
 $resultat = $req->fetch();
-if(!empty($resultat)){
+    if(!empty($resultat)){
 
-// Comparaison du pass avec la bdd
-$isPassCorrect = password_verify($_POST['password'], $resultat['password']);
+    // Comparaison du pass avec la bdd
+    $isPassCorrect = password_verify($_POST['password'], $resultat['password']);
+        if ($isPassCorrect){
+            //session_start();
+            $_SESSION['id'] = $resultat['id'];
+            $_SESSION['firstname'] = $resultat['firstname'];
+        //  $req->execute();
+            echo ("Vous etes co !");
 
-}
-//if(password_verify($pass, $))
-
-
-    
-    //echo "L'identifiant ou le mot de passe est incorrect";
-} else {
-    if ($isPassCorrect){
-        //session_start();
-        $_SESSION['id'] = $resultat['id'];
-        $_SESSION['firstname'] = $resultat['firstname'];
-      //  $req->execute();
-        echo ("Vous etes co !");
-    } else {
-        echo "L'identifiant ou le mot de passe est incorrect";
     }
-}
-}else{
-    $message_login = Messages::alert('Veuillez remplir tous les champs', 'red', '#fab0aa');
-}
+    //if(password_verify($pass, $))
+
+
+        
+        //echo "L'identifiant ou le mot de passe est incorrect";
+    } else {
+                    } else {
+                        echo "L'identifiant ou le mot de passe est incorrect";
+                            }
+                }   
+    }else{
+        $message_login = Messages::alert('Veuillez remplir tous les champs', 'red', '#fab0aa');
+    }
 
 
 //header("Location:restaurant_view.php");
