@@ -1,7 +1,7 @@
 <header>
 <div id="header2">
       <div>
-         <span><a href=""><img src="./_assets/image/logoOK.png" width="60" height="60" alt="logo feeling food"></a></span>
+         <span><a href=""><img src="./_assets/image/Logo_gris.png" width="60" height="60" alt="logo feeling food"></a></span>
       </div>
       <div class="location-search2">
          <button class="geolocalisation2" name="geolocalisation" type="submit"><span class="iconLoc"><i class="fas fa-location-arrow"></i></span></button>

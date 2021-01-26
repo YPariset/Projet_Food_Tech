@@ -7,14 +7,14 @@ footer {
 }
 
 .f-1 {
-    padding-top: 37px;
+    padding-top: 50px;
 }
 
 .flex-footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
 }
 
 #shopping2 h4 {
@@ -73,3 +73,15 @@ footer {
 .follow4:hover {
     color: #0554b5;
 }
+.apple, .google{
+    max-width: 100%;
+    margin-top: 30px;
+}
+#newsletter h4{
+    padding-top: 50px;
+}
+
+.telechargez h4{
+    padding-top: 50px;
+}
+

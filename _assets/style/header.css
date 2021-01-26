@@ -73,7 +73,7 @@ li {
     border: none;
     border-top: 1px solid lightgrey;
     background-color: transparent;
-    /*display: none;*/
+    display: none;
 }
 
 .geolocalisation:focus {

@@ -24,9 +24,16 @@
         <div id="newsletter">
             <h4>Newsletter</h4>
             <buttom type="submit" name="validMail"><i class="far fa-envelope"></i></button>
-            <input type="email" name="mail" placeholder="Your email">
+            <input id="newsletter" type="email" name="mail" placeholder="Your email">
+           
+        </div>
+        <div class="telechargez">
+            <h4>Disponible sur mobiles</h4>
+        <span><img class="apple" src="./_assets/image/Apple.png" alt="logoApple" width="180" height="60"></span><br>
+        <span><img class="google" src="./_assets/image/google.png" alt="logoGoogle" width="180" height="60"></span>
         </div>
     </div>
+    
     <div class="reseaux-sociaux">
          <span><i class="fab fa-instagram follow1 follow fa-2x"></i></span>
          <span><i class="fab fa-youtube follow2 follow fa-2x"></i></span>
