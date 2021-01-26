@@ -51,7 +51,7 @@
 						<div class="vignette"><a href="#"><img class="vignette-img" src="_assets/image/sushi.jpg" alt="" ></img></a></div>
 					</div>
 				</div>
-				
+	
 				<script>
 					$(window).scroll(function(){
 						var scrolledFromTop = $(window).scrollTop() + $(window).height();
@@ -74,6 +74,5 @@
 </main>
 
 <?php include_once '_includes/footer.php'; ?> 
-
 </body>
 </footer>

@@ -1,21 +1,53 @@
+*{
+    margin:0;
+    padding:0;
+}
 a {
     text-decoration: none;
 }
 
-#logo-bouton {
+img{
+    max-width:100%;
+    }
+
+.main-header1 {
+    height: 100vh;
+    background-image: url("../image/img.jpeg");
+    background-position: center;
+    top: 0;
+}
+
+.logo-bouton {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 10rem 1rem 4rem;
+    padding: 0.5rem 5rem 1rem 4rem;
+    visibility:visible;
 }
+.logo-bouton-sticky{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5rem 1rem 4rem;
+    z-index:2;
+    position:fixed;
+    width:100%;
+    top:0; 
+}
+.bg_sticky{
+    background-color:rgba(245,245,245, 0.9);
+}
+
 
 li {
     display: inline;
 }
 
 .bouton {
-    margin-right: 20px;
+    margin-right: 15px;
+   
 }
 
 .bouton a {
@@ -27,6 +59,7 @@ li {
 .btnlog {
     border: 1px solid lightgrey;
     color: white;
+    z-index:3;
 }
 
 .btnsign:hover,
@@ -37,7 +70,14 @@ li {
 .location-search {
     width: 500px;
     margin: 0 auto;
-    margin-top: 100px;
+    top:20px;
+    z-index:3;
+}
+.sticky{
+    position:fixed;
+    width:100%;
+    margin-left:470px;
+    top:20px;
 }
 
 .adress-input {
@@ -90,9 +130,3 @@ li {
     color: white;
 }
 
-.main-header1 {
-    height: 100vh;
-    background-image: url("../image/img.jpeg");
-    background-position: center;
-    background-repeat: no-repeat;
-}
