@@ -54,6 +54,11 @@ img {
 .vignette-img:hover{
     transform:scale(1.1);
 }
+.appear{
+    opacity:0;
+    position: relative;
+    top: 100px;
+  }
 
 
 
