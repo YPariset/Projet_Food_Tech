@@ -2,6 +2,8 @@
 // ini_set('display_errors','on');
 // error_reporting(E_ALL);
 
+//chargement des classes
+require '__classes/autoloader.php';
 
 if(isset($_GET['page']) AND !empty($_GET['page'])) 
 {
