@@ -2,7 +2,7 @@
     <div class="flex-footer">
         <div class="f-1">
             <div class="logo">
-               <h4 class="title">FeelinFood<span class="point">.</span>com</h4>
+               <h4>Feelin<span>Food.com</span></h4>
                <p>Decouvrir l'esprit Feelin' Food</p>
                <p>Conditions générales</p>
                <p>FAQ</p>

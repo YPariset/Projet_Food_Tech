@@ -21,7 +21,7 @@ class Form{
     }
 
     static function createSubmit(string $type, $class, $name, $value, $text){
-        echo '<button type="'.$type.'" class="'.$class.'" name="'.$name.'" value="'.$value.'">'.$text.'</button>';
+        echo '<button type="'.$type.'" class="'.$class.'" name="'.$name.'" value="'.$value.'" style="background-color: #3cb6c9; border:none;">'.$text.'</button>';
     }
 
     static function startSelect($name, $class){

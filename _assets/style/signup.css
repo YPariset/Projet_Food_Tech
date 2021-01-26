@@ -1,0 +1,12 @@
+.mb-1 {
+    display:flex;
+    justify-content: center;
+    font-size: xx-large;
+}
+
+.mb-2  {
+    display:flex;
+    justify-content: center;
+    font-size: large;
+    color: grey;
+}

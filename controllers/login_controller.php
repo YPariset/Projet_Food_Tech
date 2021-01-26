@@ -2,8 +2,6 @@
 
     session_start();
    
-    
-    
     if(isset($_POST["username"]) && isset($_POST["password"])){
         if (!empty($username) && !empty($password)){
     //var_dump($resultat);
@@ -31,7 +29,6 @@
         }
     }
 }
-var_dump($resultat);
 }
 
 ?>

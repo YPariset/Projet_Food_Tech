@@ -4,12 +4,14 @@
      <?php include_once '_includes/head.php'; ?>  
 	<title><?= ucFirst($page); ?> - Feeling Food </title>
 </head>
-<body style="height:1500vh;">
+<body style="height:auto;">
 <div class="container_form">
+<h1 class="mb-1" style="padding-top:120px">Sign Up</h1>
+<h2 class="mb-2">Get anything, anytime, anywhere</h2>
 <div class="row mt-4">
     <!-- debut form sign in -->
-    <div class="col mt-5" style="border :1px solid lightgrey;padding:60px;margin: 50px;">
-    <h5 class="mb-5">Je suis nouveau sur le site</h5>
+    <div class="col mt-5" style="border :1px solid lightgrey;padding:30px;margin: 50px;">
+    <h5 class="mb-5">Please fill in this form to create an account.</h5>
     <?php if(isset($alertSign)){echo $alertSign;} ?>
 
     <?php if(isset($alertSignup)){echo $alertSignup;} ?>
@@ -62,9 +64,6 @@
           </div>
  <!-- fin form sign in -->
 
-
-
-<?php include_once '_includes/header.php'; ?> 
 
 <?php include_once '_includes/footer.php'; ?> 
 </body>

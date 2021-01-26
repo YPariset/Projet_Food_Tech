@@ -10,6 +10,7 @@
     <link href="_assets/style/footer.css" rel="stylesheet">
     <link href="_assets/style/inscription.css" rel="stylesheet">
     <link href="_assets/style/login.css" rel="stylesheet">
+    <link href="_assets/style/signup.css" rel="stylesheet">
 
 
 

@@ -29,7 +29,16 @@ footer {
     justify-content: flex-start;
     align-items: flex-start;
     line-height: 30px;
+
 }
+
+#shopping2 ul li a {
+    color: white;
+    
+    
+    
+}
+
 
 #codeur-barre {
     padding-top: 0px;
@@ -84,4 +93,9 @@ footer {
 .telechargez h4{
     padding-top: 50px;
 }
+
+.logo h4 span {
+    color: #3cb6c9;
+}
+
 

@@ -11,9 +11,6 @@
                
           </div>
      </div>
-     
-
-
 <?php include_once '_includes/footer.php'; ?> 
 </body>
 </html>
