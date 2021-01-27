@@ -1,10 +1,14 @@
 .header-small{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 4rem 1rem 4rem;
     
+    
+    
+
+     
 }
 .search button{
  background-color:transparent;
@@ -18,15 +22,20 @@ font-size:17px;
 outline:none;
 }
 .mainNav{
-margin-left:200px;
+/* margin-left:200px; */
 text-transform:uppercase;
 }
 .mainNav li{
 margin-right:15px;
+
+
+
+
 }
 .mainNav li a{
 text-decoration:none;
 color:black;
+
 }
 
 .btnHeader{
@@ -43,10 +52,18 @@ font-size:14px;
 font-weight:bold;
 
 }
+
+.btnhA:hover{
+    color: #3cb6c9;
+}
 .btnhB{
 color:white;
 background-color:black;
 font-size:14px;
 font-weight:bold;
+border:1px solid lightgrey;
+}
+.btnhB:hover{
+    color: #3cb6c9;
 }
 

@@ -28,7 +28,7 @@
            
         </div>
         <div class="telechargez">
-            <h4>Available on cell phone</h4>  <!--fab-->
+            <h4>Available on Smartphone</h4>  <!--fab-->
         <span><img class="apple" src="./_assets/image/Apple.png" alt="logoApple" width="180" height="60"></span><br>
         <span><img class="google" src="./_assets/image/google.png" alt="logoGoogle" width="180" height="60"></span>
         </div>

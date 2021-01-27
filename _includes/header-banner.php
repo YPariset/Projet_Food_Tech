@@ -1,7 +1,7 @@
 <div class="header-small">
    
    <div>
-      <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="90" height="auto" alt="logo feeling food"></a></span>
+      <span><a href="index.php?page=home"><img src="./_assets/image/Logo_gris.png" width="90" height="auto" alt="logo feeling food"></a></span>
    </div>
 
    <div class="search">

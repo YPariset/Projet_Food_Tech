@@ -110,6 +110,7 @@ li {
 }
 
 .location-search {
+    
     width: 500px;
     margin: 0 auto;
     top:20px;
@@ -181,10 +182,6 @@ li {
 }
 
 
-
-
-
-
 .geolocalisation:focus {
     outline: none;
 }
@@ -194,6 +191,7 @@ li {
 }
 
 .mainTitle {
+    padding-top: 128px;
     text-align: center;
     margin-top: 60px;
     color: white;
