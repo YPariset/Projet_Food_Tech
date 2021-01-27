@@ -6,6 +6,8 @@ footer {
     padding-right: 20px;
 }
 
+
+
 .f-1 {
     padding-top: 50px;
 }
@@ -95,7 +97,15 @@ footer {
 }
 
 .logo h4 span {
+    
     color: #3cb6c9;
+    font-family: 'fontastiquefontastique';
 }
+
+
+.logo h4  {
+    color: white;
+}    
+    
 
 

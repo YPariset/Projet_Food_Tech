@@ -8,7 +8,43 @@ a {
 
 img{
     max-width:100%;
-    }
+    
+}
+
+@font-face {                                                            /*fab*/
+    font-family: 'fontastiquefontastique';
+    src: url('../fonts/fontastique-webfont.eot');
+    src: url('../fonts/fontastique-webfont.woff2') format('woff2'),
+    url('../fonts/fontastique-webfont.woff') format('woff'),
+    url('../fonts/fontastique-webfont.ttf') format('truetype'),
+    url('../fonts/fontastique-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    
+}
+
+h1{                         /*fab*/
+    text-align: center;
+}
+    
+.mainTitle h1{              /*fab*/
+    font-size: 80px;
+    
+}
+.mainTitle h1 span{          /*fab*/
+    font-size: 90px;
+    color:#3cb6c9;
+    font-family: 'fontastiquefontastique';
+}
+
+
+
+.mainTitle p{  /* Fab*/
+font-size: 40px;
+text-align: center;
+
+
+}
 
 .main-header1 {
     height: 100vh;
@@ -37,9 +73,12 @@ img{
     top:0; 
 }
 .bg_sticky{
-    background-color:rgba(245,245,245, 0.9);
+    /* background-color:rgba(245,245,245, 0.9); */
+ 
+    background-image: url("../image/img.jpeg");
+    background-position: center;
+    
 }
-
 
 li {
     display: inline;
@@ -77,10 +116,15 @@ li {
     z-index:3;
 }
 .sticky{
+    text-align: center; /*modif sitcky*/
     position:fixed;
     width:100%;
-    margin-left:470px;
     top:20px;
+}
+
+.location-search{
+    text-align: center;
+
 }
 
 .adress-input {
@@ -90,6 +134,14 @@ li {
     border-top-left-radius: 20px;
     outline: none;
     border: none;
+    
+    
+    
+}
+
+.adress-input, placeholder { /*déplacement place holder*/
+    padding-left: 20px;
+    
 }
 
 .submit-button {
@@ -109,38 +161,41 @@ li {
 }
 
 .geolocalisation {
-    color: white;
+    
+    
+    color:lightgreen; /* couleur geolocalisation*/
     width: 400px;
     height: 50px;
     outline: none;
     border: none;
     background-color: transparent;
     display: none;
-    margin-left: 470px ;
     font-size:22px;
+    margin-left: auto;    /*modif fab margin*/
+    margin-right: auto;
+    
+    
+
+   
    
 }
+
+
+
+
+
 
 .geolocalisation:focus {
     outline: none;
 }
 
 .arrow {
-    color: white;
+    color:#3cb6c9;
 }
 
 .mainTitle {
     text-align: center;
     margin-top: 60px;
     color: white;
-}
-
-.logoCart{
-    color:white;
-    margin-top:10px;
-}
-.cart{
-    color:white;
-    margin-top:10px;
 }
 

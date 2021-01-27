@@ -11,7 +11,7 @@
 <div class="row">
     <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="panel rounded shadow">
-            <div class="panel-card">
+            <div class="panel-card" style="height: 600px; margin-bottom: 200px">
                     <ul class=infoPanel>
                         <li><img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="John Doe"></li>
                         <li class="text-center"><h4 class="text-capitalize">John Doe</h4><p class="text-muted text-capitalize">web designer</p></li>

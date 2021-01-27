@@ -2,7 +2,7 @@
     <div class="flex-footer">
         <div class="f-1">
             <div class="logo">
-               <h4>Feelin<span>Food.com</span></h4>
+               <h4><span>Feelin</span>Food.com</h4> <!--fab-->
                <p>Decouvrir l'esprit Feelin' Food</p>
                <p>Conditions générales</p>
                <p>FAQ</p>
@@ -28,7 +28,7 @@
            
         </div>
         <div class="telechargez">
-            <h4>Disponible sur mobiles</h4>
+            <h4>Available on cell phone</h4>  <!--fab-->
         <span><img class="apple" src="./_assets/image/Apple.png" alt="logoApple" width="180" height="60"></span><br>
         <span><img class="google" src="./_assets/image/google.png" alt="logoGoogle" width="180" height="60"></span>
         </div>
