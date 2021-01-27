@@ -1,18 +1,11 @@
 <?php
-
-
-
-ini_set('display_errors','on');
-error_reporting(E_ALL);
 session_start();
-
-
 
 global $db;
 
 
 if (isset($_POST['valider'])){
-    if(isset($_POST['firstname']) && isset($_POST['password'])){
+    if(!empty($_POST['firstname']) && !empty($_POST['password'])){
 
         $firstname = htmlspecialchars($_POST["firstname"]);
         $password = htmlspecialchars($_POST["password"]);
