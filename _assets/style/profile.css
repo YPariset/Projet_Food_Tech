@@ -11,3 +11,38 @@
     margin-left: 25%;
 }
 
+.infoPanel{
+    margin-left:-27px;
+}
+.pointLabel{
+    text-align:center;
+    line-height:15px;
+}
+.pointsN{
+    font-size:28px;
+    font-weight:bold;
+    color:grey;
+    font-style:italic;
+}
+.points{
+    color:grey;
+    font-style:italic;
+}
+.award{
+    color:grey;
+}
+.sectionProfile{
+    
+}
+.sectionUserA{
+    padding:10px 0;
+    text-decoration:none;
+    color:black;
+    margin-left:50px;
+    width:100%;
+    
+}
+.previewUser{
+    border: 1px solid grey;
+    background-color:yellow;
+}
