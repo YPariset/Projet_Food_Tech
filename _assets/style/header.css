@@ -11,7 +11,7 @@ img{
     
 }
 
-@font-face {                                                            
+@font-face {                                                            /*fab*/
     font-family: 'fontastiquefontastique';
     src: url('../fonts/fontastique-webfont.eot');
     src: url('../fonts/fontastique-webfont.woff2') format('woff2'),
@@ -23,15 +23,15 @@ img{
     
 }
 
-h1{                         
+h1{                         /*fab*/
     text-align: center;
 }
     
-.mainTitle h1{              
+.mainTitle h1{              /*fab*/
     font-size: 80px;
     
 }
-.mainTitle h1 span{          
+.mainTitle h1 span{          /*fab*/
     font-size: 90px;
     color:#3cb6c9;
     font-family: 'fontastiquefontastique';
@@ -39,7 +39,7 @@ h1{
 
 
 
-.mainTitle p{  
+.mainTitle p{  /* Fab*/
 font-size: 40px;
 text-align: center;
 
@@ -73,7 +73,8 @@ text-align: center;
     top:0; 
 }
 .bg_sticky{
-    
+    /* background-color:rgba(245,245,245, 0.9); */
+ 
     background-image: url("../image/img.jpeg");
     background-position: center;
     
@@ -116,12 +117,16 @@ li {
     z-index:3;
 }
 .sticky{
-    text-align: center; 
+    text-align: center; /*modif sitcky*/
+    position:fixed;
     width:100%;
     top:20px;
 }
 
+.location-search{
+    text-align: center;
 
+}
 
 .adress-input {
     width: 400px;
@@ -135,7 +140,7 @@ li {
     
 }
 
-.adress-input, placeholder { 
+.adress-input, placeholder { /*déplacement place holder*/
     padding-left: 20px;
     
 }
@@ -159,7 +164,7 @@ li {
 .geolocalisation {
     
     
-    color:lightgreen; 
+    color:lightgreen; /* couleur geolocalisation*/
     width: 400px;
     height: 50px;
     outline: none;
@@ -167,7 +172,7 @@ li {
     background-color: transparent;
     display: none;
     font-size:22px;
-    margin-left: auto;    
+    margin-left: auto;    /*modif fab margin*/
     margin-right: auto;
     
     
