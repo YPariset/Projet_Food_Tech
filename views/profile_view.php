@@ -38,42 +38,43 @@
                      <div class="panel-card" style="min-height: 600px; width:600px;margin-bottom: 200px; padding:20px;">
                      <?php if(isset($_GET['action']) && $_GET['action'] == 'editer') : ?>
                         <h1>Edit Your informations</h1>
+                        <?php if(isset($alertEdit)){echo $alertEdit;} ?>
                        <?php Form::startForm( '""',  "POST",  "FormEdit") ?>
                             <div class="col-md-6">
                                 <?php Form::createLabel('inputFirstName', 'form-label', 'First name'); ?>
-                                <?php Form::createFieldWithValue("firstname", "firsname", "text", "") ?>
+                                <?php Form::createFieldWithValue("firstname", "firsname", "text", $getDataClient['firstname']) ?>
                             </div>
                             <div class="col-md-6">
                                 <?php Form::createLabel('lastname', 'form-label', 'Last name'); ?>
-                                <?php Form::createFieldWithValue("lastname", "lastname", "text", "") ?>
+                                <?php Form::createFieldWithValue("lastname", "lastname", "text", $getDataClient['lastname']) ?>
                             </div>    
                             <div class="col-md-6">
                                 <?php Form::createLabel('username', 'form-label', 'Username'); ?>
-                                <?php Form::createFieldWithValue("username", "username", "text", "") ?>
+                                <?php Form::createFieldWithValue("username", "username", "text", $getDataClient['username']) ?>
                             </div>
                             <div class="col-md-6">
                                 <?php Form::createLabel('email', 'form-label', 'Email'); ?>
-                                <?php Form::createFieldWithValue("email", "email", "email", "") ?>
+                                <?php Form::createFieldWithValue("email", "email", "email", $getDataClient['email']) ?>
                             </div>
                             <div class="col-md-6">
                                 <?php Form::createLabel('password', 'form-label', 'Password'); ?>
-                                <?php Form::createFieldWithValue("password", "password", "password", "") ?>
+                                <?php Form::createFieldWithValue("password", "password", "password", $getDataClient['password']) ?>
                             </div>
                             <div class="col-md-6">
                                 <?php Form::createLabel('streetSign', 'form-label', 'Street'); ?>
-                                <?php Form::createFieldWithValue("streetSign", "streetSign", "text", "") ?>
+                                <?php Form::createFieldWithValue("streetSign", "streetSign", "text", $getDataClient['street']) ?>
                             </div>
                             <div class="col-md-6">
                                 <?php Form::createLabel('zipSign', 'form-label', 'Zip'); ?>
-                                <?php Form::createFieldWithValue("zipSign", "zipSign", "text", "") ?>
+                                <?php Form::createFieldWithValue("zipSign", "zipSign", "text", $getDataClient['zip']) ?>
                             </div>
                             <div class="col-md-6">
                                 <?php Form::createLabel('citySign', 'form-label', 'City'); ?>
-                                <?php Form::createFieldWithValue("citySign", "citySign", "text", "") ?>
+                                <?php Form::createFieldWithValue("citySign", "citySign", "text", $getDataClient['city']) ?>
                             </div>
                             <div class="col-md-6">
                                 <?php Form::createLabel('birthday', 'form-label', 'Birthday'); ?>
-                                <?php Form::createFieldWithValue("birthday", "birthday", "date", "") ?>
+                                <?php Form::createFieldWithValue("birthday", "birthday", "date", $getDataClient['birthday']) ?>
                             </div>
                             <div class="col-12" style="padding-top: 20px">
                                 <?php Form::createSubmit('submit', 'btn btn-primary', 'submit', 'done', 'Save'); ?>
