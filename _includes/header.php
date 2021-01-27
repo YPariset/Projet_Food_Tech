@@ -4,7 +4,7 @@
  <!--<img src="./_assets/image/img.jpeg" alt="food" /> -->
  
  <div class="logo-bouton">
-   
+   <?php if(!isset($_SESSION['firstname'])) : ?>
       <div>
          <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="90" height="auto" alt="logo feeling food"></a></span>
       </div>
@@ -16,7 +16,22 @@
          </ul>
       </div>
    </div>
+   <?php else  : ?>
+      <div>
+         <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="90" height="auto" alt="logo feeling food"></a></span>
+      </div>
 
+      <div>
+         <ul class="block-bouton">
+            <li class="bouton sign"><a class="btnsign" href="index.php?page=profile">Profile</a></li>
+            <li class="bouton log"><a class="btnlog" href="index.php?page=logout">Log Out</a></li>
+            <li><a class="cart" href="index.php?page=shoppingcart"><i class="fas fa-cart-arrow-down fa-2x logoCart"></i></a></li>
+         </ul>
+      </div>
+   </div>
+
+
+   <?php endif; ?>
    <div class="mainTitle">
          <h1> Trouvez des restaurants autour de vous</h1>
          <p>vive les vacances</p></br>
@@ -53,19 +68,36 @@
                }
             });
       </script>
-<div class="logo-bouton-sticky">
-   
-   <div>
-      <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="90" height="auto" alt="logo feeling food"></a></span>
-   </div>
+ <?php if(!isset($_SESSION['firstname'])) : ?>
+   <div class="logo-bouton-sticky">
+      
+      <div>
+         <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="90" height="auto" alt="logo feeling food"></a></span>
+      </div>
 
-   <div>
-      <ul class="block-bouton">
-         <li class="bouton sign"><a class="btnsign" href="index.php?page=signup">Sign Up</a></li>
-         <li class="bouton log"><a class="btnlog" href="index.php?page=login">Log In</a></li>
-      </ul>
+      <div>
+         <ul class="block-bouton">
+         <li class="bouton sign"><a class="btnsign" href="index.php?page=profile">Sign Up</a></li>
+            <li class="bouton log"><a class="btnlog" href="index.php?page=login">Log In</a></li>
+         </ul>
+      </div>
    </div>
-</div>
-</header>
- 
+   </header>
+<?php else  : ?>
+   <div class="logo-bouton-sticky">
+      
+      <div>
+         <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="90" height="auto" alt="logo feeling food"></a></span>
+      </div>
+
+      <div>
+         <ul class="block-bouton">
+            <li class="bouton sign"><a class="btnsign" href="index.php?page=profile">Profile</a></li>
+            <li class="bouton log"><a class="btnlog" href="index.php?page=logout">Log Out</a></li>
+            <li><a class="cart" href="index.php?page=shoppingcart"><i class="fas fa-cart-arrow-down fa-2x logoCart"></i></a></li>
+         </ul>
+      </div>
+   </div>
+   </header>
+   <?php endif; ?>
    

@@ -10,7 +10,7 @@ if(isset($_POST['signup']) && $_POST['signup'] == 'done'){
             $firstname = $_POST['firstname'];
             $lastname = $_POST['lastname'];
             $email = $_POST['email'];
-            $password = $_POST['passSign'];
+            $password = $password = password_hash($_POST['passSign'], PASSWORD_DEFAULT);
             $street = $_POST['streetSign'];
             $zip = $_POST['zipSign'];
             $city = $_POST['citySign'];
