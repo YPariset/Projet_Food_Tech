@@ -31,9 +31,7 @@
 .award{
     color:grey;
 }
-.sectionProfile{
-    
-}
+
 .sectionUserA{
     padding:10px 0;
     text-decoration:none;
@@ -42,7 +40,4 @@
     width:100%;
     
 }
-.previewUser{
-    border: 1px solid grey;
-    background-color:yellow;
-}
+
