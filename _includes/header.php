@@ -77,7 +77,7 @@
 
       <div>
          <ul class="block-bouton">
-         <li class="bouton sign"><a class="btnsign" href="index.php?page=profile">Sign Up</a></li>
+         <li class="bouton sign"><a class="btnsign" href="index.php?page=signup">Sign Up</a></li>
             <li class="bouton log"><a class="btnlog" href="index.php?page=login">Log In</a></li>
          </ul>
       </div>

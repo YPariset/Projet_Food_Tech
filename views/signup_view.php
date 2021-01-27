@@ -16,47 +16,49 @@
     <h5 class="mb-5">Please fill in this form to create an account.</h5>
     <?php if(isset($alertSign)){echo $alertSign;} ?>
 
-    <?php if(isset($alertSignup)){echo $alertSignup;} ?>
-       
-        <?php Form::startForm('""', 'POST', 'row g-3'); ?>
-        <div class="col-md-6">
-            <?php Form::createLabel('inputFirstName', 'form-label', 'First name'); ?>
-            <?php Form::createField('firstname', 'form-control' , 'text'); ?>
-        </div>
+    <?php Form::startForm('""', 'POST', 'row g-3'); ?>
+          <div class="col-md-6">
+               <?php Form::createLabel('inputFirstName', 'form-label', 'First name'); ?>
+               <?php Form::createField('firstname', 'form-control' , 'text'); ?>
+          </div>
 
-        <div class="col-md-6">
-            <?php Form::createLabel('inputLastName', 'form-label', 'Last name'); ?>
-            <?php Form::createField('lastname', 'form-control' , 'text'); ?>
-        </div>
-            <div class="col-md-6">
-            <?php Form::createLabel('inputMail', 'form-label', 'Email'); ?>
-            <?php Form::createField('email', 'form-control' , 'text'); ?>
-            </div>
-            <div class="col-md-6">
-            <?php Form::createLabel('inputPass', 'form-label', 'Password'); ?>
-            <?php Form::createField('passSign', 'form-control' , 'password'); ?>
-            </div>
-            <div class="col-md-6">
-            <?php Form::createLabel('inputStreet', 'form-label', 'Street'); ?>
-            <?php Form::createField('streetSign', 'form-control' , 'text'); ?>
-            </div>
-            <div class="col-md-6">
-            <?php Form::createLabel('inputZip', 'form-label', 'Zip'); ?>
-            <?php Form::createField('zipSign', 'form-control' , 'text'); ?>
-            </div>
-            <div class="col-md-6">
-            <?php Form::createLabel('inputCity', 'form-label', 'City'); ?>
-            <?php Form::createField('citySign', 'form-control' , 'text'); ?>
-            </div>
-            <div class="col-md-6">
-            <?php Form::createLabel('inputBirthday', 'form-label', 'Birthday'); ?>
-            <?php Form::createField('birthday', 'form-control' , 'date'); ?>
-            </div>
+          <div class="col-md-6">
+               <?php Form::createLabel('inputLastName', 'form-label', 'Last name'); ?>
+               <?php Form::createField('lastname', 'form-control' , 'text'); ?>
+          </div>
+          <div class="col-md-6">
+               <?php Form::createLabel('inputUsername', 'form-label', 'username'); ?>
+               <?php Form::createField('username', 'form-control' , 'text'); ?>
+          </div>
+          <div class="col-md-6">
+               <?php Form::createLabel('inputMail', 'form-label', 'Email'); ?>
+               <?php Form::createField('email', 'form-control' , 'text'); ?>
+          </div>
+          <div class="col-md-6">
+               <?php Form::createLabel('inputPass', 'form-label', 'Password'); ?>
+               <?php Form::createField('passSign', 'form-control' , 'password'); ?>
+          </div>
+               <div class="col-md-6">
+               <?php Form::createLabel('inputStreet', 'form-label', 'Street'); ?>
+               <?php Form::createField('streetSign', 'form-control' , 'text'); ?>
+          </div>
+               <div class="col-md-6">
+               <?php Form::createLabel('inputZip', 'form-label', 'Zip'); ?>
+               <?php Form::createField('zipSign', 'form-control' , 'text'); ?>
+          </div>
+               <div class="col-md-6">
+               <?php Form::createLabel('inputCity', 'form-label', 'City'); ?>
+               <?php Form::createField('citySign', 'form-control' , 'text'); ?>
+          </div>
+               <div class="col-md-6">
+               <?php Form::createLabel('inputBirthday', 'form-label', 'Birthday'); ?>
+               <?php Form::createField('birthday', 'form-control' , 'date'); ?>
+          </div>
             
             <div class="col-12">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="news">
-                    <label class="form-check-label" for="gridCheck">Recevoir la newsletter du site</label>
+                    <label class="form-check-label" for="gridCheck">Receive the newsletter</label>
                 </div>
             </div>
             <div class="col-12" style="padding-top: 20px">

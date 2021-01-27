@@ -1,0 +1,14 @@
+
+
+.infoPanel li{
+    width: 90%;
+   
+}
+
+.infoPanel li img {
+    border-radius: 50%;
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+}
+

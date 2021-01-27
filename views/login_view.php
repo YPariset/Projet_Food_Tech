@@ -14,13 +14,12 @@
           <div id="signup">
                <form action="" method="post" class="signup_identifiant" >
                
-               <p id="name">Name</p>
-               <input type="name" id="name" name="firstname">
+               <input placeholder="username" type="username" id="name" name="username">
                <br><br>
-               <p id="pass" >Mot de passe</p>
-               <input type="pass" id="pass" name="password">
+
+               <input placeholder="password" type="password" id="pass" name="password">
                <br>
-               <button class="signup_motdepasse" name="valider">Se connecter</button>
+               <button class="signup_motdepasse" name="valider">Connect</button>
           </form>
           </div>
      </div>

@@ -5,13 +5,13 @@ global $db;
 
 
 if (isset($_POST['valider'])){
-    if(!empty($_POST['firstname']) && !empty($_POST['password'])){
+    if(!empty($_POST['username']) && !empty($_POST['password'])){
 
-        $firstname = htmlspecialchars($_POST["firstname"]);
+        $username = htmlspecialchars($_POST["username"]);
         $password = htmlspecialchars($_POST["password"]);
 
-        $req = $db->prepare('SELECT * FROM customer WHERE firstname = :firstname');
-        $req->execute(array('firstname' => $firstname));
+        $req = $db->prepare('SELECT * FROM customer WHERE username = :username');
+        $req->execute(array('username' => $username));
         $resultat = $req->fetch();
 
         if(!empty($resultat)){
@@ -19,16 +19,16 @@ if (isset($_POST['valider'])){
 
                 if ($isPassCorrect){
                     $_SESSION['id'] = $resultat['id'];
-                    $_SESSION['firstname'] = $resultat['firstname'];
+                    $_SESSION['username'] = $resultat['username'];
                     header('Location:index.php?page=restaurant');
                 }else{
-                    $message_login = Messages::alert('Mot de passe non reconnu, veuillez recommencer', 'red', '#fab0aa');
+                    $message_login = Messages::alert('Invalid password or username, please try again', 'red', '#fab0aa');
                 }
          }else{
-            $message_login = Messages::alert('Mot de passe ou identifiant invalide, veuillez recommencer', 'red', '#fab0aa');
+            $message_login = Messages::alert('Invalid password or username, please try again', 'red', '#fab0aa');
          }    
     }else{
-        $message_login = Messages::alert('Veuillez remplir tous les champs', 'red', '#fab0aa');
+        $message_login = Messages::alert('Please complete all fields', 'red', '#fab0aa');
     }
 }
 ?>

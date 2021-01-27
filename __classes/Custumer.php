@@ -1,19 +1,19 @@
-<?php
-class Client {
+<?php 
+class Customer{
 
-    /*
+      /*
     * recupere toutes les informations clients en BDD
     *
     * @param string $mail
     *
     * @return array
     */
-    public function getDatasClient($email){
+    public function getDatasClient($mail){
         global $db;
 
         $client = $db->prepare('
-            SELECT * FROM customer WHERE email = ?');
-        $client->execute(array($email));
+            SELECT * FROM client WHERE email = ?');
+        $client->execute(array($mail));
         $reqClient = $client->fetch(PDO::FETCH_ASSOC);
         return $reqClient;
     }
@@ -29,7 +29,7 @@ class Client {
         global $db;
 
         $client = $db->prepare('
-            SELECT * FROM customer WHERE firstname = ?');
+            SELECT * FROM client WHERE firstname = ?');
         $client->execute(array($name));
         $reqClient = $client->fetch(PDO::FETCH_ASSOC);
         return $reqClient;
@@ -43,13 +43,11 @@ class Client {
     *
     * @return void
     */
-    public function createClient($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $dateCreation){
+    public function createClient($firstname, $lastname, $email, $password){
         global $db;
-           $req= " INSERT INTO customer(firstname, lastname, username, email,  password, street, zip, city, birthday, dateCreation) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-             $newClient = $db->prepare($req);
-        $newClient->execute(array($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $dateCreation));
-       
+        $newClient = $db->prepare('
+            INSERT INTO client(firstname, lastname, email, password) VALUES (?, ?, ?, ?)');
+        $newClient->execute(array($firstname, $lastname, $email, $password));
     }
 
     
@@ -64,7 +62,7 @@ class Client {
         global $db;
 
         $reqDatas = $db->prepare('
-            SELECT * FROM customer
+            SELECT * FROM client
             WHERE email = ?
             AND password = ?
         ');
@@ -85,7 +83,7 @@ class Client {
         global $db;
 
         $reqDatas = $db->prepare('
-            SELECT * FROM customer
+            SELECT * FROM client
             WHERE email = ? ');
             
         $reqDatas->execute(array($mail));
@@ -96,12 +94,12 @@ class Client {
     public function VerifyUsernameAvailable($username){
         global $db;
 
-        $reqData = $db->prepare('
-            SELECT * FROM customer
+        $reqDatas = $db->prepare('
+            SELECT * FROM client
             WHERE username = ? ');
-
-        $reqData->execute(array($username));
-        $categoryExist = $reqData->rowCount();
+            
+        $reqDatas->execute(array($mail));
+        $categoryExist = $reqDatas->rowCount(); //renvoi booleen
         return $categoryExist;
     }
 
@@ -113,23 +111,19 @@ class Client {
     *
     * @return void
     */
-    public function updateClientsDatas($firstname, $lastname,$username, $email, $password, $streetSign, $zipSign, $citySign, $birthday, $session){
+    public function updateClientsDatas($prenom, $nom, $email, $session){
         global $db;
         $update = $db->prepare('
-            UPDATE customer
+            UPDATE client
             SET firstname = ?,
             lastname = ?,
-            username = ?, 
             email = ?
-            password = ?
-            street ?
-            zip ? 
-            city ? 
-            birthday ? 
             WHERE email = ?
             ');
-        $update->execute(array($firstname, $lastname, $username, $email, $password, $streetSign, $zipSign, $citySign, $birthday, $session));
+        $update->execute(array($prenom, $nom, $email, $session));
     }
+
+
 
     /*
     * supprime un compte client
@@ -142,10 +136,13 @@ class Client {
         global $db;
 
         $reqDatas = $db->prepare('
-        DELETE FROM customer
+        DELETE FROM client
         WHERE email = ?
     ');
     $reqDatas->execute(array($session));
 
     }
 }
+
+
+
