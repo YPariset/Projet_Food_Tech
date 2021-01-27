@@ -33,12 +33,47 @@
         </div>  
      <!-- end Panel user -->
       <!-- start preview  -->
-        <div class="col-sm-9">  
+        <div class="col-sm-9 bloc_edit">  
                 <div class="panel rounded shadow">
                      <div class="panel-card" style="min-height: 600px; width:600px;margin-bottom: 200px; padding:20px;">
                      <?php if(isset($_GET['action']) && $_GET['action'] == 'editer') : ?>
                         <h1>Edit Your informations</h1>
-
+                            <div class="col-md-6">
+                                <?php Form::createLabel('inputFirstName', 'form-label', 'First name'); ?>
+                                <?php Form::createFieldWithValue("firstname", "firsname", "text", "") ?>
+                            </div>
+                            <div class="col-md-6">
+                                <?php Form::createLabel('lastname', 'form-label', 'Last name'); ?>
+                                <?php Form::createFieldWithValue("lastname", "lastname", "text", "") ?>
+                            </div>    
+                            <div class="col-md-6">
+                                <?php Form::createLabel('username', 'form-label', 'Username'); ?>
+                                <?php Form::createFieldWithValue("username", "username", "text", "") ?>
+                            </div>
+                            <div class="col-md-6">
+                                <?php Form::createLabel('email', 'form-label', 'Email'); ?>
+                                <?php Form::createFieldWithValue("email", "email", "email", "") ?>
+                            </div>
+                            <div class="col-md-6">
+                                <?php Form::createLabel('password', 'form-label', 'Password'); ?>
+                                <?php Form::createFieldWithValue("password", "password", "password", "") ?>
+                            </div>
+                            <div class="col-md-6">
+                                <?php Form::createLabel('streetSign', 'form-label', 'Street'); ?>
+                                <?php Form::createFieldWithValue("streetSign", "streetSign", "text", "") ?>
+                            </div>
+                            <div class="col-md-6">
+                                <?php Form::createLabel('zipSign', 'form-label', 'Zip'); ?>
+                                <?php Form::createFieldWithValue("zipSign", "zipSign", "text", "") ?>
+                            </div>
+                            <div class="col-md-6">
+                                <?php Form::createLabel('citySign', 'form-label', 'City'); ?>
+                                <?php Form::createFieldWithValue("citySign", "citySign", "text", "") ?>
+                            </div>
+                            <div class="col-md-6">
+                                <?php Form::createLabel('birthday', 'form-label', 'Birthday'); ?>
+                                <?php Form::createFieldWithValue("birthday", "birthday", "date", "") ?>
+                            </div>
 
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'history') : ?>
                         <h1>Historic</h1>
