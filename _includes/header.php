@@ -4,7 +4,7 @@
  <!--<img src="./_assets/image/img.jpeg" alt="food" /> -->
  
  <div class="logo-bouton">
-   <?php if(!isset($_SESSION['firstname'])) : ?>
+   <?php if(!isset($_SESSION['username'])) : ?>
       <div>
          <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="90" height="auto" alt="logo feeling food"></a></span>
       </div>
@@ -68,7 +68,7 @@
                }
             });
       </script>
- <?php if(!isset($_SESSION['firstname'])) : ?>
+ <?php if(!isset($_SESSION['username'])) : ?>
    <div class="logo-bouton-sticky">
       
       <div>

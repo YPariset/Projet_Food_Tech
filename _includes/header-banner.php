@@ -19,7 +19,7 @@
         </ul>
 
    <div>
-   <?php if(!isset($_SESSION['firstname'])) : ?>
+   <?php if(!isset($_SESSION['username'])) : ?>
       <ul class="block-bouton">
          <li class="but"><a class="btnHeader btnhA" href="index.php?page=signup">Sign Up</a></li>
          <li class="but"><a class="btnHeader btnhB" href="index.php?page=login">Log In</a></li>
