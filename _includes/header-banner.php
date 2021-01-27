@@ -26,9 +26,9 @@
       </ul>
       <?php else : ?>
          <ul class="block-bouton">
-            <li class="bouton sign"><a class="btnsign" href="index.php?page=profile">Profile</a></li>
-            <li class="bouton log"><a class="btnlog" href="index.php?page=logout">Log Out</a></li>
-            <li><a class="btnlog" href="index.php?page=shoppingcart"><i class="fas fa-cart-arrow-down fa-2x logoCart"></i></a></li>
+            <li class="but"><a class="btnHeader btnhA" href="index.php?page=profile">Profile</a></li>
+            <li class="but"><a class="btnHeader btnhB" href="index.php?page=logout">Log Out</a></li>
+            <li><a  href="index.php?page=shoppingcart"><i class="fas fa-cart-arrow-down fa-2x logoCart"></i></a></li>
       </ul>
       <?php endif; ?>
    </div>
