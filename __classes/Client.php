@@ -29,7 +29,7 @@ class Client {
         global $db;
 
         $client = $db->prepare('
-            SELECT * FROM customer WHERE firstname = ?');
+            SELECT * FROM customer WHERE username = ?');
         $client->execute(array($name));
         $reqClient = $client->fetch(PDO::FETCH_ASSOC);
         return $reqClient;
@@ -122,11 +122,11 @@ class Client {
             username = ?, 
             email = ?
             password = ?
-            street ?
-            zip ? 
-            city ? 
+            street = ?
+            zip = ? 
+            city = ? 
             birthday ? 
-            WHERE email = ?
+            WHERE username = ?
             ');
         $update->execute(array($firstname, $lastname, $username, $email, $password, $streetSign, $zipSign, $citySign, $birthday, $session));
     }

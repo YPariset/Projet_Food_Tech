@@ -38,6 +38,7 @@
                      <div class="panel-card" style="min-height: 600px; width:600px;margin-bottom: 200px; padding:20px;">
                      <?php if(isset($_GET['action']) && $_GET['action'] == 'editer') : ?>
                         <h1>Edit Your informations</h1>
+                       <?php Form::startForm( '""',  "POST",  "FormEdit") ?>
                             <div class="col-md-6">
                                 <?php Form::createLabel('inputFirstName', 'form-label', 'First name'); ?>
                                 <?php Form::createFieldWithValue("firstname", "firsname", "text", "") ?>
@@ -74,6 +75,10 @@
                                 <?php Form::createLabel('birthday', 'form-label', 'Birthday'); ?>
                                 <?php Form::createFieldWithValue("birthday", "birthday", "date", "") ?>
                             </div>
+                            <div class="col-12" style="padding-top: 20px">
+                                <?php Form::createSubmit('submit', 'btn btn-primary', 'submit', 'done', 'Save'); ?>
+                            </div>
+                        <?php Form::endForm() ?>
 
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'history') : ?>
                         <h1>Historic</h1>

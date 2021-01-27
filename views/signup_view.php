@@ -17,40 +17,40 @@
     <?php if(isset($alertSign)){echo $alertSign;} ?>
 
     <?php Form::startForm('""', 'POST', 'row g-3'); ?>
-          <div class="col-md-6">
+          <div class="col-md-4">
                <?php Form::createLabel('inputFirstName', 'form-label', 'First name'); ?>
                <?php Form::createField('firstname', 'form-control' , 'text'); ?>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-4">
                <?php Form::createLabel('inputLastName', 'form-label', 'Last name'); ?>
                <?php Form::createField('lastname', 'form-control' , 'text'); ?>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
                <?php Form::createLabel('inputUsername', 'form-label', 'username'); ?>
                <?php Form::createField('username', 'form-control' , 'text'); ?>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
                <?php Form::createLabel('inputMail', 'form-label', 'Email'); ?>
                <?php Form::createField('email', 'form-control' , 'text'); ?>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
                <?php Form::createLabel('inputPass', 'form-label', 'Password'); ?>
                <?php Form::createField('passSign', 'form-control' , 'password'); ?>
           </div>
-               <div class="col-md-6">
+               <div class="col-md-4">
                <?php Form::createLabel('inputStreet', 'form-label', 'Street'); ?>
                <?php Form::createField('streetSign', 'form-control' , 'text'); ?>
           </div>
-               <div class="col-md-6">
+               <div class="col-md-4">
                <?php Form::createLabel('inputZip', 'form-label', 'Zip'); ?>
                <?php Form::createField('zipSign', 'form-control' , 'text'); ?>
           </div>
-               <div class="col-md-6">
+               <div class="col-md-4">
                <?php Form::createLabel('inputCity', 'form-label', 'City'); ?>
                <?php Form::createField('citySign', 'form-control' , 'text'); ?>
           </div>
-               <div class="col-md-6">
+               <div class="col-md-4">
                <?php Form::createLabel('inputBirthday', 'form-label', 'Birthday'); ?>
                <?php Form::createField('birthday', 'form-control' , 'date'); ?>
           </div>
