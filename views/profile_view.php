@@ -148,7 +148,9 @@
                                     <img src="" alt=""/>
                                     <h2><?= $itemList['name']; ?></h2>
                                     <h3><?= $itemList['price']; ?></h3>
-                                    <span class="wish"><i class="far fa-heart"></i></span>
+                                    <span class="wish">
+                                    <button class="button-like"><i class="fa fa-heart"></i></button>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -164,5 +166,29 @@
 </div>
 
 <?php include_once '_includes/footer.php'; ?> 
+<script>
+var $buttons = $(".button-like");
+
+// Click button
+$buttons.on('click', function () {
+  var $button = $(this);
+  
+  // Button Off
+  if ($button.hasClass('is-active')) {
+    $button
+      .removeClass('is-active');
+    return;
+  }
+  
+  // Button On (with a loader)
+  $button.addClass('is-loading');  
+  setTimeout(function () {
+    $button
+      .removeClass('is-loading')
+      .addClass('is-active');
+  }, 50);
+});
+
+</script>
 </body>
 </html>

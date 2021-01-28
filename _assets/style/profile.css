@@ -68,3 +68,23 @@
     margin-top:10px;
 }
 
+.button-like {
+    background: transparent;
+    border: none;
+}
+ 
+   
+.button-like:hover, .button-like:focus {
+    outline: none;
+}
+     
+.is-active {
+     z-index: 2;
+     color: red;
+     
+     }
+   
+  
+ 
+
+
