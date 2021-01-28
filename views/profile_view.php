@@ -149,7 +149,8 @@
                                     <h2><?= $itemList['name']; ?></h2>
                                     <h3><?= $itemList['price']; ?></h3>
                                     <span class="wish">
-                                    <button class="button-like"><i class="fa fa-heart"></i></button>
+                                    <a href="index.php?page=profile&action=wishlist&itemWish=<?= $itemList['id']; ?>"
+                                        class="button-like"><i class="fa fa-heart"></i></a>
                                     </span>
                                 </div>
                             </div>
