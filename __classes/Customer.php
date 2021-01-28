@@ -142,7 +142,7 @@ class Customer {
     public function getWishList($id){
         global $db;
         $client = $db->prepare('
-        SELECT D.name, D.price
+        SELECT D.name, D.price,D.img
         From dishes as D, customer as C, wishlist_item as W 
         where D.id = W.id_dish 
         AND  W.id_customer = C.id
