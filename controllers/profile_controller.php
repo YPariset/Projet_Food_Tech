@@ -1,31 +1,35 @@
 <?php
 session_start();
 
-$client = new client(); 
-$getDataClient = $client->getDatasClientByName($_SESSION['username']);
-var_dump($getDataClient);
+$user = new Customer();
+$dataClient = $user->getDatasClientById($_SESSION['id']);
+$sessionUser = $_SESSION['id'];
 
-if(isset($_POST['submit'])) {
-    if(!empty($_POST['firstname']) && !empty($_POST['lastname'])
-     && !empty($_POST['username']) && !empty($_POST['email'])
-      && !empty($_POST['password']) && !empty($_POST['streetSign'])
-      && !empty($_POST['zipSign']) && !empty($_POST['citySign'])
-      && !empty($_POST['birthday'])) {
+$getPoints = $user->getDatasPoints($_SESSION['id']);
+var_dump($getPoints['points']);
 
-       $firstname = $_POST['firstname'];
-       $lastname = $_POST['lastname'];
-       $username = $_POST['username'];
-       $email= $_POST['email'];
-       $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-       $street = $_POST['streetSign'];
-       $zip = $_POST['zipSign'];
-       $city = $_POST['citySign'];
-       $birthday = $_POST['birthday'];
-       $session = $_SESSION['username'];
 
-        $client->updateClientsDatas($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $session);
-        $alertEdit = Messages::alert('Votre compte à été crée avec succès, veuillez vous connecter!', 'green', '#97f7a2');
-      }else{
-        $alertEdit = Messages::alert('Veuillez remplir tous les champs!', 'red', '#fab0aa');
-      }
+if(isset($_POST['updateUser'])){
+    if(!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['username']) 
+        && !empty($_POST['street']) && !empty($_POST['zip'])  && !empty($_POST['city']) ){
+        $prenom = $_POST['prenom'];
+        $nom = $_POST['nom'];
+        $mail = $_POST['email'];
+        $username = $_POST['username'];
+        $street = $_POST['street'];
+        $zip = $_POST['zip'];
+        $city = $_POST['city'];
+
+        $user->updateClientDatas($prenom, $nom, $mail, $username,$street, $zip, $city, $sessionUser);
+        $alertEdit = Messages::alert('Informations modifiées avec succès', 'green', '#97f7a2');
+        $_SESSION['firstname'] =  $prenom;
+        $_SESSION['lastname'] = $nom ;
+        $_SESSION['email'] = $mail;
+        $_SESSION['username'] = $username;
+
+    }else{
+        $alertEdit = Messages::alert('Veuillez remplir tous les champs', 'orange', '#fae1a7');
     }
+}
+
+        // $client->updateClientsDatas($firstname, $lastname, $username, $email, $street, $zip, $city, $session);

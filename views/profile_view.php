@@ -15,23 +15,31 @@
             <div class="panel-card" style="height: 600px; margin-bottom: 200px; padding:20px;">
                     <ul class=infoPanel>
                         <li><img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="John Doe"></li>
-                        <li class="text-center"><h4 class="text-capitalize">John Doe</h4><p class="text-muted text-capitalize">web designer</p></li>
-                        <li><a href="index.php?page=order" class="btn btn-success text-center btn-block" style="margin-left:47px;">PRO Account</a></li>
+                        <li class="text-center"><h4 class="text-capitalize">
+                            <?php if(isset($_SESSION['firstname'])){echo $_SESSION['firstname'];} ?>
+                            </h4><p class="text-muted text-capitalize">
+                            <?php if(isset($dataClient['birthday'])){echo $dataClient['birthday'];} ?>
+                            </p>
+                        </li>
+                        <li style="width:100%;"><a href="index.php?page=order" class="btn btn-success text-center btn-block" style="display:block;margin:0 auto;">Order</a></li>
                         <li><br><br></li>
                     </ul>
-                    <p class="pointLabel"><span class="pointsN">20 </span><br><span class="points">Foodies</span>
+                    <p class="pointLabel"><span class="pointsN">
+                    <?= $getPoints['points']; ?>
+                    </span><br><span class="points">Foodies</span>
                             </span> <span class="award"><i class="fas fa-award "></i></span></p><br>
 
                         <div class="btn-group-vertical btn-block sectionProfile">
                             <a href="index.php?page=profile&action=editer" class="sectionUserA"><span class="iconUser" ><i class="fa fa-cog pull-right"></i></span> Edit Account</a>
                             <a href="index.php?page=profile&action=history" class=" sectionUserA"><span class="iconUser" ><i class="fas fa-history"></i></span> Order history</a>
                             <a href="index.php?page=profile&action=wishlist" class="sectionUserA"><span class="iconUser" ><i class="fas fa-heart"></i></span> Wishlist</a>
-                            <a href="index.php?page=logout" class=" sectionUserA"><span class="iconUser" ><i class="fas fa-sign-out-alt"></i></span> Logout</a>
+                            <a href="index.php?page=logout" class="sectionUserA"><span class="iconUser" ><i class="fas fa-sign-out-alt"></i></span> Logout</a>
                         </div>
                </div>
         </div>
         </div>  
      <!-- end Panel user -->
+
       <!-- start preview  -->
         <div class="col-sm-9 bloc_edit">  
                 <div class="panel rounded shadow">
@@ -39,47 +47,49 @@
                      <?php if(isset($_GET['action']) && $_GET['action'] == 'editer') : ?>
                         <h1>Edit Your informations</h1>
                         <?php if(isset($alertEdit)){echo $alertEdit;} ?>
-                       <?php Form::startForm( '""',  "POST",  "FormEdit") ?>
-                            <div class="col-md-6">
-                                <?php Form::createLabel('inputFirstName', 'form-label', 'First name'); ?>
-                                <?php Form::createFieldWithValue("firstname", "firsname", "text", $getDataClient['firstname']) ?>
-                            </div>
-                            <div class="col-md-6">
-                                <?php Form::createLabel('lastname', 'form-label', 'Last name'); ?>
-                                <?php Form::createFieldWithValue("lastname", "lastname", "text", $getDataClient['lastname']) ?>
-                            </div>    
-                            <div class="col-md-6">
-                                <?php Form::createLabel('username', 'form-label', 'Username'); ?>
-                                <?php Form::createFieldWithValue("username", "username", "text", $getDataClient['username']) ?>
-                            </div>
-                            <div class="col-md-6">
-                                <?php Form::createLabel('email', 'form-label', 'Email'); ?>
-                                <?php Form::createFieldWithValue("email", "email", "email", $getDataClient['email']) ?>
-                            </div>
-                            <div class="col-md-6">
-                                <?php Form::createLabel('password', 'form-label', 'Password'); ?>
-                                <?php Form::createFieldWithValue("password", "password", "password", $getDataClient['password']) ?>
-                            </div>
-                            <div class="col-md-6">
-                                <?php Form::createLabel('streetSign', 'form-label', 'Street'); ?>
-                                <?php Form::createFieldWithValue("streetSign", "streetSign", "text", $getDataClient['street']) ?>
-                            </div>
-                            <div class="col-md-6">
-                                <?php Form::createLabel('zipSign', 'form-label', 'Zip'); ?>
-                                <?php Form::createFieldWithValue("zipSign", "zipSign", "text", $getDataClient['zip']) ?>
-                            </div>
-                            <div class="col-md-6">
-                                <?php Form::createLabel('citySign', 'form-label', 'City'); ?>
-                                <?php Form::createFieldWithValue("citySign", "citySign", "text", $getDataClient['city']) ?>
-                            </div>
-                            <div class="col-md-6">
-                                <?php Form::createLabel('birthday', 'form-label', 'Birthday'); ?>
-                                <?php Form::createFieldWithValue("birthday", "birthday", "date", $getDataClient['birthday']) ?>
-                            </div>
-                            <div class="col-12" style="padding-top: 20px">
-                                <?php Form::createSubmit('submit', 'btn btn-primary', 'submit', 'done', 'Save'); ?>
-                            </div>
-                        <?php Form::endForm() ?>
+
+            <!-- Alerts messages -->
+            <?php if(isset($alertUpdate)){ echo $alertUpdate; } ?>
+
+        <!-- start Form update -->
+        <div class="adminForm">
+        <?php Form::startForm('""', 'POST', 'Form'); ?>
+            <div class="col-sm-8 mb-3">
+                <?php Form::createLabel('adFirstName', 'form-label', 'First name'); ?>
+                <?php Form::createFieldWithValue('prenom', 'form-control' , 'text', $_SESSION['firstname']); ?>
+            </div>
+            <div class="col-sm-8 mb-3">
+                <?php Form::createLabel('adLastName', 'form-label', 'Last name'); ?>
+                <?php Form::createFieldWithValue('nom', 'form-control' , 'text', $_SESSION['lastname']); ?>
+            </div>
+            <div class="col-sm-8 mb-3">
+                <?php Form::createLabel('username', 'form-label', 'Username'); ?>
+                <?php Form::createFieldWithValue('username', 'form-control' , 'text', $_SESSION['username']); ?>
+            </div>
+            <div class="col-sm-8 mb-3">
+                <?php Form::createLabel('street', 'form-label', 'Street'); ?>
+                <?php Form::createFieldWithValue('street', 'form-control' , 'text', $dataClient['street']); ?>
+            </div>
+            <div class="col-sm-8 mb-3">
+                <?php Form::createLabel('zip', 'form-label', 'Zip'); ?>
+                <?php Form::createFieldWithValue('zip', 'form-control' , 'text', $dataClient['zip']); ?>
+            </div>
+            <div class="col-sm-8 mb-3">
+                <?php Form::createLabel('city', 'form-label', 'City'); ?>
+                <?php Form::createFieldWithValue('city', 'form-control' , 'text', $dataClient['city']); ?>
+            </div>
+            <div class="col-sm-8 mb-3">
+                <?php Form::createLabel('adMail', 'form-label', 'Email'); ?>
+                <?php Form::createFieldWithValue('email', 'form-control' , 'text', $_SESSION['email']); ?>
+            </div>
+    
+            <div class="col-8">
+                <?php Form::createSubmit('submit', 'btn btn-primary', 'updateUser', 'done', 'Modifier'); ?>
+            </div>
+        <?php Form::endForm(); ?>
+        </div>
+        <!-- end form update -->
+
 
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'history') : ?>
                         <h1>Historic</h1>

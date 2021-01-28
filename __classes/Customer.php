@@ -1,5 +1,5 @@
 <?php
-class Client {
+class Customer {
 
     /*
     * recupere toutes les informations clients en BDD
@@ -17,6 +17,18 @@ class Client {
         $reqClient = $client->fetch(PDO::FETCH_ASSOC);
         return $reqClient;
     }
+    public function getDatasPoints($id){
+        global $db;
+
+        $client = $db->prepare('
+            SELECT * FROM awards AS A,
+            customer AS C
+            WHERE A.id_customer = C.id
+            AND C.id = ?');
+        $client->execute(array($id));
+        $reqClient = $client->fetch(PDO::FETCH_ASSOC);
+        return $reqClient;
+    }
 
     /*
     * recupere toutes les informationsclients
@@ -25,12 +37,12 @@ class Client {
     *
     * @return array
     */
-    public function getDatasClientByName($name){
+    public function getDatasClientById($id){
         global $db;
 
         $client = $db->prepare('
-            SELECT * FROM customer WHERE username = ?');
-        $client->execute(array($name));
+            SELECT * FROM customer WHERE id = ?');
+        $client->execute(array($id));
         $reqClient = $client->fetch(PDO::FETCH_ASSOC);
         return $reqClient;
     }
@@ -113,22 +125,25 @@ class Client {
     *
     * @return void
     */
-    public function updateClientsDatas($firstname, $lastname,$username, $email, $password, $streetSign, $zipSign, $citySign, $birthday, $session){
+    public function updateClientDatas($prenom, $nom, $email, $username, $street, $zip, $city, $session){
         global $db;
-        $update = $db->prepare('
-            UPDATE customer
-            SET firstname = ?,
-            lastname = ?,
-            username = ?, 
-            email = ?
-            password = ?
-            street = ?
-            zip = ? 
-            city = ? 
-            birthday ? 
-            WHERE username = ?
-            ');
-        $update->execute(array($firstname, $lastname, $username, $email, $password, $streetSign, $zipSign, $citySign, $birthday, $session));
+        $update = $db->prepare('UPDATE customer 
+        SET firstname = :prenom,
+        lastname = :nom,
+        email = :email, 
+        username = :username,
+        street = :street,
+        zip = :zip,
+        city = :city
+        WHERE id = :session');
+        $update->execute(array(':prenom' => $prenom, 
+        ':nom' => $nom, 
+        ':email' => $email, 
+        ':username' => $username, 
+        ':street' => $street, 
+        ':zip' => $zip, 
+        ':city' => $city, 
+        ':session' => $session));
     }
 
     /*

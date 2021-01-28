@@ -18,7 +18,7 @@ if(isset($_POST['signup']) && $_POST['signup'] == 'done'){
             $birthday = $_POST['birthday'];
             $dateCreation = date("Y/m/d");
 
-        $client = new Client();
+        $client = new Customer();
         $clientExist = $client->VerifyMailAvailable($email);
         $usernameExist = $client->VerifyUsernameAvailable($username);
 
