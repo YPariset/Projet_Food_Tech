@@ -42,9 +42,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'history'){
 }
 
 //on affiche le contenu d'une commande
-if($_GET['action'] == 'history' && isset($_GET['id'])){
+if(isset($_GET['action']) && $_GET['action'] == 'history' && isset($_GET['id'])){
     $getOrderContent = $order->getDishesOrder($_SESSION['id'], $_GET['id']);
-    var_dump($getOrderContent);
 }
 
 

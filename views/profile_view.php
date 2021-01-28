@@ -21,7 +21,7 @@
                             <?php if(isset($dataClient['birthday'])){echo $dataClient['birthday'];} ?>
                             </p>
                         </li>
-                        <li style="width:100%;"><a href="index.php?page=order" class="btn btn-success text-center btn-block" style="display:block;margin:0 auto;">Order</a></li>
+                        <li style="width:100%;"><a href="index.php?page=restaurant" class="btn btn-success text-center btn-block" style="display:block;margin:0 auto;">Order</a></li>
                         <li><br><br></li>
                     </ul>
                     <p class="pointLabel"><span class="pointsN">
@@ -43,7 +43,7 @@
       <!-- start preview  -->
         <div class="col-sm-9 bloc_edit">  
                 <div class="panel rounded shadow">
-                     <div class="panel-card" style="min-height: 600px; width:600px;margin-bottom: 200px; padding:20px;">
+                     <div  style="min-height: 600px; width:100%;margin-bottom: 200px; padding:20px;">
                      <?php if(isset($_GET['action']) && $_GET['action'] == 'editer') : ?>
                         <h1>Edit Your informations</h1>
                         <?php if(isset($alertEdit)){echo $alertEdit;} ?>
@@ -94,33 +94,48 @@
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'history') : ?>
                             <?php if(!isset($_GET['id'])) : ?>
                                 <h1>Historic</h1>
-                                    <div class="col-sm-6">
-                                    <div class="panel rounded shadow">
-                                        <div class="panel-card" style="height: 300px; padding:20px;">
+                                    <div class="col" >
+                                    
+                                        <div class="panel-card" style="min-height: 300px; padding:20px;">
+                                        <!-- affichage liste des commandes -->
                                 <?php foreach($orderOrder as $orderList) : ?>
-                                            <a href="index.php?page=profile&action=history&id=<?= $orderList['id']; ?>"><span>
-                                                <?= $orderList['id']; ?>  
-                                                <?= $orderList['total_price']; ?> 
-                                                <?= $orderList['date_order']; ?> 
-                                            </span></a><br> 
+                                    <div class="containerOrder">
+                                        <span class="orderz">Order n° <?= $orderList['number']; ?> -</span> 
+                                        <span class="orderz"> On <?= $orderList['date_order']; ?> </span>
+                                        <span class="orderz">Amount: <?= number_format($orderList['total_price'],2); ?>$</span>
+                                        <a class="listOrder" href="index.php?page=profile&action=history&id=<?= $orderList['id']; ?>"><span class="eye"><i class="far fa-eye"></i></a><br>
+                                    </div>     
                                 <?php endforeach; ?>
                                         </div>
                                     </div>
                             
                             <?php else :  ?>
-                            <div class="col-sm-6">
-                            <div class="panel rounded shadow">
-                            <?php foreach($getOrderContent as $orderContentList) : ?>
-                                <div class="panel-card" style="height: 300px; padding:20px;">
-                                <h2><?= $orderContentList['name']; ?></h2>
-                                <h3><?= $orderContentList['price']; ?></h3>
-                                <h3><?= $orderContentList['date_order']; ?></h3>
-                                <img src="<?= $orderContentList['img']; ?>"> 
+                            
+                                <!-- affichage contenu d'une commande -->
+                                <h3>Order détails</h3><br>
+                                <div class="legends">
+                                    <div class="ord dview"><span class="view">View</span></div>
+                                    <div class="ord dtitle"><span class="title">Name</span></div>
+                                    <div class="ord dorderNumero"><span class="orderNumero">N° Order</span></div>
+                                    <div class="ord dqtyOrder"><span class="qtyOrder">Quantity</span></div>
+                                    <div class="ord ddateO"><span class="dateO">Date</span></div>
+                                    <div class="ord ddateO"><span class="dateO">Price</span></div>
                                 </div>
+                                <hr>
+                            <?php foreach($getOrderContent as $orderContentList) : ?>
+                               
+                                <div class="legends">
+                                    <div class="ord dview"><span class="view"><img src="<?= $orderContentList['img']; ?>" width="50" height="50"></span></div>
+                                    <div class="ord dtitle"><span class="title"><?= $orderContentList['name']; ?></span></div>
+                                    <div class="ord dorderNumero"><span class="orderNumero"><?= $orderContentList['number']; ?></span></div>
+                                    <div class="ord dqtyOrder"><span class="qtyOrder"><?= $orderContentList['item_quantity']; ?></span></div>
+                                    <div class="ord ddateO"><span class="dateO"><?= $orderContentList['date_order']; ?></span></div>
+                                    <div class="ord ddateO"><span class="dateO"><?php echo number_format($orderContentList['price'] * $orderContentList['item_quantity'],2); ?>$</span></div>
+                                </div><br>                           
+                                
                             <?php endforeach; ?>
-                            </div>
-                            </div>
-                                <a href="index.php?page=profile&action=history">Retour aux commandes</a>
+                            <br><br>
+                                <a href="index.php?page=profile&action=history" class="btn btn-primary backOrder">back</a>
                             <?php endif;?>
                         <!-- end history -->
 
@@ -140,7 +155,6 @@
                         <?php endforeach; ?>
                     <?php endif; ?>
                     </div>
-                </div>
             </div>
         </div>
        
