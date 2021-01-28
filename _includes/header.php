@@ -59,12 +59,21 @@
       <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="160" height="auto" alt="logo feeling food"></a></span>  
    </div>
 
-   <div>
+   
+   <?php if(isset($_SESSION['username'])) : ?>
+      <div>
       <ul class="block-bouton">
+         <li class="bouton sign"><a class="btnsign" href="index.php?page=profile">Profile</a></li>
+         <li class="bouton log"><a class="btnlog" href="index.php?page=logout">Log Out</a></li>
+      </ul>
+      </div>
+      <?php else : ?>
+         <div>
          <li class="bouton sign"><a class="btnsign" href="index.php?page=signup">Sign Up</a></li>
          <li class="bouton log"><a class="btnlog" href="index.php?page=login">Log In</a></li>
-      </ul>
-   </div>
+      </div>
+      <?php endif; ?>
+   
 </div>
 </header>
  

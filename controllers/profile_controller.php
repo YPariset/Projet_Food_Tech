@@ -6,7 +6,6 @@ $dataClient = $user->getDatasClientById($_SESSION['id']);
 $sessionUser = $_SESSION['id'];
 
 $getPoints = $user->getDatasPoints($_SESSION['id']);
-var_dump($getPoints['points']);
 
 
 if(isset($_POST['updateUser'])){
