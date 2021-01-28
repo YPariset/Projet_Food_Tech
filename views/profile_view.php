@@ -90,7 +90,7 @@
         </div>
         <!-- end form update -->
 
-
+                        <!-- start history -->
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'history') : ?>
                             <?php if(!isset($_GET['id'])) : ?>
                                 <h1>Historic</h1>
@@ -99,24 +99,33 @@
                                         <div class="panel-card" style="height: 300px; padding:20px;">
                                 <?php foreach($orderOrder as $orderList) : ?>
                                             <a href="index.php?page=profile&action=history&id=<?= $orderList['id']; ?>"><span>
-                                                <?= $orderList['id']; ?> - 
-                                                <?= $orderList['total_price']; ?> - 
+                                                <?= $orderList['id']; ?>  
+                                                <?= $orderList['total_price']; ?> 
                                                 <?= $orderList['date_order']; ?> 
-                                            </span></a><br>
+                                            </span></a><br> 
                                 <?php endforeach; ?>
                                         </div>
                                     </div>
                             
                             <?php else :  ?>
-
-                                <?php echo '<h1>salut ouèch </h1>'; ?>
+                            <div class="col-sm-6">
+                            <div class="panel rounded shadow">
+                            <?php foreach($getOrderContent as $orderContentList) : ?>
+                                <div class="panel-card" style="height: 300px; padding:20px;">
+                                <h2><?= $orderContentList['name']; ?></h2>
+                                <h3><?= $orderContentList['price']; ?></h3>
+                                <h3><?= $orderContentList['date_order']; ?></h3>
+                                <img src="<?= $orderContentList['img']; ?>"> 
+                                </div>
+                            <?php endforeach; ?>
+                            </div>
+                            </div>
                                 <a href="index.php?page=profile&action=history">Retour aux commandes</a>
                             <?php endif;?>
-                        
+                        <!-- end history -->
 
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'wishlist') : ?>
                         <h1>Whishlist</h1>  
-                        
                         <?php foreach($wishlist as $itemList) : ?>
                         <div class="col-sm-6">
                             <div class="panel rounded shadow">
@@ -125,7 +134,6 @@
                                     <h2><?= $itemList['name']; ?></h2>
                                     <h3><?= $itemList['price']; ?></h3>
                                     <span class="wish"><i class="far fa-heart"></i></span>
-
                                 </div>
                             </div>
                         </div>
