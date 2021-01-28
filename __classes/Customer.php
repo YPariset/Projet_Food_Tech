@@ -163,4 +163,19 @@ class Customer {
     $reqDatas->execute(array($session));
 
     }
+
+    //get wishlist
+    public function getWishList($id){
+        global $db;
+        $client = $db->prepare('
+        SELECT D.name, D.price
+        From dishes as D, customer as C, wishlist_item as W 
+        where D.id = W.id_dish 
+        AND  W.id_customer = C.id
+        ANd C.id = ?;');
+         $client->execute(array($id));
+         $reqClient = $client->fetchAll(PDO::FETCH_ASSOC);
+        return $reqClient;
+
+    }
 }

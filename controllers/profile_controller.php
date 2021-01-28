@@ -2,12 +2,15 @@
 session_start();
 
 $user = new Customer();
+
+//on recupere toutes les datas de clients
 $dataClient = $user->getDatasClientById($_SESSION['id']);
 $sessionUser = $_SESSION['id'];
 
+//on recupere les points du client
 $getPoints = $user->getDatasPoints($_SESSION['id']);
 
-
+//recuperation données du form update et insertion en BDD
 if(isset($_POST['updateUser'])){
     if(!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['username']) 
         && !empty($_POST['street']) && !empty($_POST['zip'])  && !empty($_POST['city']) ){
@@ -31,4 +34,13 @@ if(isset($_POST['updateUser'])){
     }
 }
 
-        // $client->updateClientsDatas($firstname, $lastname, $username, $email, $street, $zip, $city, $session);
+//on recupere les commandes 
+
+
+
+//on recupere les elements de la wishlist
+if(isset($_GET['action']) && $_GET['action'] == 'wishlist'){
+    $wishlist = $user->getWishList($_SESSION['id']);
+}
+
+       

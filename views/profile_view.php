@@ -25,7 +25,7 @@
                         <li><br><br></li>
                     </ul>
                     <p class="pointLabel"><span class="pointsN">
-                    <?= $getPoints['points']; ?>
+                    <?php if(isset($getPoints['points'])){ echo $getPoints['points'];}  ?>
                     </span><br><span class="points">Foodies</span>
                             </span> <span class="award"><i class="fas fa-award "></i></span></p><br>
 
@@ -97,9 +97,20 @@
 
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'wishlist') : ?>
                         <h1>Whishlist</h1>  
-
-
                         
+                        <?php foreach($wishlist as $itemList) : ?>
+                        <div class="col-sm-6">
+                            <div class="panel rounded shadow">
+                                <div class="panel-card" style="height: 300px; padding:20px;">
+                                    <img src="" alt=""/>
+                                    <h2><?= $itemList['name']; ?></h2>
+                                    <h3><?= $itemList['price']; ?></h3>
+                                    <span class="wish"><i class="far fa-heart"></i></span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
                     <?php endif; ?>
                     </div>
                 </div>
