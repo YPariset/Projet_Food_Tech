@@ -34,14 +34,18 @@ if(isset($_POST['updateUser'])){
     }
 }
 
-//on recupere les commandes 
-
+//on affiche les commandes 
 if(isset($_GET['action']) && $_GET['action'] == 'history'){
     $order = new Order();
     //$dishOrder = $order->getDishesOrder($_SESSION['id']);
     $orderOrder = $order->getOrder($_SESSION['id']);
 }
-var_dump($orderOrder);
+
+//on affiche le contenu d'une commande
+if($_GET['action'] == 'history' && isset($_GET['id'])){
+    $getOrderContent = $order->getDishesOrder($_SESSION['id'], $_GET['id']);
+    var_dump($getOrderContent);
+}
 
 
 //on recupere les elements de la wishlist

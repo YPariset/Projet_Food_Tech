@@ -92,22 +92,29 @@
 
 
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'history') : ?>
-                        <h1>Historic</h1>
-                            <div class="col-sm-6">
-                            <div class="panel rounded shadow">
-                                <div class="panel-card" style="height: 300px; padding:20px;">
-                        <?php foreach($orderOrder as $orderList) : ?>
-                                    <a href="index.php?page=profile&action=history&id=<?= $orderList['id']; ?>"><span>
-                                        <?= $orderList['id']; ?> - 
-                                        <?= $orderList['total_price']; ?> - 
-                                        <?= $orderList['date_order']; ?> 
-                                    </span></a><br>
-                        <?php endforeach; ?>
-                                </div>
-                            </div>
+                            <?php if(!isset($_GET['id'])) : ?>
+                                <h1>Historic</h1>
+                                    <div class="col-sm-6">
+                                    <div class="panel rounded shadow">
+                                        <div class="panel-card" style="height: 300px; padding:20px;">
+                                <?php foreach($orderOrder as $orderList) : ?>
+                                            <a href="index.php?page=profile&action=history&id=<?= $orderList['id']; ?>"><span>
+                                                <?= $orderList['id']; ?> - 
+                                                <?= $orderList['total_price']; ?> - 
+                                                <?= $orderList['date_order']; ?> 
+                                            </span></a><br>
+                                <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                            
+                            <?php else :  ?>
+
+                                <?php echo '<h1>salut ouèch </h1>'; ?>
+                                <a href="index.php?page=profile&action=history">Retour aux commandes</a>
+                            <?php endif;?>
                         
 
-                        <?php elseif(isset($_GET['action']) && $_GET['action'] == 'history') : ?>
+                        <?php elseif(isset($_GET['action']) && $_GET['action'] == 'wishlist') : ?>
                         <h1>Whishlist</h1>  
                         
                         <?php foreach($wishlist as $itemList) : ?>

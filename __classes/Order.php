@@ -5,17 +5,16 @@ class Order {
         global $db;
 
         $client = $db->prepare('
-        SELECT D.name, D.description, D.price, O.total_price, O.date_order, O.id
+        SELECT D.*, O.total_price, O.date_order, O.id
         FROM dishes AS D, orders AS O, order_item AS OI, customer AS C
         WHERE OI.dish_id = D.id
-        AND OI.id = O.id
+        AND OI.order_id = O.id
         AND C.id = O.id_customer
         AND C.id = ?
         AND O.id = ?');
 
-
         $client->execute(array($id, $orderId));
-        $reqClient = $client->fetch(PDO::FETCH_ASSOC);
+        $reqClient = $client->fetchAll(PDO::FETCH_ASSOC);
         return $reqClient;
     }
 
