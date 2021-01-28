@@ -13,11 +13,11 @@
      <h2 class="mb-2">Join us and enjoy a new experience!</h2>  
           <div id="signup">
                <form action="" method="post" class="signup_identifiant" >
-               
-               <input placeholder="username" type="username" id="name" name="username">
+               <label for="name">Username</label><br>
+               <input type="username" id="name" name="username">
                <br><br>
-
-               <input placeholder="password" type="password" id="pass" name="password">
+               <label for="pass">Password</label><br>
+               <input  type="password" id="pass" name="password">
                <br>
                <button class="signup_motdepasse" name="valider">Connect</button>
           </form>

@@ -1,24 +1,4 @@
 
-/*.signup_identifiant{
-    display: flex;
-    flex-direction: row;
-    margin-top: 7em;
-    margin-bottom: 7em;
-}
-#name, #pass  {
-    padding-left: 3em;
-}
-
-.signup_motdepasse{
-    margin-left: 3em;
-}
-
-.signup_identifiant{
-    margin-left: 12em;
-}*/
-
-
-/********* css provisoire seb ******/
 .signup_identifiant{
     text-align:center;
     margin:50px 0;
@@ -32,9 +12,34 @@
     outline:none;
 }
 .signup_motdepasse{
-    margin-top:30px;
+    margin-top:40px;
     color:white;
     background-color: #3cb6c9;
+  
+}
+.mb-2{
+
+    padding-bottom: 10PX;
 }
 
+#signup{
+    display: block;
+    align-items: center;
+    height:350px;
+    width:400px;
+    border: 1px;
+    border-style: solid;
+    border-color: lightgray; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+label
+{
+   display:block;
+    width:250px;
+    float:left;
+    white-space: nowrap;
+    padding-bottom: 10px;
+}
 
