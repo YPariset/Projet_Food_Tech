@@ -36,6 +36,12 @@ if(isset($_POST['updateUser'])){
 
 //on recupere les commandes 
 
+if(isset($_GET['action']) && $_GET['action'] == 'history'){
+    $order = new Order();
+    //$dishOrder = $order->getDishesOrder($_SESSION['id']);
+    $orderOrder = $order->getOrder($_SESSION['id']);
+}
+var_dump($orderOrder);
 
 
 //on recupere les elements de la wishlist

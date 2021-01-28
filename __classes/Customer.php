@@ -17,6 +17,7 @@ class Customer {
         $reqClient = $client->fetch(PDO::FETCH_ASSOC);
         return $reqClient;
     }
+
     public function getDatasPoints($id){
         global $db;
 
@@ -117,6 +118,42 @@ class Customer {
         return $categoryExist;
     }
 
+    // Ajout du restaurant dans la wishList
+    public function createWishItem($id, $id_dish, $id_wishlist){
+        global $db;
+
+        $req = 'INSERT INTO wishlist_item (id, id_dish, id_wishlist) VALUES (?, ?, ?)';
+
+        $newWish = $db->prepare($req);
+        $newWish->execute(array($id, $id_dish, $id_wishlist));
+    }
+
+
+    // Supression de l'item_wish
+    public function deleteWishItem($id, $id_dish, $id_wishlist){
+        global $db;
+
+        $reqData = $db->prepare ('DELETE FROM wishlist_item WHERE id = ?');
+
+        $reqData->execute(array($id, $id_dish, $id_wishlist));
+    }
+
+    //get wishlist
+    public function getWishList($id){
+        global $db;
+        $client = $db->prepare('
+        SELECT D.name, D.price
+        From dishes as D, customer as C, wishlist_item as W 
+        where D.id = W.id_dish 
+        AND  W.id_customer = C.id
+        ANd C.id = ?;');
+         $client->execute(array($id));
+         $reqClient = $client->fetchAll(PDO::FETCH_ASSOC);
+        return $reqClient;
+
+    }
+
+
     
     /*
     * cmodifie les informations de compte client
@@ -161,21 +198,6 @@ class Customer {
         WHERE email = ?
     ');
     $reqDatas->execute(array($session));
-
-    }
-
-    //get wishlist
-    public function getWishList($id){
-        global $db;
-        $client = $db->prepare('
-        SELECT D.name, D.price
-        From dishes as D, customer as C, wishlist_item as W 
-        where D.id = W.id_dish 
-        AND  W.id_customer = C.id
-        ANd C.id = ?;');
-         $client->execute(array($id));
-         $reqClient = $client->fetchAll(PDO::FETCH_ASSOC);
-        return $reqClient;
 
     }
 }

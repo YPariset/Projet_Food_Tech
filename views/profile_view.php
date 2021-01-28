@@ -93,9 +93,21 @@
 
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'history') : ?>
                         <h1>Historic</h1>
+                            <div class="col-sm-6">
+                            <div class="panel rounded shadow">
+                                <div class="panel-card" style="height: 300px; padding:20px;">
+                        <?php foreach($orderOrder as $orderList) : ?>
+                                    <a href="index.php?page=profile&action=history&id=<?= $orderList['id']; ?>"><span>
+                                        <?= $orderList['id']; ?> - 
+                                        <?= $orderList['total_price']; ?> - 
+                                        <?= $orderList['date_order']; ?> 
+                                    </span></a><br>
+                        <?php endforeach; ?>
+                                </div>
+                            </div>
+                        
 
-
-                        <?php elseif(isset($_GET['action']) && $_GET['action'] == 'wishlist') : ?>
+                        <?php elseif(isset($_GET['action']) && $_GET['action'] == 'history') : ?>
                         <h1>Whishlist</h1>  
                         
                         <?php foreach($wishlist as $itemList) : ?>
