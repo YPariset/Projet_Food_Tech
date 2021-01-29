@@ -11,11 +11,11 @@
 
  
        <ul class="mainNav">
-           <li><a href="#">Food</a></li>
-           <li><a href="#">Drinks</a></li>
-           <li><a href="#">Categories</a></li>
-           <li><a href="#">Restaurants</a></li>
-           <li><a href="#">Specials</a></li>
+           <li><a href="index.php?page=restaurant">Food</a></li>
+           <li><a href="index.php?page=restaurant">Drinks</a></li>
+           <li><a href="index.php?page=restaurant">Categories</a></li>
+           <li><a href="index.php?page=restaurant">Restaurants</a></li>
+           <li><a href="index.php?page=restaurant">Specials</a></li>
         </ul>
 
    <div>
