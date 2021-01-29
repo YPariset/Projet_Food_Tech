@@ -1,17 +1,15 @@
 <?php
 session_start();
 
-global $db;
-$juste1rest = $db->prepare('SELECT * FROM restaurants WHERE id = 2');
-$juste1rest->execute();
-$datadejuste1rest = $juste1rest->fetchAll(PDO::FETCH_ASSOC);
-
+$resto = new Food();
+$datadejuste1rest= $resto->getRestaurantById($_GET['resto']);
 
 
 
 if(isset($_GET['resto']))
 {
     $resto = new Food();
-    $datasResto = $resto->getProductByrestaurantId($_GET['resto']);
-    var_dump($datasResto);
+    $datasResto = $resto->getSaltyByrestaurantId($_GET['resto']);
+    $dataresto2 = $resto->getSweetByrestaurantId($_GET['resto']);
+    
 }

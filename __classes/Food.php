@@ -23,11 +23,35 @@ class Food{
         global $db;
 
         $prod = $db->prepare('
-            SELECT * FROM dishes AS D, restaurants AS R
+            SELECT D.* FROM dishes AS D, restaurants AS R
              WHERE D.id_restaurant = R.id
              AND R.id = ?');
         $prod->execute(array($id));
-        $data = $prod->fetch(PDO::FETCH_ASSOC);
+        $data = $prod->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+    public function getSaltyByrestaurantId($id){
+        global $db;
+
+        $prod = $db->prepare('
+            SELECT D.* FROM dishes AS D, restaurants AS R
+             WHERE D.id_restaurant = R.id
+             AND R.id = ?
+             AND D.dish_category <> "Dessert"');
+        $prod->execute(array($id));
+        $data = $prod->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+    public function getSweetByrestaurantId($id){
+        global $db;
+
+        $prod = $db->prepare('
+            SELECT D.* FROM dishes AS D, restaurants AS R
+             WHERE D.id_restaurant = R.id
+             AND R.id = ?
+             AND D.dish_category = "Dessert"');
+        $prod->execute(array($id));
+        $data = $prod->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
 
@@ -37,7 +61,7 @@ class Food{
         $prod = $db->prepare('
             SELECT * FROM restaurants WHERE id = ?');
         $prod->execute(array($id));
-        $get = $prod->fetch(PDO::FETCH_ASSOC);
+        $get = $prod->fetchAll(PDO::FETCH_ASSOC);
         return $get;
     }
     

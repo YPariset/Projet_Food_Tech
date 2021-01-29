@@ -41,29 +41,52 @@
 
                     <button class="rm">Read More</button>
      <?php else : ?>
-
-          <?php if(isset($_GET['dishitem']))  : ?>
               
                <!-- debut affichage du restaurant selectionné -->
-          <div class="containerResto" style="width:80%;margin:0 auto;border:1px solid lightgrey;">
+          <div class="containerResto" style="width:75%;margin:60px auto;min-height:400px;padding:40px;">
           <?php foreach($datadejuste1rest as $data) : ?>
-                    <h4><?= $data['name']; ?></h4>
+                    <h3><?= $data['name']; ?></h3>
+                    <P style="color:#3cb6c9">FREE DELIVERY</p>
+                    <a href="#" class="btn bg-transparent" style="color:lightgrey;border:1px solid lightgrey;border-radius:40px;"><i class="fas fa-clock"></i> 35-45mn</a>
+                    <a href="#" class="btn bg-transparent" style="color:lightgrey;border:1px solid lightgrey;border-radius:40px;"><i class="fas fa-map-marker-alt"></i> <?= $data['address']; ?></h3></a>
+                    <a href="#" class="btn bg-transparent" style="color:lightgrey;border:1px solid lightgrey;border-radius:40px;">more infos <i class="fas fa-sort-down"></i></a>
           <?php endforeach; ?>
-          <H4></H4>
+          <br><br><br>
+          <H4>OUR SALTY SELECTION</H4>
+          <hr>
+          <div style="display:flex;flex-flow:row wrap;justify-content:space-between;margin:60px 0;">
+  
+          <?php foreach($datasResto as $datas) : ?>
+               
+               <a href="#" class="cardResto">
+                    <h5><strong><?= $datas['name']; ?></strong></h5>
+                    <p style="font-size:12px;"><?= $datas['description']; ?>
+                    <p style="font-size:12px;font-weight:bold;color:#3cb6c9">$<?= $datas['price']; ?></p>
+                    </a>
+          <?php endforeach; ?>
+          </div>
 
-
-
-
-
-
-
-
-
-
-
+          <H4>OUR SWEET SELECTION</H4>
+          <hr>
+          <div style="display:flex;flex-flow:row wrap;justify-content:space-between;margin-top:40px;" class="">
+  
+          <?php foreach($dataresto2 as $datas2) : ?>
+               
+               <a href="#" class="cardResto">
+                    <h5><strong><?= $datas2['name']; ?></strong></h5>
+                    <p style="font-size:12px;"><?= $datas2['description']; ?>
+                    <p style="font-size:12px;font-weight:bold;color:#3cb6c9">$<?= $datas2['price']; ?></p>
+                    </a>
+          <?php endforeach; ?>
 
           </div>
-          <?php endif ;?>          
+
+
+
+
+
+
+          </div>       
      <?php endif; ?>
 </main>
 

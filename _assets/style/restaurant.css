@@ -2,4 +2,23 @@
     visibility: hidden;
     /* Hide my Read More button */
 }
+.cardResto{
+    width:47%;
+    min-height:100px;
+    border:1px solid lightgrey;
+    margin-bottom:20px;
+    padding:20px;
+}
+.cardResto h5 {
+    text-decoration:none;
+    color:black;
+}
+.cardResto p{
+    text-decoration:none;
+    color:black;
+
+}
+.cardResto:hover{
+    background-color:rgb(238,237,237,0.4);
+}
 
