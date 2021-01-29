@@ -12,9 +12,10 @@
     <!-- Panel user -->
     <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="panel rounded shadow">
-            <div class="panel-card" style="height: 600px; margin-bottom: 200px; padding:20px;">
+            <div class="panel-card" style="min-height: 600px; margin-bottom: 200px; padding:20px;">
                     <ul class=infoPanel>
-                        <li><img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="John Doe"></li>
+                        
+                        <li><img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="John Doe"><span class="editAvatar"><a href="#"><i class="fas fa-pen"></i></a></span></li>
                         <li class="text-center"><h4 class="text-capitalize">
                             <?php if(isset($_SESSION['firstname'])){echo $_SESSION['firstname'];} ?>
                             </h4><p class="text-muted text-capitalize">
@@ -33,6 +34,7 @@
                             <a href="index.php?page=profile&action=editer" class="sectionUserA"><span class="iconUser" ><i class="fa fa-cog pull-right"></i></span> Edit Account</a>
                             <a href="index.php?page=profile&action=history" class=" sectionUserA"><span class="iconUser" ><i class="fas fa-history"></i></span> Order history</a>
                             <a href="index.php?page=profile&action=wishlist" class="sectionUserA"><span class="iconUser" ><i class="fas fa-heart"></i></span> Wishlist</a>
+                            <a href="index.php?page=profile&action=promo"  class="sectionUserA"><span class="iconUser"><i class="fas fa-percentage"></i></span> My offers</a>
                             <a href="index.php?page=logout" class="sectionUserA"><span class="iconUser" ><i class="fas fa-sign-out-alt"></i></span> Logout</a>
                         </div>
                </div>
@@ -141,21 +143,41 @@
 
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'wishlist') : ?>
                         <h1>Whishlist</h1>  
+                        <div class="wishlist_container">  
                         <?php foreach($wishlist as $itemList) : ?>
-                        <div class="col-sm-6">
-                            <div class="panel rounded shadow">
-                                <div class="panel-card" style="height: 300px; padding:20px;">
-                                    <img src="" alt=""/>
-                                    <h2><?= $itemList['name']; ?></h2>
-                                    <h3><?= $itemList['price']; ?></h3>
-                                    <span class="wish">
-                                    <a href="index.php?page=profile&action=wishlist&itemWish=<?= $itemList['id']; ?>"
-                                        class="button-like"><i class="fa fa-heart"></i></a>
-                                    </span>
-                                </div>
+                            
+                            <div class="overlay-image">
+                                <a href="index.php?page=dish&id=<?= $itemList['id'] ?>">
+                                <img class="image" src="<?= $itemList['img'] ?>" alt="Alt text" />
+                                    <div class="text">
+                                        <?= $itemList['name']; ?> 
+                                    </div>
+                                </a>
+                                <span class="wish is-active"><a href="#"><i class="far fa-heart"></i></a></span> 
                             </div>
-                        </div>
                         <?php endforeach; ?>
+                        </div>
+
+                        <?php elseif(isset($_GET['action']) && $_GET['action'] == 'promo') : ?>
+                            <h3>My offers</h3><br><br>
+                            <div class="legends">
+                                    <div class="ord dtitle"><span class="title">Offer</span></div>
+                                    <div class="ord dorderNumero"><span class="orderNumero">start date</span></div>
+                                    <div class="ord dqtyOrder"><span class="qtyOrder">End date</span></div>
+                                    <div class="ord ddateO"><span class="dateO">Quantity</span></div>
+                                    <div class="ord ddateO"><span class="dateO">Amount</span></div>
+                                </div>
+                                <hr>
+                            <?php foreach($discounts as $discount) : ?>
+                                <div class="legends">
+                                    <div class="ord dview"><span class="view"><?= $discount['name']; ?></span></div>
+                                    <div class="ord dtitle"><span class="title"><?= $discount['start_date']; ?></span></div>
+                                    <div class="ord dorderNumero"><span class="orderNumero"><?= $discount['end_date']; ?></span></div>
+                                    <div class="ord dqtyOrder"><span class="qtyOrder">1 coupon</span></div>
+                                    <div class="ord ddateO"><span class="dateO"><?= $discount['amount']; ?>$</span></div>
+                                </div>
+
+                            <?php endforeach; ?>
                     <?php endif; ?>
                     </div>
             </div>

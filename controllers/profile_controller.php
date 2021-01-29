@@ -52,4 +52,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'wishlist'){
     $wishlist = $user->getWishList($_SESSION['id']);
 }
 
+//on recupere les discount
+if(isset($_GET['action']) && $_GET['action'] == 'promo'){
+    $discounts = $user->getDiscountt($_SESSION['id']);
+}
        

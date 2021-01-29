@@ -150,7 +150,16 @@ class Customer {
          $client->execute(array($id));
          $reqClient = $client->fetchAll(PDO::FETCH_ASSOC);
         return $reqClient;
-
+    }
+    public function getDiscountt($id){
+        global $db;
+        $client = $db->prepare('
+        SELECT * FROM discount AS D, customer AS C
+        WHERE D.id_customer = C.id
+        AND C.id = ?');
+        $client->execute(array($id));
+         $reqClient = $client->fetchAll(PDO::FETCH_ASSOC);
+        return $reqClient;
     }
 
 
