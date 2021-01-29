@@ -21,6 +21,6 @@ if(in_array($page.'_controller.php', $allpages))
     include_once 'views/' .$page.'_view.php';
 }
 else{
-        echo 'error 404';
+        header('Location:index.php?page=quatrecentquatre');
     }
 

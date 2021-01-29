@@ -45,6 +45,11 @@
           <?php if(isset($_GET['dishitem']))  : ?>
               
                <!-- debut affichage du restaurant selectionné -->
+          <div class="containerResto" style="width:80%;margin:0 auto;border:1px solid lightgrey;">
+          <?php foreach($datadejuste1rest as $data) : ?>
+                    <h4><?= $data['name']; ?></h4>
+          <?php endforeach; ?>
+          <H4></H4>
 
 
 
@@ -57,6 +62,7 @@
 
 
 
+          </div>
           <?php endif ;?>          
      <?php endif; ?>
 </main>

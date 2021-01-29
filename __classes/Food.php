@@ -16,9 +16,21 @@ class Food{
         $prod = $db->prepare('
             SELECT * FROM product WHERE id = ?');
         $prod->execute(array($id));
-        $prod = $client->fetch(PDO::FETCH_ASSOC);
-        return $prod;
+        $data = $prod->fetch(PDO::FETCH_ASSOC);
+        return $data;
     }
+    public function getProductByrestaurantId($id){
+        global $db;
+
+        $prod = $db->prepare('
+            SELECT * FROM dishes AS D, restaurants AS R
+             WHERE D.id_restaurant = R.id
+             AND R.id = ?');
+        $prod->execute(array($id));
+        $data = $prod->fetch(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
     public function getRestaurantById($id){
         global $db;
 
