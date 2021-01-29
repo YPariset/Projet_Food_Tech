@@ -56,7 +56,7 @@
 <div class="logo-bouton-sticky">
    
    <div>
-      <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="160" height="auto" alt="logo feeling food"></a></span>  
+      <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="100" height="auto" alt="logo feeling food"></a></span>  
    </div>
 
    
