@@ -95,21 +95,22 @@
                         <!-- start history -->
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'history') : ?>
                             <?php if(!isset($_GET['id'])) : ?>
-                                <h1>Historic</h1>
-                                    <div class="col" >
-                                    
-                                        <div class="panel-card" style="min-height: 300px; padding:20px;">
-                                        <!-- affichage liste des commandes -->
+                                <h3>My historic</h3><br><br>
+                            <div class="legends">
+                                    <div class="ord dorderNumero"><span class="orderNumero">Order n°</span></div>
+                                    <div class="ord dqtyOrder"><span class="qtyOrder">Date</span></div>
+                                    <div class="ord ddateO"><span class="dateO">Amount</span></div>
+                                    <div class="ord icon"><span class="icon">Details</span></div>
+                                </div>
+                                <hr>
                                 <?php foreach($orderOrder as $orderList) : ?>
-                                    <div class="containerOrder">
-                                        <span class="orderz">Order n° <?= $orderList['number']; ?> -</span> 
-                                        <span class="orderz"> On <?= $orderList['date_order']; ?> </span>
-                                        <span class="orderz">Amount: <?= number_format($orderList['total_price'],2); ?>$</span>
-                                        <a class="listOrder" href="index.php?page=profile&action=history&id=<?= $orderList['id']; ?>"><span class="eye"><i class="far fa-eye"></i></a><br>
-                                    </div>     
+                                <div class="legends">
+                                    <div class="ord dorderNumero"><span class="orderNumero"><?= $orderList['number']; ?></span></div>
+                                    <div class="ord dateO"><span class="dateO"><?= $orderList['date_order']; ?></span></div>
+                                    <div class="ord amount"><span class="amount"><?= number_format($orderList['total_price'],2); ?>$</span></div>
+                                    <div class="ord icon"><a class="icon" href="index.php?page=profile&action=history&id=<?= $orderList['id']; ?>"><span class="eye"><i class="far fa-eye"></i></a><br></div>
+                                </div>     
                                 <?php endforeach; ?>
-                                        </div>
-                                    </div>
                             
                             <?php else :  ?>
                             
