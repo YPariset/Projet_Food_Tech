@@ -13,6 +13,7 @@
     <link href="_assets/style/signup.css" rel="stylesheet">
     <link href="_assets/style/header2.css" rel="stylesheet">
     <link href="_assets/style/profile.css" rel="stylesheet">
+    <link href="_assets/style/restaurant.css" rel="stylesheet">
 
 
 

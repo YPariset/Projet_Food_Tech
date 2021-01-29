@@ -1,0 +1,22 @@
+.rm {
+    visibility: hidden;
+    /* Hide my Read More button */
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+p {
+    margin: 2em 0;
+}
+
+
+.first {
+    color: red;
+}
+
+.sec {
+    color: green;
+}

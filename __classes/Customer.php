@@ -161,9 +161,7 @@ class Customer {
          $reqClient = $client->fetchAll(PDO::FETCH_ASSOC);
         return $reqClient;
     }
-
-
-    
+ 
     /*
     * cmodifie les informations de compte client
     *

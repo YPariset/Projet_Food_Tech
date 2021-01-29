@@ -174,7 +174,7 @@
                                     <div class="ord dtitle"><span class="title"><?= $discount['start_date']; ?></span></div>
                                     <div class="ord dorderNumero"><span class="orderNumero"><?= $discount['end_date']; ?></span></div>
                                     <div class="ord dqtyOrder"><span class="qtyOrder">1 coupon</span></div>
-                                    <div class="ord ddateO"><span class="dateO"><?= $discount['amount']; ?>$</span></div>
+                                    <div class="ord ddateO"><span class="dateO"><?= $discount['amount']; ?>%</span></div>
                                 </div>
 
                             <?php endforeach; ?>
