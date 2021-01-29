@@ -8,27 +8,57 @@
 <?php include_once './_includes/header-banner.php'; ?> 
      
 <main>
-    <!-- Template Element is parsed by not rendered by the Browser -->
-    <template id="temp">
-        <div class="resto"><p>Salut je suis le contenu 1</p></div>
-        <div class="vegan"><p>Salut je suis le contenu 1</p></div>
-        <div class="tendances"><p>Salut je suis le contenu 1</p></div>
-        <div class="organic"><p>Salut je suis le contenu 1</p></div>
-        <div class="specialites"><p>Salut je suis le contenu 1</p></div>
-        <div class="specialites"><p>Salut je suis le contenu 1</p></div>
-        <div class="specialites"><p>Salut je suis le contenu 1</p></div>
-        <div class="specialites"><p>Salut je suis le contenu 1</p></div>
-        <div class="specialites"><p>Salut je suis le contenu 1</p></div>
-        <div class="specialites"><p>Salut je suis le contenu 1</p></div>
-        <div class="specialites"><p>Salut je suis le contenu 1</p></div>
-        <div class="specialites"><p>Salut je suis le contenu 1</p></div>
-        <div class="specialites"><p>Salut je suis le contenu 1</p></div>
-        <div class="specialites"><p>Salut je suis le contenu 1</p></div>
-    </template>
+     <?php if(!isset($_GET['cat'])) :?>
+          <template id="temp">
+               <div class="resto"><p>Salut je suis le contenu 1</p></div>
+               <div class="vegan"><p>Salut je suis le contenu 1</p></div>
+               <div class="tendances"><p>Salut je suis le contenu 1</p></div>
+               <div class="organic"><p>Salut je suis le contenu 1</p></div>
+               <div class="specialites"><p>Salut je suis le contenu 1</p></div>
+               <div class="specialites"><p>Salut je suis le contenu 1</p></div>
+               <div class="specialites"><p>Salut je suis le contenu 1</p></div>
+               <div class="specialites"><p>Salut je suis le contenu 1</p></div>
+               <div class="specialites"><p>Salut je suis le contenu 1</p></div>
+               <div class="specialites"><p>Salut je suis le contenu 1</p></div>
+               <div class="specialites"><p>Salut je suis le contenu 1</p></div>
+               <div class="specialites"><p>Salut je suis le contenu 1</p></div>
+               <div class="specialites"><p>Salut je suis le contenu 1</p></div>
+               <div class="specialites"><p>Salut je suis le contenu 1</p></div>
+          </template>
 
-    <h1>Salut c'est toutes les categories</h1>
+                    <h1>Salut c'est toutes les categories</h1>
 
-    <button class="rm">Read More</button>
+                    <button class="rm">Read More</button>
+     <?php else : ?>
+          <?php if($_GET['cat'] == 'restaurant') : ?>
+
+               <?php elseif($_GET['cat'] == 'vegan') : ?>
+
+
+               <?php elseif($_GET['cat'] == 'organic') : ?>
+
+
+               <?php elseif($_GET['cat'] == 'speciality') : ?>
+
+
+               <?php elseif($_GET['cat'] == 'trend') : ?>
+
+
+               <?php elseif($_GET['cat'] == 'hotdeals') : ?>
+
+
+               <?php elseif($_GET['cat'] == 'burgers') : ?>
+
+
+               <?php elseif($_GET['cat'] == 'seafood') : ?>
+                    
+
+               <?php elseif($_GET['cat'] == 'gastronomy') : ?>
+
+
+
+          <?php endif ;?>          
+     <?php endif; ?>
 </main>
 
 <script>
