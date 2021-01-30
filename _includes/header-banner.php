@@ -28,7 +28,11 @@
          <ul class="block-bouton">
             <li class="but"><a class="btnHeader btnhA" href="index.php?page=profile">Profile</a></li>
             <li class="but"><a class="btnHeader btnhB" href="index.php?page=logout">Log Out</a></li>
-            <li><a  href="index.php?page=shoppingcart"><i class="fas fa-cart-arrow-down fa-2x logoCart"></i></a></li>
+            <li><a class="btn btn-secondary" href="index.php?page=shoppingcart" style="background-color:3cb6c9;border-radius:40px;height:27px;line-height:12px">
+                     <i class="fas fa-cart-arrow-down logoCart"></i>
+                     <span class="headerCartItem"><?php if($count = count($_SESSION['panier']['nom'] )){echo $count;}; ?></span> items
+               </a>
+            </li>
       </ul>
       <?php endif; ?>
    </div>

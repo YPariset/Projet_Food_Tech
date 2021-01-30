@@ -42,8 +42,8 @@
                     <button class="rm">Read More</button>
      <?php else : ?>
               
-               <!-- debut affichage du restaurant selectionné -->
-          <div class="containerResto" style="width:75%;margin:60px auto;min-height:400px;padding:40px;">
+      <!-- debut affichage du restaurant selectionné -->
+          <div class="containerResto" style="width:90%;margin:60px auto;min-height:400px;">
           <?php foreach($datadejuste1rest as $data) : ?>
                     <h3><?= $data['name']; ?></h3>
                     <P style="color:#3cb6c9">FREE DELIVERY</p>
@@ -52,44 +52,99 @@
                     <a href="#" class="btn bg-transparent" style="color:lightgrey;border:1px solid lightgrey;border-radius:40px;">more infos <i class="fas fa-sort-down"></i></a>
           <?php endforeach; ?>
           <br><br><br>
+
+     <!-- section dish -->
           <H4>OUR SALTY SELECTION</H4>
           <hr>
           <div style="display:flex;flex-flow:row wrap;justify-content:space-between;margin:60px 0;">
   
           <?php foreach($datasResto as $datas) : ?>
                
-               <a href="#" class="cardResto">
-                    <h5><strong><?= $datas['name']; ?></strong></h5>
-                    <p style="font-size:12px;"><?= $datas['description']; ?>
-                    <p style="font-size:12px;font-weight:bold;color:#3cb6c9">$<?= $datas['price']; ?></p>
-                    </a>
+               <div class="cardResto">
+                    <div style="display:flex; flex-flow:row wrap;">
+                         <div style="width:70%;padding:20px 20px 0 20px;">
+                              <h5><strong><?= $datas['name']; ?></strong></h5>
+                              <!-- description du produit -->
+                              <p style="font-size:12px;"><?= $datas['description']; ?></p>
+                              <!-- affichage du prix unitaire -->
+                              <span style="font-size:12px;font-weight:bold;color:#3cb6c9">$<?= $datas['price']; ?>
+                             
+                                   <form method="POST" action="" style="display:inline;margin-left:40px;">
+                                   <!-- ajouter ou supprimer quantité -->
+                                         <input type="number" name="qteCart" class="qt" value="1" min="1" 
+                                         style="border:none;width:30px;backround-color:grey;outline:none;border:0.5px solid #3cb6c9;"/>
+                                    <!-- recuperer nom du produit -->
+                                        <input type="hidden" name="nomItem" value="<?= $datas['name']; ?>">
+                                   <!-- recuperer nom du produit -->
+                                         <input type="hidden" name="unitPrice" value="<?= $datas['price']; ?>">
+                                   <!-- valider -->
+                                        <button type="submit" name="cartButton" style="border:none;background-color:#3cb6c9;border-radius:40px;color:white;padding:2px 5px;">
+                                             <span class="addCart" style="margin-right:10px;">Add to ass</span>
+                                             <span class="priceTotal">$10</span>
+                                        </button>
+                                   </form>
+                              </span>
+                          </div>
+                          <!-- image de la card -->
+                          <div style="width:30%;">
+                              <img src="<?= $datas['img']; ?>" alt="dish" style="max-width:100%;" width="250" height="140"/>
+                          </div>
+                    </div>
+          </div>       
           <?php endforeach; ?>
-          </div>
+          </div>  
+     <!-- end section dish --> 
+     <!-- section dessert -->
+
 
           <H4>OUR SWEET SELECTION</H4>
           <hr>
           <div style="display:flex;flex-flow:row wrap;justify-content:space-between;margin-top:40px;" class="">
-  
+
           <?php foreach($dataresto2 as $datas2) : ?>
-               
-               <a href="#" class="cardResto">
-                    <h5><strong><?= $datas2['name']; ?></strong></h5>
-                    <p style="font-size:12px;"><?= $datas2['description']; ?>
-                    <p style="font-size:12px;font-weight:bold;color:#3cb6c9">$<?= $datas2['price']; ?></p>
-                    </a>
-          <?php endforeach; ?>
 
-          </div>
-
-
-
-
-
-
+               <div class="cardResto">
+                    <div style="display:flex; flex-flow:row wrap;">
+                         <div style="width:70%;padding:20px 20px 0 20px;">
+                              <h5><strong><?= $datas2['name']; ?></strong></h5>
+                              <!-- description du produit -->
+                              <p style="font-size:12px;"><?= $datas2['description']; ?></p>
+                              <!-- affichage du prix unitaire -->
+                              <span style="font-size:12px;font-weight:bold;color:#3cb6c9">$<?= $datas2['price']; ?>
+                             
+                                   <form method="POST" action="" style="display:inline;margin-left:40px;">
+                                   <!-- ajouter ou supprimer quantité -->
+                                         <input type="number" name="qteCart" class="qt" value="1" min="1" 
+                                         style="border:none;width:30px;backround-color:grey;outline:none;border:0.5px solid #3cb6c9;"/>
+                                    <!-- recuperer nom du produit -->
+                                        <input type="hidden" name="nomItem" value="<?= $datas2['name']; ?>">
+                                   <!-- recuperer nom du produit -->
+                                         <input type="hidden" name="unitPrice" value="<?= $datas2['price']; ?>">
+                                   <!-- valider -->
+                                        <button type="submit" name="cartButton" style="border:none;background-color:#3cb6c9;border-radius:40px;color:white;padding:2px 5px;">
+                                             <span class="addCart" style="margin-right:10px;">Add to ass</span>
+                                             <span class="priceTotal">$10</span>
+                                        </button>
+                                   </form>
+                              </span>
+                          </div>
+                          <!-- image de la card -->
+                          <div style="width:30%;">
+                              <img src="<?= $datas2['img']; ?>" alt="dish" style="max-width:100%;" width="250" height="140"/>
+                          </div>
+                    </div>
           </div>       
+          <?php endforeach; ?> 
+          </div>
+    
+     </div>       
      <?php endif; ?>
 </main>
+<!-- script increment quantity -->
 
+
+
+<!-- script infinite scroll -->
 <script>
     document.addEventListener(
     "DOMContentLoaded",
@@ -116,7 +171,6 @@ function showMore() {
 
     main.insertBefore(cloned, btn);
 }
-
 </script>
 </body>
 </html>

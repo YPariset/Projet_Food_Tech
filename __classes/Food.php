@@ -34,7 +34,8 @@ class Food{
         global $db;
 
         $prod = $db->prepare('
-            SELECT D.* FROM dishes AS D, restaurants AS R
+            SELECT D.* 
+            FROM dishes AS D, restaurants AS R
              WHERE D.id_restaurant = R.id
              AND R.id = ?
              AND D.dish_category <> "Dessert"');
