@@ -78,5 +78,4 @@ function montant_panier()
     
     return $montant;
 }
-
 }

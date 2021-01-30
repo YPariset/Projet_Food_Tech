@@ -4,9 +4,9 @@
      <?php include_once '_includes/head.php'; ?>  
 	<title><?= ucFirst($page); ?> - Feeling Food </title>
 </head>
-<body style="height:auto;">
+<body >
 <?php include_once '_includes/header-banner.php'; ?>  
-<div class="container bootstrap snippets">
+<div class="container bootstrap snippets" style="margin-top:100px;">
 <h1 class="mb-1" style="padding-top:60px; padding-bottom:60px">profile</h1>
 <div class="row">
     <!-- Panel user -->

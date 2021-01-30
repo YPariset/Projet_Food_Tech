@@ -19,7 +19,7 @@ if(isset($_GET['resto']))
 
             $cart =new ShoppingCart();
             $cart->addToCart($nomItem, $qte, $prixItem);
-            var_dump($_SESSION['panier']);
+           // var_dump($_SESSION['panier']);
         }else{
             echo 'il n\'y a pas de donnée';
         }

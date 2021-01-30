@@ -7,7 +7,7 @@
 <body>
 <?php include_once './_includes/header-banner.php'; ?> 
      
-<main>
+<main style="margin-top:150px;">
      
 
      <?php if(!isset($_GET['resto'])) :?>
@@ -79,8 +79,8 @@
                                          <input type="hidden" name="unitPrice" value="<?= $datas['price']; ?>">
                                    <!-- valider -->
                                         <button type="submit" name="cartButton" style="border:none;background-color:#3cb6c9;border-radius:40px;color:white;padding:2px 5px;">
-                                             <span class="addCart" style="margin-right:10px;">Add to ass</span>
-                                             <span class="priceTotal">$10</span>
+                                             <span class="addCart">Add to cart</span>
+                                             
                                         </button>
                                    </form>
                               </span>
@@ -122,8 +122,7 @@
                                          <input type="hidden" name="unitPrice" value="<?= $datas2['price']; ?>">
                                    <!-- valider -->
                                         <button type="submit" name="cartButton" style="border:none;background-color:#3cb6c9;border-radius:40px;color:white;padding:2px 5px;">
-                                             <span class="addCart" style="margin-right:10px;">Add to ass</span>
-                                             <span class="priceTotal">$10</span>
+                                             <span class="addCart">Add to cart</span>
                                         </button>
                                    </form>
                               </span>
