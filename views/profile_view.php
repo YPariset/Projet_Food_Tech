@@ -13,15 +13,16 @@
     <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="panel rounded shadow">
             <div class="panel-card" style="min-height: 600px; margin-bottom: 200px; padding:20px;">
+                    <!-- affichage avatar et infos -->
                     <ul class=infoPanel>
-                        
-                        <li><img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="John Doe"><span class="editAvatar"><a href="#"><i class="fas fa-pen"></i></a></span></li>
+                        <li><img src="<?= $dataClient['avatar']; ?>" alt="John Doe"><span class="editAvatar"><a href="#"><i class="fas fa-pen"></i></a></span></li>
                         <li class="text-center"><h4 class="text-capitalize">
                             <?php if(isset($_SESSION['firstname'])){echo $_SESSION['firstname'];} ?>
                             </h4><p class="text-muted text-capitalize">
                             <?php if(isset($dataClient['birthday'])){echo $dataClient['birthday'];} ?>
                             </p>
                         </li>
+                    <!-- infos -->
                         <li style="width:100%;"><a href="index.php?page=restaurant" class="btn btn-success text-center btn-block" style="display:block;margin:0 auto;">Order</a></li>
                         <li><br><br></li>
                     </ul>
@@ -41,6 +42,13 @@
         </div>
         </div>  
      <!-- end Panel user -->
+
+    <!-- form upload -->
+     <form method="post" enctype="multipart/form-data">
+      <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $poids_max; ?>">
+      <input type="file" name="fichier">
+      <button type="submit" value="Envoyer">go</button>
+   </form>
 
       <!-- start preview  -->
         <div class="col-sm-9 bloc_edit">  
@@ -141,24 +149,28 @@
                                 <a href="index.php?page=profile&action=history" class="btn btn-primary backOrder">back</a>
                             <?php endif;?>
                         <!-- end history -->
-
+                    <!-- wishlist -->
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'wishlist') : ?>
                         <h1>Whishlist</h1>  
                         <div class="wishlist_container">  
                         <?php foreach($wishlist as $itemList) : ?>
                             
                             <div class="overlay-image">
-                                <a href="index.php?page=dish&id=<?= $itemList['id'] ?>">
+                                <a href="index.php?page=restaurant&resto=<?= $itemList['id_restaurant '] ?>">
                                 <img class="image" src="<?= $itemList['img'] ?>" alt="Alt text" />
                                     <div class="text">
                                         <?= $itemList['name']; ?> 
                                     </div>
                                 </a>
-                                <span class="wish is-active"><a href="#"><i class="far fa-heart"></i></a></span> 
+                                <form action="" method="POST">
+                                <button type="submit" class="wish" style="border:none;background:transparent;outline:none;">
+                                    <i class="fas fa-heart"></i>
+                                </button> 
+                                </form>
                             </div>
                         <?php endforeach; ?>
                         </div>
-
+                <!--  promotions  -->
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'promo') : ?>
                             <h3>My offers</h3><br><br>
                             <div class="legends">

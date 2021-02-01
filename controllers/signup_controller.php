@@ -27,7 +27,8 @@ if(isset($_POST['signup']) && $_POST['signup'] == 'done'){
         } elseif ($usernameExist == 1) {
                $alertSign = Messages::alert("Username déjà utilisé", 'red', '#fab0aa');
         }else{
-               $client->createClient($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $dateCreation);
+               $avatarDefault = "_assets/image/avatar/default.jpg";
+               $client->createClient($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $dateCreation, $avatarDefault);
                $alertSign = Messages::alert('Votre compte à été crée avec succès, veuillez vous connecter!', 'green', '#97f7a2');
         }
 

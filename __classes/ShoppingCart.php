@@ -17,7 +17,6 @@ class Shoppingcart{
            $_SESSION['panier']['prix'] = array();
         }
      }
-
      /*
     * ajoute des produits à la session panier
     *
@@ -39,13 +38,7 @@ class Shoppingcart{
         }
     }
     
-    /*
-    * modifie la quantite d'un produit du panier
-    *
-    * @param string $nom, int quantite
-    *
-    * @return int 
-    */
+
     public function changeQuantity($nom, $qte){
         $nb_articles = count($_SESSION['panier']['nom']);
 
@@ -53,11 +46,41 @@ class Shoppingcart{
         {
         if($nom == $_SESSION['panier']['nom'][$i])
         {
-            $_SESSION['panier']['qte'][$i] = $qte;
+            $_SESSION['panier']['quantite'][$i] = $qte;
         }
-        return $qte;
     }
 }
+
+    public function removeFromCart($nom){
+        //panier temporaire
+        $panier_tmp = array("nom"=>array(),"quantite"=>array(),"prix"=>array());
+        //on compte le nombre d'article
+        $nb_articles = count($_SESSION['panier']['nom']);
+        
+        for($i = 0; $i < $nb_articles; $i++)
+        {
+            if($_SESSION['panier']['nom'][$i] != $nom)
+             {
+            array_push($panier_tmp['nom'],$_SESSION['panier']['nom'][$i]);
+            array_push($panier_tmp['quantite'],$_SESSION['panier']['quantite'][$i]);
+            array_push($panier_tmp['prix'],$_SESSION['panier']['prix'][$i]);
+            }
+        }
+            $montant -= $_SESSION['panier']['quantite'][$i] * $_SESSION['panier']['prix'][$i];
+
+            $_SESSION['panier'] = $panier_tmp;
+            /* Option : on peut maintenant supprimer notre panier temporaire: */
+            unset($panier_tmp);
+
+        }
+
+        public function clearCart(){
+
+            unset($_SESSION['panier']);
+        }
+    
+
+
 
     /*
     * calcule le montant du panier
@@ -69,13 +92,17 @@ function montant_panier()
 {
     $montant = 0;
     
-    $nb_articles = count($_SESSION['panier']['nom']);
-   
-    for($i = 0; $i < $nb_articles; $i++)
-    {
-        $montant += $_SESSION['panier']['quantite'][$i] * $_SESSION['panier']['prix'][$i];
+    if(isset($_SESSION['panier'])){
+        $nb_articles = count($_SESSION['panier']['nom']);
+    
+        for($i = 0; $i < $nb_articles; $i++)
+        {
+            $montant += $_SESSION['panier']['quantite'][$i] * $_SESSION['panier']['prix'][$i];
+        }
+    }else{
+        $nb_articles = 0;
     }
     
     return $montant;
-}
+    }
 }

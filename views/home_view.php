@@ -9,12 +9,12 @@
 <main>
 	<div class="section1 appear">
 		<div class="text1">
-			<h2>Économiser sur chaque commande</h2>  
+			<h2>Order near by</h2>  
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
 				Ratione sunt eum labore commodi fuga omnis, 
 				molestias sapiente, accusamus eveniet consectetur 
 				necessitatibus.</p>
-				<a class="btn btn-secondary" href="#">Essayez</a>
+				<a class="btn btn-secondary" href="index.php?page=restaurant">Try!</a>
 			</div>
 			<div class="img1">
 				<img src="_assets/image/photo_bouffe.jpg" alt=""></img>

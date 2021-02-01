@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container" >
     
     <script type="text/javascript">
         var count = 5; // Timer
@@ -31,7 +31,7 @@
             <div class="icon"></div>
                 <div class="logo">
                 <h1>Merci de votre visite sur </h1>
-                     <p class="title">Feein' Food<span class="point">.</span>com</p>
+                     <p class="title">Feelin' Food<span class="point">.</span>com</p>
                 </div>
           </div>
       

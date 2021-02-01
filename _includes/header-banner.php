@@ -28,9 +28,18 @@
          <ul class="block-bouton">
             <li class="but"><a class="btnHeader btnhA" href="index.php?page=profile">Profile</a></li>
             <li class="but"><a class="btnHeader btnhB" href="index.php?page=logout">Log Out</a></li>
-            <li><a class="btn btn-secondary" href="index.php?page=shoppingcart" style="background-color:#3cb6c9;border-radius:40px;height:27px;line-height:12px">
+            <li id="buttonPreviewCart"><a class="btn btn-secondary buttonItem" href="index.php?page=shoppingcart" 
+               style="background-color:#3cb6c9;border-radius:40px;height:27px;line-height:12px;">
                      <i class="fas fa-cart-arrow-down logoCart"></i>
-                     <span class="headerCartItem"><?php if($count = count($_SESSION['panier']['nom'] )){echo $count;}; ?></span> items
+                     <span ><?php 
+                           if(isset($_SESSION['panier'])){
+                              $count = count($_SESSION['panier']['nom']);
+                              echo $count;
+                           }else{
+                              $count = 0;
+                              echo $count;
+                           }
+                     ?></span> items
                </a>
             </li>
       </ul>
@@ -40,21 +49,23 @@
 </div>
 
 <!-- affichage apercu panier -->
-<div class="dropdownCart">
+<div id="dropdownCart" class="dropdownCart">
    <!-- si utilisateur connecté -->
-      <?php if(isset($_SESSION['id'])) : ?>
+      <?php if(isset($_SESSION['id']))  : ?>
          <!-- si panier vide -->
-         <?php if(empty($_SESSION['panier']['nom'])) : ?>
-            <h5>Wanna eat something?</h5>
-            <a href="index.php?page=restaurant" class="btn-btn-secondary">order now</a>
+         <?php if(!isset($_SESSION['panier'])) : ?>
+            <h5>Your shopping cart is empty</h5>
 
          <!-- si le panier est rempli -->
-          <?php else :?>
+          <?php else  :?>
+               <?php if(!count($_SESSION['panier']['nom'])) :?>
+                  <h5>Your shopping cart is empty</h5>
+               <?php else :?>
                <h5>order</h5>
                <?php for($i = 0; $i < count($_SESSION['panier']['nom']); $i++) : ?>
                   <div style="display:flex;flex-flow:row wrap; justify-content:space-between;">
-                     <p><strong><?php echo $_SESSION['panier']['nom'][$i] ?><span> X </span> <?php echo $_SESSION['panier']['quantite'][$i]; ?></strong></p>
-                     <p style="color:#3cb6c9;"> $<?php echo $_SESSION['panier']['prix'][$i] ?></p>
+                     <p><strong><?php echo $_SESSION['panier']['nom'][$i] ?><span> X </span> <?= $_SESSION['panier']['quantite'][$i]; ?></strong></p>
+                     <p style="color:#3cb6c9;"> $<?= $_SESSION['panier']['prix'][$i]; ?></p>
                   </div>
                   <?php endfor; ?>
                   <br><hr>
@@ -67,16 +78,39 @@
                   <p style="color:#3cb6c9;">$<?php echo $TotalAmount; ?></p>
                </div>
                <div style="margin:0 auto;">
-               <a class="btn btn-secondary" href="index.php?page=shoppingcart" style="border-radius:40px;color:white;background-color:#3cb7c8;padding:8px 120px;">Checkout</a>
+               <a class="btn btn-secondary" href="index.php?page=shoppingcart"  style="border-radius:40px;color:white;background-color:#3cb7c8;padding:8px 120px;">Checkout</a>
+               <form method="POST" action=""> 
+                   <button id="clear" class="btn btn-secondary" name="empty" onclick="history.go(0)" style="border-radius:40px;color:white;background-color:#3cb7c8;padding:8px 135px;margin-top:10px;">Clear</button>
+               </form>
                </div>
+               <?php endif ?>
          <?php endif ?>
    <!-- si utilisateur non connecté -->
    <?php else : ?>
       <br><br><br>
       <div style="margin:0 auto;text-align:center;">
-         <h5>Please login view orders</h5><br><br>
-         <a class="btn btn-secondary" href="index.php?page=login" style="border-radius:40px;color:white;background-color:#3cb7c8;padding:8px 120px;">log in </a>
+         <h5>Please login to view orders</h5><br><br>
+         <a  class="btn btn-secondary" href="index.php?page=login" style="border-radius:40px;color:white;background-color:#3cb7c8;padding:8px 120px;">log in </a>
        </div>
    <?php endif; ?>
    </div>
 <!-- fin affichage apercu panier -->
+
+<script>
+   window.addEventListener("load", function(e){
+      var buttonPreviewCart = document.querySelector(".buttonItem");
+      buttonPreviewCart.addEventListener("mouseover", function(e){
+         document.querySelector(".dropdownCart").style.display= "block";
+      });
+      window.addEventListener("click", function(e){
+         document.querySelector(".dropdownCart").style.display= "none";
+      });
+   });
+
+</script>
+
+<?php
+   if(isset($_POST['empty'])){
+      $delete = new ShoppingCart();
+      $clear = $delete->clearCart();
+   }

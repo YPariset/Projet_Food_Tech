@@ -56,13 +56,12 @@ class Customer {
     *
     * @return void
     */
-    public function createClient($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $dateCreation){
+    public function createClient($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $dateCreation, $avatar){
         global $db;
-           $req= " INSERT INTO customer(firstname, lastname, username, email,  password, street, zip, city, birthday, dateCreation) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+           $req= " INSERT INTO customer(firstname, lastname, username, email,  password, street, zip, city, birthday, dateCreation, avatar) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
              $newClient = $db->prepare($req);
-        $newClient->execute(array($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $dateCreation));
-       
+        $newClient->execute(array($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $dateCreation, $avatar));
     }
 
     
@@ -142,7 +141,7 @@ class Customer {
     public function getWishList($id){
         global $db;
         $client = $db->prepare('
-        SELECT D.name, D.price,D.img,D.id
+        SELECT D.name, D.price,D.img,D.id, D.id_restaurant
         From dishes as D, customer as C, wishlist_item as W 
         where D.id = W.id_dish 
         AND  W.id_customer = C.id

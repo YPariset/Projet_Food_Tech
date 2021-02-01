@@ -6,6 +6,7 @@
 </head>
 <body>
 <?php include_once '_includes/header-banner.php'; ?>  
+<div  style="margin-top:150px;">
      <div class="connexion">
      <?php if(isset($message_login)){echo $message_login;} ?>
 
@@ -23,6 +24,7 @@
           </form>
           </div>
      </div>
+</div>
 <?php include_once '_includes/footer.php'; ?> 
 </body>
 </html>

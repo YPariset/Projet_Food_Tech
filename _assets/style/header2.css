@@ -77,11 +77,9 @@ border:1px solid lightgrey;
     z-index:2000;
     background-color:white;
     position:absolute;
-    top:100px;
+    top:70px;
     right:60px;
     position:fixed;
     border:0.5px solid lightgrey;
 }
-.buttonItem:hover .dropdownCart {
-    display:block;
-}
+
