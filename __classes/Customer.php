@@ -206,4 +206,16 @@ class Customer {
     $reqDatas->execute(array($session));
 
     }
+
+    //requete search bar
+    public function searchBarre($search){
+        global $db;
+               $req = $db->prepare('SELECT DISTINCT (R.name), R.img, R.id FROM restaurants AS R, dishes as D where R.id=D.id_restaurant
+                            AND R.name LIKE CONCAT("%", ?, "%")');
+
+                  $req->execute(array($search));
+                  $requete = $req->fetchAll(PDO::FETCH_ASSOC);
+
+                  return $requete;
+    }
 }

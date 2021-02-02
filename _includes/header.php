@@ -1,33 +1,70 @@
 
 
  <header class="main-header1">
- <!--<img src="./_assets/image/img.jpeg" alt="food" /> -->
  
- <div class="logo-bouton">
-   
-      <!-- <div>
-         <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="160" height="auto" alt="logo feeling food"></a></span>  
-      </div>
+ <div class="logo-bouton"></div>
 
-      <div>
-         <ul class="block-bouton">
-            <li class="bouton sign"><a class="btnsign" href="index.php?page=signup">Sign Up</a></li>
-            <li class="bouton log"><a class="btnlog" href="index.php?page=login">Log In</a></li>
-         </ul>
-      </div> -->
-   </div>
 
    <div class="mainTitle">
          <h1><span>Feelin'  </span>the difference</h1> <!--fab-->
          <p>Find a restaurant near you</p></br>
    </div>
       <div class="location-search" id="location-search">
-         <input id="adress-input" class="adress-input" name="adress-input" type="text" placeholder="Enter your address">
-         <button class="submit-button" name="submit-button" type="submit"><span class="arrow"><i class="fas fa-arrow-right"></i></span></button>
+         
+         <!-- <input id="adress-input" class="adress-input" name="adress-input" type="text" placeholder="Enter your address"> -->
+         <div id="map" style="display: none;"></div>
+         <div id="geocoder" class="geocoder" style="position: relative; z-index: 1; width: 50%; left: 45%; margin-left: -19%; top: 10px;">
+            <!-- <button class="submit-button" name="submit-button" type="submit">
+               <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+            </button> -->
+         </div>
+        
       </div>
       <button id="geolocalisation" class="geolocalisation" name="geolocalisation" type="submit"><span><i class="fas fa-location-arrow"></i></span> Find my location</button>
    
    </div>
+<div class="logo-bouton-sticky">
+   
+   <div>
+      <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="100" height="auto" alt="logo feeling food"></a></span>  
+   </div>
+
+   
+   <?php if(isset($_SESSION['username'])) : ?>
+      <div>
+      <ul class="block-bouton">
+         <li class="bouton sign"><a class="btnsign" href="index.php?page=profile">Profile</a></li>
+         <li class="bouton log"><a class="btnlog" href="index.php?page=logout">Log Out</a></li>
+      </ul>
+      </div>
+      <?php else : ?>
+         <div>
+         <li class="bouton sign"><a class="btnsign" href="index.php?page=signup">Sign Up</a></li>
+         <li class="bouton log"><a class="btnlog" href="index.php?page=login">Log In</a></li>
+      </div>
+      <?php endif; ?>
+   
+</div>
+
+<script>
+   mapboxgl.accessToken = 'pk.eyJ1IjoieXBhcmlzZXQiLCJhIjoiY2trbXpkbHIzMXdlbjJucGczdTduZzZ0ayJ9.jzw_Lv9CPSAo7OZAaKN6ag';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        
+        center: [-79.4512, 43.6568],
+        zoom: 13
+    });
+
+    var geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+    });
+
+    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+   </script>
+
+
    <script>window.addEventListener("load",function(e){
             var input= document.getElementById("adress-input");
             var local= document.getElementById("geolocalisation");
@@ -53,28 +90,6 @@
                }
             });
       </script>
-<div class="logo-bouton-sticky">
-   
-   <div>
-      <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="100" height="auto" alt="logo feeling food"></a></span>  
-   </div>
-
-   
-   <?php if(isset($_SESSION['username'])) : ?>
-      <div>
-      <ul class="block-bouton">
-         <li class="bouton sign"><a class="btnsign" href="index.php?page=profile">Profile</a></li>
-         <li class="bouton log"><a class="btnlog" href="index.php?page=logout">Log Out</a></li>
-      </ul>
-      </div>
-      <?php else : ?>
-         <div>
-         <li class="bouton sign"><a class="btnsign" href="index.php?page=signup">Sign Up</a></li>
-         <li class="bouton log"><a class="btnlog" href="index.php?page=login">Log In</a></li>
-      </div>
-      <?php endif; ?>
-   
-</div>
 </header>
  
    

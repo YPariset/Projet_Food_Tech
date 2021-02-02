@@ -6,8 +6,42 @@
 </head>
 <body>
 <?php include_once './_includes/header-banner.php'; ?> 
-     
-<main style="margin-top:150px;">
+
+<div class="image">
+          <div class="ptext">
+               <span class="border">
+               <?php if(!isset($_GET['resto'])) :?>
+               our restaurants
+               <?php else: ?>
+               <?php foreach($datadejuste1rest as $data) : ?> 
+               <?= $data['name']; ?>
+               <?php endforeach; ?>
+               <?php endif;?>
+               </span>
+          </div>
+          </div>
+
+<main style="margin-top:150px;margin-bottom:100px;">
+     <!-- result search Bar -->
+     <?php if(isset($_POST['headerSearchSubmit'])) : ?>
+          <?php if(!empty($_POST['headerSearch'])) : ?>
+
+          <div id="resultatSearch" style="display:flex; flex-direction:row; justify-content:space-between">
+
+               <?php foreach ($searchBanniere as $dataSearch) : ?>
+                    <div>
+                         <a href="index.php?page=restaurant&resto=<?= $dataSearch['id'] ?>">
+                         <h4><?=$dataSearch['name'] ?></h4>
+                         <img class="image" src="<?= $dataSearch['img'] ?>" alt="Alt text"/>
+                                             <div class="text">
+                         </a>
+                    </div>
+               <?php endforeach; ?>
+               </div>
+          <?php endif; ?>
+     <?php endif; ?>
+     <!-- fin de result search -->
+
      
 
      <?php if(!isset($_GET['resto'])) :?>
@@ -36,23 +70,23 @@
                <!-- fin de test  -->
                <!-- Organic Restaurants -->
                <div class="organic"><h2>Organic restaurant</h2></div>
-                    <div class="restoOrganic">
+                    <div class="restoOrganic mostly-customized-scrollbar">
                          <?php foreach($restaurantsOrganic as $organic) : ?>
-                              <a href="index.php?page=restaurant&resto=<?= $organic['id']; ?>">
-                                   <img class="image" src="<?= $organic['img'] ?>" alt="Alt text"/>
-                                   <div class="text">
+                              <a class="restaurantDeco" href="index.php?page=restaurant&resto=<?= $organic['id']; ?>">
+                                   <img class="image item" src="<?= $organic['img'] ?>" alt="Alt text"/>
+                                   <div class="text item">
                                         <h4><?= $organic['name']; ?></h4>
-                                   </div>         
+                                   </div>        
                               </a>
                          <?php endforeach; ?>     
                     </div>
                <!-- Gastronomic restaurants -->
                <div class="gastronomique"><h2>Gastronomic Restaurant</h2></div>
-                    <div class="restoGastronomique">
+                    <div class="restoGastronomique mostly-customized-scrollbar">
                          <?php foreach($restaurantsGastro as $gastro) : ?>
-                              <a href="index.php?page=restaurant&resto=<?= $gastro['id']; ?>">
-                                   <img class="image" src="<?= $gastro['img'] ?>" alt="Alt text"/>
-                                   <div class="text">
+                              <a class="restaurantDeco" href="index.php?page=restaurant&resto=<?= $gastro['id']; ?>">
+                                   <img class="image item" src="<?= $gastro['img'] ?>" alt="Alt text"/>
+                                   <div class="text item">
                                         <h4><?= $gastro['name']; ?></h4>
                                    </div>     
                               </a>
@@ -60,9 +94,9 @@
                     </div>
                <!-- Restaurants Vegan -->
                <div class="vegan"><h2>Vegan Restaurant</h2></div>
-                    <div class="restoVegan">
+                    <div class="restoVegan mostly-customized-scrollbar">
                          <?php foreach($restaurantsVegan as $vegan) : ?>
-                              <a href="index.php?page=restaurant&resto=<?= $vegan['id']; ?>">
+                              <a class="restaurantDeco" href="index.php?page=restaurant&resto=<?= $vegan['id']; ?>">
                                    <img class="image" src="<?= $vegan['img'] ?>" alt="Alt text"/>   
                                    <div class="text">
                                         <h4><?= $vegan['name']; ?></h4>
@@ -73,9 +107,9 @@
 
                <!-- Fast Food -->
                <div class="fastFood"><h2>Fast Food</h2></div>
-                    <div class="fastFoodResto">
+                    <div class="fastFoodResto mostly-customized-scrollbar">
                          <?php foreach($restaurantsFastFood as $fastFood) : ?>
-                              <a href="index.php?page=restaurant&resto=<?= $fastFood['id']; ?>">
+                              <a class="restaurantDeco" href="index.php?page=restaurant&resto=<?= $fastFood['id']; ?>">
                               <img class="image" src="<?= $fastFood['img'] ?>" alt="Alt text"/>
                                    <div class="text">
                                         <h4><?= $fastFood['name']; ?></h4>
@@ -86,9 +120,9 @@
 
                <!-- Pizza food -->
                <div class="pizza"><h2>Pizza</h2></div>
-                    <div class="restoPizza">
+                    <div class="restoPizza mostly-customized-scrollbar">
                          <?php foreach($Pizzarestaurants as $pizza) : ?>
-                              <a href="index.php?page=restaurant&resto=<?= $fastFood['id']; ?>">
+                              <a class="restaurantDeco" href="index.php?page=restaurant&resto=<?= $pizza['id']; ?>">
                               <img class="image" src="<?= $pizza['img'] ?>" alt="Alt text"/>
                                    <div class="text">
                                         <h4><?= $pizza['name']; ?></h4>
@@ -100,9 +134,9 @@
 
                <!-- Salades -->
                <div class="salades"><h2>Salades</h2></div>
-                    <div class="restoSalade">
+                    <div class="restoSalade mostly-customized-scrollbar">
                          <?php foreach($saladesRestaurants as $salades) : ?>
-                              <a href="index.php?page=restaurant&resto=<?= $fastFood['id']; ?>">
+                              <a class="restaurantDeco" href="index.php?page=restaurant&resto=<?= $salades['id']; ?>">
                               <img class="image" src="<?= $salades['img'] ?>" alt="Alt text"/> 
                                    <div class="text">
                                         <h4><?= $salades['name']; ?></h4>
@@ -113,9 +147,9 @@
 
                <!-- Speciality -->
                <div class="specialites"><h2>Speciality</h2></div>
-                    <div class="restoSpeciality">
+                    <div class="restoSpeciality mostly-customized-scrollbar">
                          <?php foreach($specialityRestaurants as $speciality) : ?>
-                              <a href="index.php?page=restaurant&resto=<?= $fastFood['id']; ?>">
+                              <a class="restaurantDeco" href="index.php?page=restaurant&resto=<?= $speciality['id']; ?>">
                               <img class="image" src="<?= $speciality['img'] ?>" alt="Alt text"/>
                                    <div class="text">
                                         <h4><?= $speciality['name']; ?></h4>
@@ -126,9 +160,9 @@
 
                <!-- Tacos Restaurants -->
                <div class="tacos"><h2>Tacos</h2></div>
-                    <div class="restoTacos">
+                    <div class="restoTacos mostly-customized-scrollbar">
                          <?php foreach($tacosRestaurants as $tacos) : ?>
-                              <a href="index.php?page=restaurant&resto=<?= $fastFood['id']; ?>">
+                              <a class="restaurantDeco" href="index.php?page=restaurant&resto=<?= $tacos['id']; ?>">
                               <img class="image" src="<?= $tacos['img'] ?>" alt="Alt text"/> 
                                    <div class="text">
                                         <h4><?= $tacos['name']; ?></h4>
@@ -139,9 +173,9 @@
 
                <!-- Meat Restaurants -->
                <div class="meat"><h2>Meat</h2></div>
-                    <div class="restoMeat">
+                    <div class="restoMeat mostly-customized-scrollbar">
                          <?php foreach($meatRestaurants as $meat) : ?>
-                              <a href="index.php?page=restaurant&resto=<?= $fastFood['id']; ?>">
+                              <a class="restaurantDeco" href="index.php?page=restaurant&resto=<?= $meat['id']; ?>">
                                    <img class="image" src="<?= $meat['img'] ?>" alt="Alt text"/> 
                                    <div class="text">
                                         <h4><?= $meat['name']; ?></h4>
@@ -152,9 +186,9 @@
 
                <!-- Pastas restaurants -->
                <div class="pastas"><h2>Pastas</h2></div>
-                    <div class="restoPasta">
+                    <div class="restoPasta mostly-customized-scrollbar">
                          <?php foreach($pastasRestaurants as $pastas) : ?>
-                              <a href="index.php?page=restaurant&resto=<?= $fastFood['id']; ?>">
+                              <a class="restaurantDeco" href="index.php?page=restaurant&resto=<?= $pastas['id']; ?>">
                               <img class="image" src="<?= $pastas['img'] ?>" alt="Alt text"/> 
                                    <div class="text">
                                         <h4><?= $pastas['name']; ?></h4>
@@ -165,9 +199,9 @@
 
                <!-- Desserts Restaurants -->
                <div class="desserts"><h2>Desserts</h2></div>
-                    <div class="restoDesserts">
+                    <div class="restoDesserts mostly-customized-scrollbar">
                          <?php foreach($dessertsRestaurants as $desserts) : ?>
-                              <a href="index.php?page=restaurant&resto=<?= $fastFood['id']; ?>">
+                              <a class="restaurantDeco" href="index.php?page=restaurant&resto=<?= $desserts['id']; ?>">
                               <img class="image" src="<?= $desserts['img'] ?>" alt="Alt text"/> 
                                    <div class="text">
                                         <h4><?= $desserts['name']; ?></h4>
@@ -190,6 +224,18 @@
                     <a href="#" class="btn bg-transparent" style="color:lightgrey;border:1px solid lightgrey;border-radius:40px;"><i class="fas fa-clock"></i> 35-45mn</a>
                     <a href="#" class="btn bg-transparent" style="color:lightgrey;border:1px solid lightgrey;border-radius:40px;"><i class="fas fa-map-marker-alt"></i> <?= $data['address']; ?></h3></a>
                     <a href="#" class="btn bg-transparent" style="color:lightgrey;border:1px solid lightgrey;border-radius:40px;">more infos <i class="fas fa-sort-down"></i></a>
+          <!-- carte + infos resto -->
+          <br><br><br>
+                    <div class="presentationInfos" style="justify-content: space-between;">
+                         <div>
+                         <?= $data['maps']; ?><br>
+                         </div>
+                         <div>
+                              <h4 class="infosOuverture" >Horaires : <?= $data['horaires']; ?></h4><br><br>
+                              <h4 class="infosOuverture1" >Fermeture : <?= $data['fermeture']; ?></h4>
+                         </div>
+                    </div>
+          <!-- fin cart -->
           <?php endforeach; ?>
           <br><br><br>
 
@@ -242,7 +288,6 @@
           <div style="display:flex;flex-flow:row wrap;justify-content:space-between;margin-top:40px;" class="">
 
           <?php foreach($dataresto2 as $datas2) : ?>
-
                <div class="cardResto">
                     <div style="display:flex; flex-flow:row wrap;">
                          <div style="width:70%;padding:20px 20px 0 20px;">
@@ -253,14 +298,14 @@
                               <span style="font-size:12px;font-weight:bold;color:#3cb6c9">$<?= $datas2['price']; ?>
                              
                                    <form method="POST" action="" style="display:inline;margin-left:40px;">
-                                   <!-- ajouter ou supprimer quantité -->
+                                        <!-- ajouter ou supprimer quantité -->
                                          <input type="number" name="qteCart" class="qt" value="1" min="1" 
                                          style="border:none;width:30px;backround-color:grey;outline:none;border:0.5px solid #3cb6c9;"/>
-                                    <!-- recuperer nom du produit -->
+                                        <!-- recuperer nom du produit -->
                                         <input type="hidden" name="nomItem" value="<?= $datas2['name']; ?>">
-                                   <!-- recuperer nom du produit -->
+                                        <!-- recuperer nom du produit -->
                                          <input type="hidden" name="unitPrice" value="<?= $datas2['price']; ?>">
-                                   <!-- valider -->
+                                        <!-- valider -->
                                         <button type="submit" name="cartButton" style="border:none;background-color:#3cb6c9;border-radius:40px;color:white;padding:2px 5px;">
                                              <span class="addCart">Add to cart</span>
                                         </button>
@@ -271,14 +316,16 @@
                           <div style="width:30%;">
                               <img src="<?= $datas2['img']; ?>" alt="dish" style="max-width:100%;" width="250" height="140"/>
                           </div>
+                          
                     </div>
-          </div>       
-          <?php endforeach; ?> 
+               </div>       
+          <?php endforeach; ?>  
           </div>
-    
-     </div>       
+     </div>  
+     
      <?php endif; ?>
 </main>
+<?php include_once './_includes/footer.php'; ?> 
 <!-- script increment quantity -->
 
 
@@ -310,6 +357,11 @@ function showMore() {
 
     main.insertBefore(cloned, btn);
 }
+
+// test
+
+
+
 </script>
 </body>
 </html>

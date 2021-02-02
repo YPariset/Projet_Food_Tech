@@ -127,7 +127,7 @@ class Food{
     }
 
     // Pizza restaurants
-    public function getPizzaRestaurant($id){
+    public function getPizzaRestaurant(){
         global $db;
         $pizza = $db->prepare('   SELECT R.img, R.name, R.id
                                 FROM restaurants as R, dishes AS D
@@ -272,6 +272,22 @@ class Food{
         $prod->execute(array($idDish));
         $get = $prod->fetchAll(PDO::FETCH_ASSOC);
         return $get;
+
     }
+
+    /****** Affiche les informations restaurant ***********/ 
+
+    public function getInfosRestaurant($id){
+        global $db;
+
+        $infosRestaurant = $db->prepare('
+        SELECT * FROM product WHERE id = ?');
+        
+        $infosRestaurant->execute(array($id));
+        $infos = $infosRestaurant->fetch(PDO::FETCH_ASSOC);
+        return $infos;
+        
+    }
+
 }
 	

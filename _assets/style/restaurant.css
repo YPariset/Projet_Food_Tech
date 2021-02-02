@@ -36,30 +36,48 @@
 }
 /*************/
 
-/*Product Rating  */
-.star {
-	display: inline;
-	margin-left: 0.5em;
-	color: gold;
-	
-}
-img.image {
-    display: flex;
+
+
+img.image, .text {
+    display: flex; 
     z-index:0;
     width: 200px;
     height: 200px;
-    position: relative;
-
+    position: relative; 
+    margin-right: 60px;
+    margin-left: 10px;
 }
+
+
+.text{
+    text-align: center;
+}
+
+main{
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.mostly-customized-scrollbar::-webkit-scrollbar, .text {
+    width: 0px;
+    height: 0px;
+  }
+
+  .mostly-customized-scrollbar::-webkit-scrollbar-thumb, .text {
+      background: #000;
+  }
+
 
 .restoTradi, .restoOrganic, .restoGastronomique,
 .restoVegan, .fastFoodResto, .restoPizza, .restoSalade,
 .restoSpeciality, .restoTacos, .restoMeat, .restoPasta,
 .restoPasta, .restoDesserts {
-    display: flex;
-    justify-content: space-around;
-
+    display: flex; 
+    overflow: scroll;
+    text-align: right;
 }
+
+
 
 .tradi, .organic, .gastronomique, 
 .vegan, .fastFood, .pizza, 
@@ -67,24 +85,21 @@ img.image {
 .meat, .pastas, .desserts{
     margin-top: 2em;
     margin-bottom: 0.5em;
-    margin-left: 20px;
-}
+    margin-left: 40px; 
+    height: 50%;
 
-.overlay-image {
-    position: relative;
-    width: 100%;
 }
 
 .titrePage{
     margin-top: 3em;
     margin-bottom: 2em;
-    
 }
+
 
 .text{
     margin-top: -40px;
     z-index: 1;
-    position: absolute;
+    position: relative;
     width: 200px;
     height: 30px;
     text-align: center;
@@ -92,6 +107,110 @@ img.image {
     background-color: rgba(238, 237, 237, 0.753);
 }
 
+img.image.item{
+    text-align: right;
+}
+
+.restaurantDeco{
+    color: #000;
+    text-decoration: none;
+}
+  
+.restaurantInfos{
+    margin-right: 10em;
+    padding-bottom: 3em;
+    
+}
+
+h4.infosOuverture{
+    display: flex;
+    flex-direction: column-reverse;  
+}
+
+.infosCarteOuvertureRestaurant{
+    margin-right: 20em;
+    display: flex;
+    justify-content: flex-end;
+}
+
+div.presentationInfos{
+    display: flex;
+    padding-top: 1em;
+    
+    
+}
+
+h4.infosOuverture1{
+    padding-right: 12em;
+    margin-right: -2em;
+    
+}
+
+h4.infosOuverture1{
+    padding-top: 20px;
+}
+
+h4.infosOuverture{
+    padding-top: 6em;
+    
+}
+
+
+
+
+
+
+
+/**** FAB **/
+body, html {
+    height: 100%;
+    margin: 0;
+    
+   
+  }
+  
+  .image {
+    background-image: url('../image/restaurant/restaurant.jpg');
+    min-height: 100%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+  }
+  
+  
+  
+  
+  .ptext {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+  }
+  
+  .ptext .border {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+  
 
 
 

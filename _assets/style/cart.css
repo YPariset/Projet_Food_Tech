@@ -1,0 +1,100 @@
+.containerCArt{
+    width:60%;
+    margin:0 auto;
+    margin-top:180px;
+}
+.titleShopCart{
+    padding:11px 0;
+    border-top:0.7px solid lightgrey;
+    text-align:left;
+    border-bottom:0.7px solid lightgrey;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-between;
+  
+}
+.productCART{
+ 
+    display:flex;
+    flex-flow:row wrap; 
+    justify-content:space-between;
+    padding:20px 0;
+}
+
+
+.totals-item{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:flex-end;
+}
+
+
+.remove-product{
+    color:lightgrey;
+    outline:none;
+    background:
+    transparent;
+    border:none;
+}
+.remove-product:hover{
+    color:red;
+    
+}
+.product-title{
+    font-weight:bold;
+}
+.product-price{
+    margin-right:10px;
+    color:grey;font-size:18px;
+}
+.product-line-price{
+    color:grey;font-size:18px;
+}
+
+.containerPrice{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:flex-end;
+   
+}
+.totals-item{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-between;
+    width:400px;
+   
+}
+.subtotal{
+    font-size:18px;
+}
+.totals-item-coupon{
+    margin-top:15px;
+    margin-bottom:25px;
+}
+
+.backCart{
+    border-radius:40px;
+    color:aqua;
+}
+
+
+.formConfirmGeo{
+    margin-top:180px;
+    margin:0 auto;
+    height:60px;
+
+}
+.formConfirmGeo .géoloc{
+    margin:0 auto;
+    margin-top:80px;
+    height:50px;
+    width:70%;
+   
+}
+.formConfirmGeo .validGeoloc{
+    margin-top:210px;
+}
+
+.proceed{
+    margin-top:50px;
+}

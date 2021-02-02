@@ -7,15 +7,34 @@
 <body >
 <?php include_once '_includes/header-banner.php'; ?>  
 <div class="container bootstrap snippets" style="margin-top:100px;">
-<h1 class="mb-1" style="padding-top:60px; padding-bottom:60px">profile</h1>
+<h1 class="mb-1" style="padding-top:30px; padding-bottom:30px"></h1>
 <div class="row">
     <!-- Panel user -->
     <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="panel rounded shadow">
             <div class="panel-card" style="min-height: 600px; margin-bottom: 200px; padding:20px;">
                     <!-- affichage avatar et infos -->
-                    <ul class=infoPanel>
-                        <li><img src="<?= $dataClient['avatar']; ?>" alt="John Doe"><span class="editAvatar"><a href="#"><i class="fas fa-pen"></i></a></span></li>
+                <ul class=infoPanel>
+                    <div class="editImg">    
+                        <!-- Start imageUpload -->
+                        <div class="editOver">
+                            <div class="preview img-wrapper">
+                                <div class="overlay">
+                                    <div class="text-p"><i class="fas fa-pen pen"></i></div>
+                                </div>
+                                <img src="<?= $dataClient['avatar']; ?>" alt="John Doe">
+                            </div>
+                        </div>
+                        <div class="file-upload-wrapper">
+                             <!-- form upload -->
+                                <form method="post" enctype="multipart/form-data" onclick="myFunction()">
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $poids_max; ?>">
+                                    <input type="file" name="fichier" onclick="myFunction()" class="file-upload-native">
+                                    <button type="submit" value="Envoyer" id="myButton" class="wesh btn btn-primary" style="background-color: #3cb6c9; border:none; ">ok</button>
+                                </form>  
+                            </div>
+                        <!-- End form upload -->
+                    </div>    
                         <li class="text-center"><h4 class="text-capitalize">
                             <?php if(isset($_SESSION['firstname'])){echo $_SESSION['firstname'];} ?>
                             </h4><p class="text-muted text-capitalize">
@@ -23,7 +42,7 @@
                             </p>
                         </li>
                     <!-- infos -->
-                        <li style="width:100%;"><a href="index.php?page=restaurant" class="btn btn-success text-center btn-block" style="display:block;margin:0 auto;">Order</a></li>
+                        <li style="width:100%;"><a href="index.php?page=restaurant" class="btn btn-success text-center btn-block" style="display:block;margin:0 auto; background-color: #3cb6c9; border: none;">Order</a></li>
                         <li><br><br></li>
                     </ul>
                     <p class="pointLabel"><span class="pointsN">
@@ -31,25 +50,18 @@
                     </span><br><span class="points">Foodies</span>
                             </span> <span class="award"><i class="fas fa-award "></i></span></p><br>
 
-                        <div class="btn-group-vertical btn-block sectionProfile">
-                            <a href="index.php?page=profile&action=editer" class="sectionUserA"><span class="iconUser" ><i class="fa fa-cog pull-right"></i></span> Edit Account</a>
-                            <a href="index.php?page=profile&action=history" class=" sectionUserA"><span class="iconUser" ><i class="fas fa-history"></i></span> Order history</a>
-                            <a href="index.php?page=profile&action=wishlist" class="sectionUserA"><span class="iconUser" ><i class="fas fa-heart"></i></span> Wishlist</a>
-                            <a href="index.php?page=profile&action=promo"  class="sectionUserA"><span class="iconUser"><i class="fas fa-percentage"></i></span> My offers</a>
-                            <a href="index.php?page=logout" class="sectionUserA"><span class="iconUser" ><i class="fas fa-sign-out-alt"></i></span> Logout</a>
+                            <div class="list-group sectionProfile">
+                            <a href="index.php?page=profile&action=editer" class="list-group-item buttonList" role="button"><span class="iconUser" ><i class="fa fa-cog pull-right"></i></span> Edit Account</a>
+                            <a href="index.php?page=profile&action=history" class=" list-group-item buttonList"><span class="iconUser" ><i class="fas fa-history"></i></span> Order history</a>
+                            <a href="index.php?page=profile&action=wishlist" class="list-group-item buttonList"><span class="iconUser" ><i class="fas fa-heart"></i></span> Wishlist</a>
+                            <a href="index.php?page=profile&action=promo"  class="list-group-item buttonList"><span class="iconUser"><i class="fas fa-percentage"></i></span> My offers</a>
+                            <a href="index.php?page=logout" class="list-group-item buttonList"><span class="iconUser" ><i class="fas fa-sign-out-alt"></i></span> Logout</a>
                         </div>
                </div>
         </div>
         </div>  
      <!-- end Panel user -->
-
-    <!-- form upload -->
-     <form method="post" enctype="multipart/form-data">
-      <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $poids_max; ?>">
-      <input type="file" name="fichier">
-      <button type="submit" value="Envoyer">go</button>
-   </form>
-
+     
       <!-- start preview  -->
         <div class="col-sm-9 bloc_edit">  
                 <div class="panel rounded shadow">
@@ -203,6 +215,16 @@
 
 <?php include_once '_includes/footer.php'; ?> 
 <script>
+
+function myFunction() {
+  var x = document.getElementById("myButton");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 var $buttons = $(".button-like");
 
 // Click button

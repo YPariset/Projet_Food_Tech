@@ -23,6 +23,10 @@ if (isset($_POST['valider'])){
                     $_SESSION['firstname'] = $resultat['firstname'];
                     $_SESSION['lastname'] = $resultat['lastname'];
                     $_SESSION['email'] = $resultat['email'];
+                    $_SESSION['street'] = $resultat['street'];
+                    $_SESSION['zip'] = $resultat['zip'];
+                    $_SESSION['city'] = $resultat['city'];
+
                     header('Location:index.php?page=restaurant');
                 }else{
                     $message_login = Messages::alert('Invalid password or username, please try again', 'red', '#fab0aa');
