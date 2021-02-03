@@ -126,15 +126,6 @@ class Customer {
     }
 
 
-    // Supression de l'item_wish
-    public function deleteWishItem($id, $id_dish, $id_wishlist){
-        global $db;
-
-        $reqData = $db->prepare ('DELETE FROM wishlist_item WHERE id = ?');
-
-        $reqData->execute(array($id, $id_dish, $id_wishlist));
-    }
-
     //get wishlist
     public function getWishList($id){
         global $db;
@@ -235,6 +226,31 @@ class Customer {
                   $requete = $req->fetchAll(PDO::FETCH_ASSOC);
 
                   return $requete;
+    }
+
+    public function deleteWishItem($id, $idDish){
+        global $db;
+
+        $reqData = $db->prepare ('DELETE FROM wishlist_item WHERE id_customer = ? AND id_dish = ?');
+
+        $reqData->execute(array($id, $idDish));
+    }
+
+    // insertion produit dans wishlist
+    function insertItemFromWishList($id_dish, $item){
+        global $db;
+        $result = $db->prepare("INSERT INTO wishlist_item(id_dish, id_customer) VALUES(?, ?)");
+        $result->execute(array($id_dish, $item));
+        
+    }
+
+    public function isWishList($id, $idDish){
+        global $db;
+        $result = $db->prepare("SELECT * FROM wishlist_item as W, customer AS C WHERE W.id_customer=C.id AND C.id = ? AND W.id_dish = ?");
+        $result->execute(array($id, $idDish));
+        $req = $result->rowCount();
+        
+        return $req;
     }
     
 }

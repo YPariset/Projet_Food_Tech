@@ -24,7 +24,7 @@ session_start();
 // mail('feelingfoodfrance@gmail.com')
 
 
-//Test2
+// Test2
 // $destinataire = "paulmarechal785@hotmail.fr";
 // $objet        = "Alice parle à Bob";
 // $content      = "<b>Salut Bob !</b>";
@@ -35,12 +35,12 @@ session_start();
 // $headers .= "Content-type: text/html; charset=utf-8\n";
 
  
-// $result = mail($destinataire, $objet, $content, $headers);
-// var_dump($result);
-// return $result;
-// if( !$result ){
-//     echo "L'envoi du mail a échoué";
-// }
+$result = mail($destinataire, $objet, $content, $headers);
+var_dump($result);
+return $result;
+if( !$result ){
+    echo "L'envoi du mail a échoué";
+}
 
 $header="MIME-Version: 1.0\r\n";
 $header.='From:"feelinFood"<feelingfoodfrance@gmail.com>';

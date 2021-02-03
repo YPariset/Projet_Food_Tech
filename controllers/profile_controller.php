@@ -2,6 +2,16 @@
 session_start();
 
 $user = new Customer();
+$count = new Order();
+
+//on recupere le nombre de commandes effectués par le client
+$numberOfOrders = $count->countOrder($_SESSION['id']);
+
+//on recupere le nombre d'offres que bénéficie le client
+$numberOfOffers = $count->countOffers($_SESSION['id']);
+
+//on recupere le nombre d'offres que bénéficie le client
+$numberOfWish = $count->countWish($_SESSION['id']);
 
 //on recupere toutes les datas de clients
 $dataClient = $user->getDatasClientById($_SESSION['id']);
@@ -113,8 +123,6 @@ if(isset($_GET['action']) && $_GET['action'] == 'promo'){
 
 
 
-
-// CHARTS
  
 
 ?>

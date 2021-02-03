@@ -42,12 +42,22 @@ if(isset($_GET['resto']))
 
             $cart =new ShoppingCart();
             $cart->addToCart($nomItem, $qte, $prixItem);  
-           // var_dump($_SESSION['panier']);
         }else{
             echo 'il n\'y a pas de donnée';
         }
     }
     
+}
+
+if(isset($_POST['submitWishlist'])){                                             
+    $addWishList = new Customer();
+    $isList = $addWishList->isWishList($_SESSION['id'], $_POST['addWishList']);
+if($isList > 0){
+    $addWishList->deleteWishItem($_SESSION['id'], $_POST['addWishList']);
+}else{
+    $addWishList->insertItemFromWishList($_POST['addWishList'], $_SESSION['id']);
+    
+}
 }
 
 

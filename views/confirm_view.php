@@ -1,20 +1,38 @@
+<head>
+     <?php include_once '_includes/head.php'; ?>  
+	<title><?= ucFirst($page); ?> - Feeling Food </title>
+</head>
 
-<?php if(isset($_GET['load'])) : ?>
-    <h1>Thank you and enjoy your meal <?= $_SESSION['firstname'] ?></h1>
-    <p>Your order number is  : <?= $_SESSION['number'] ?></p>
-    <p>You heave collected  10 foodies!! </p>
-    <a href="index.php?page=home&back" class="btn btn-secondary">Back to home</a>
+
+<div class="confirmation">
+<div class="logo"><img class="logoConf" src="./_assets/image/Logo_gris.png" width="120" height="auto" alt="logo feeling food"></div>
+  <div class="headPage">
+
+  
+    <?php if(isset($_GET['load'])) : ?>
+    <div class="titreConfirm"><h1>Thank you and enjoy your meal </br><div class="nomClient"><?= $_SESSION['firstname'] ?></div></h1></div>
+  </div>
+    <p class="orderNumb">Your order number is  :  <span class="orderBack"><?= $_SESSION['number'] ?></span></p>
+  <div class="colFoodies">
+    <span class="award1"><i class="fas fa-award "></i></span> <p>You have collected  10 foodies!! </p> <span class="award2"><i class="fas fa-award "></i></span>
+  </div>
+    <div class="buttonBack"><a  href="index.php?page=home&back" class="btn btn-secondary" style="background-color: #3cb6c9;">Back to home</a></div>
 <?php else : ?>
     <div id="loader" class="load"></div>
 <?php endif; ?>
+
+</div>
 
 
   <script>
       function hide(){
         document.getElementById('loader').style.display= "none";
         document.location.href="index.php?page=confirm&load"; 
+        
+
     }
     setTimeout(hide,3000);
+
 </script>
 
 

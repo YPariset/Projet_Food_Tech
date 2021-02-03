@@ -6,11 +6,11 @@ if(isset($_GET['pay'])){
 
     //on cree une nouvelle commande client
     $createOrder = new Order();
-    $createOrder->createOrder($_SESSION['id'], $_SESSION['panierMontant'], date("Y/m/s"), $orderNumber);
+    $createOrder->createOrder($_SESSION['id'], $_SESSION['panierMontant'], date("Y/m/d"), $orderNumber);
     //on ajoute 10 ppoints sur le compte client
     $_SESSION['foodie'] += 10;
     $createOrder->creditPoints($_SESSION['foodie'], $_SESSION['id']);
-    var_dump(count($_SESSION['panier']['nom']));
+    // var_dump(count($_SESSION['panier']['nom']));
 
     for($i = 0; $i < count($_SESSION['panier']['nom']); $i++){
 

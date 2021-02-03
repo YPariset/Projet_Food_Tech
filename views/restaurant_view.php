@@ -21,7 +21,7 @@
           </div>
           </div>
 
-<main style="margin-top:150px;margin-bottom:100px;">
+<main style="margin-top:50px;margin-bottom:100px;">
      <!-- result search Bar -->
 
      <?php if(isset($_POST['headerSearchSubmit'])) : ?>
@@ -65,19 +65,17 @@
                </div> 
           <?php endforeach; ?>
                
-               <!-- <div class="tradi"><h2>Traditionals Restaurants</h2></div>
-                    <div class="restoTradi">
-                         <?php foreach($restaurantsTradi as $tradi) : ?>
-                              <a href="index.php?page=restaurant&resto=<?= $data['id']; ?>">
-                                   <img class="image" src="<?= $traditional['img'] ?>" alt="Alt text"/>
-                                   <div class="text">
-                                        <h4><?= $data['name']; ?></h4>
-                                   </div>
-                                   
+          <div class="tradi"><h2>Traditionnal restaurant</h2></div>
+                    <div class="restoTradi mostly-customized-scrollbar">
+                         <?php foreach($restaurantsTradi as $speciality) : ?>
+                              <a class="restaurantDeco" href="index.php?page=restaurant&resto=<?= $speciality['id']; ?>">
+                                   <img class="image item" src="<?= $speciality['img'] ?>" alt="Alt text"/>
+                                   <div class="text item">
+                                        <h4><?= $speciality['name']; ?></h4>
+                                   </div>        
                               </a>
-                         <?php endforeach; ?>
-                    </div>        -->
-               <!-- fin de test  -->
+                         <?php endforeach; ?>     
+                    </div> 
                <!-- Organic Restaurants -->
                <div class="organic"><h2>Organic restaurant</h2></div>
                     <div class="restoOrganic mostly-customized-scrollbar">
@@ -221,8 +219,6 @@
                     </div>
           </template>
 
-                    <h1 class="titrePage">What would you want to eat today ?</h1>
-
                     <button class="rm">Read More</button>
      <?php else : ?>
               
@@ -279,8 +275,12 @@
                                              
                                         </button>
                                    </form>
-                                   <form method="POST" action="" >
-                                        <button type="submit" name="star" styele="border:none;background:transparent; outline:none"><i  class="far fa-star" aria-hidden="true"></i></button>
+                                   
+                                   
+                               <!-- bouton ajout aux favoris -->
+                                   <form method="POST" action="">
+                                        <input type="hidden" name="addWishList" value="<?= $datas['id'];?>" >
+                                        <button type="submit" name="submitWishlist" style="border:none;outline:none;background:transparent;margin-left:200px;"><span><i class="fas fa-heart"></i></span></button>
                                    </form>
                               </span>
                           </div>
@@ -324,6 +324,11 @@
                                         </button>
                                    </form>
                               </span>
+
+                              <form method="POST" action="">
+                                        <input type="hidden" name="addWishList" value="<?= $datas2['id'];?>" >
+                                        <button type="submit" name="submitWishlist" style="border:none;outline:none;background:transparent;margin-left:200px;"><span><i class="fas fa-heart"></i></span></button>
+                              </form>
                           </div>
                           <!-- image de la card -->
                           <div style="width:30%;">

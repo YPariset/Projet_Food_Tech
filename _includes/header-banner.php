@@ -12,13 +12,13 @@
    </div>
 
  
-       <ul class="mainNav">
+       <!-- <ul class="mainNav">
            <li><a href="index.php?page=restaurant">Food</a></li>
            <li><a href="index.php?page=restaurant">Drinks</a></li>
            <li><a href="index.php?page=restaurant">Categories</a></li>
            <li><a href="index.php?page=restaurant">Restaurants</a></li>
            <li><a href="index.php?page=restaurant">Specials</a></li>
-        </ul>
+        </ul> -->
 
    <div>
    <?php if(!isset($_SESSION['username'])) : ?>
@@ -31,7 +31,7 @@
             <li class="but"><a class="btnHeader btnhA" href="index.php?page=profile">Profile</a></li>
             <li class="but"><a class="btnHeader btnhB" href="index.php?page=logout">Log Out</a></li>
             <li id="buttonPreviewCart"><a class="btn btn-secondary buttonItem" href="index.php?page=shoppingcart" 
-               style="background-color:#3cb6c9;border-radius:40px;height:27px;line-height:12px;">
+               style="background-color:#3cb6c9;border-radius:40px;height:27px;line-height:12px;border:none;">
                      <i class="fas fa-cart-arrow-down logoCart"></i>
                      <span ><?php 
                            if(isset($_SESSION['panier'])){
@@ -80,10 +80,11 @@
                   <p style="color:#3cb6c9;">$<?php echo $TotalAmount; ?></p>
                </div>
                <div style="margin:0 auto;">
-               <a class="btn btn-secondary" href="index.php?page=shoppingcart"  style="border-radius:40px;color:white;background-color:#3cb7c8;padding:8px 120px;">Checkout</a>
-               <form method="POST" action=""> 
+               <a class="btn btn-secondary" href="index.php?page=shoppingcart"  style="border-radius:40px;color:white;background-color:#3cb7c8;padding:8px 120px; margin-top:20px">Checkout</a>
+              
+               <!-- <form method="POST" action=""> 
                    <button id="clear" class="btn btn-secondary" name="empty" onclick="javascript:history.go(0)" style="border-radius:40px;color:white;background-color:#3cb7c8;padding:8px 135px;margin-top:10px;">Clear</button>
-               </form>
+               </form> -->
                </div>
                <?php endif ?>
          <?php endif ?>

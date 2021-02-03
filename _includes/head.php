@@ -16,6 +16,7 @@
     <link href="_assets/style/profile.css" rel="stylesheet">
     <link href="_assets/style/restaurant.css" rel="stylesheet">
     <link href="_assets/style/cart.css" rel="stylesheet">
+    <link href="_assets/style/confirm.css" rel="stylesheet">
 
 
 
@@ -40,3 +41,5 @@
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script> 
     <!-- canvas chart -->
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!-- google chart -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

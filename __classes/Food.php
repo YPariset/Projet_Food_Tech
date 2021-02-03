@@ -165,7 +165,7 @@ class Food{
         global $db;
         $speciality = $db->prepare('   SELECT R.img, R.name, R.id
                                 FROM restaurants as R, dishes AS D
-                                WHERE D.dish_category = "Spécialitée"
+                                WHERE D.dish_category = "Spécialités"
                                     AND D.id_restaurant = R.id');
         $speciality->execute();
         $specialityRestaurants = $speciality->fetchAll(PDO::FETCH_ASSOC);

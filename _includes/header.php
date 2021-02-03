@@ -90,6 +90,13 @@
                }
             });
       </script>
+      <script>
+         document.getElementById("geocoder").addEventListener('keypress', function(event){
+                        if (event.keyCode == 13){
+                               document.location.href="index.php?page=restaurant"
+                        }
+                    });
+      </script>
 </header>
  
    

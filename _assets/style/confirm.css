@@ -1,0 +1,134 @@
+
+
+.confirmation
+{
+  position: relative;
+  width: 60%;
+  height:90%;
+  background: whitesmoke;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-top: 50px;
+  color: rgba(0,0,0, .8);
+  line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
+  
+ 
+
+}
+
+.confirmation:before, .confirmation:after
+{
+  z-index: -2;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 15px 10px rgba(0,0,0, 0.7);
+  -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+
+.confirmation:after
+{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+.headPage{
+  
+  transition-delay: 2s;
+  height: 12em;
+  width:60%;
+  margin-left: auto;
+  margin-right: auto;
+  
+  
+
+
+}
+.titreConfirm{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  color: grey;
+  
+  
+  
+  
+}
+.nomClient{
+  color: #3cb6c9;
+  font-family: 'fontastiquefontastique';
+  margin-top: 20px;
+  font-size: 60px;
+  
+}
+
+.orderNumb  {
+    font-size: 30px;
+    margin-top: 70px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+
+}
+.orderBack{
+    margin-left: 20px;
+    background-color:#3cb6c9 ;
+    border-radius: 17px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+}
+.colFoodies{
+  font-size: 30px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonBack {
+    margin-top: 100px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: flex-end;
+   justify-content: center;
+  
+}
+
+.award1{
+  font-size:50px;
+  margin-right: 20px;
+  color: red;
+}
+
+.award2{
+  font-size:50px;
+  margin-left: 20px;
+  color: red;
+}
+
+.logo{
+  padding-top: 10px;
+}

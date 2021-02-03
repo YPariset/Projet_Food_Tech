@@ -31,11 +31,54 @@ class Order {
         return $reqClient;
     }
 
+
+    public function countOrder($id) {
+        global $db;
+
+        $client = $db->prepare('SELECT COUNT(*) AS nombreOrder FROM orders WHERE id_customer = ?');
+
+        $client->execute(array($id));
+        $reqClient = $client->fetch(PDO::FETCH_ASSOC);
+        return $reqClient;
+    }
+
+    public function countOffers($id) {
+        global $db;
+
+        $client = $db->prepare('SELECT COUNT(*) AS nombreOffer FROM discount WHERE id_customer = ?');
+
+        $client->execute(array($id));
+        $reqClient = $client->fetch(PDO::FETCH_ASSOC);
+        return $reqClient;
+    }
+
+    public function countWish($id) {
+        global $db;
+
+        $client = $db->prepare('SELECT COUNT(*) AS nombreWish FROM wishlist_item WHERE id_customer = ?');
+
+        $client->execute(array($id));
+        $reqClient = $client->fetch(PDO::FETCH_ASSOC);
+        return $reqClient;
+    }
+
+    // public function countOrder($id) {
+    //     global $db;
+
+    //     $client = $db->prepare('
+    //     SELECT count(*) FROM orders AS O
+    //     WHERE id_customer = ? ');
+
+    //     $client->execute(array($id));
+    //     $reqClient = $client->fetch(PDO::FETCH_ASSOC);
+    //     return $reqClient;
+    // }
+
     function getTotalAmount($id){
         global $db;
         $total = $db->prepare('
             SELECT sum(item_price * item_quantity)
-            FROM order_item as OI, order as O, customer as C
+            FROM order_item as OI, orders as O, customer as C
             WHERE OI.order_id = O.id
             AND O.id_customer = C.id
             ANd c.id : ?');

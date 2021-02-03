@@ -72,22 +72,24 @@ main{
 .restoVegan, .fastFoodResto, .restoPizza, .restoSalade,
 .restoSpeciality, .restoTacos, .restoMeat, .restoPasta,
 .restoPasta, .restoDesserts {
+    margin-top:1em;
     display: flex; 
     overflow: scroll;
     text-align: right;
 }
 
 
-
 .tradi, .organic, .gastronomique, 
 .vegan, .fastFood, .pizza, 
 .salades, .specialites, .tacos
 .meat, .pastas, .desserts{
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-    margin-left: 40px; 
+    margin-top: 3em;
+    margin-bottom: 1em;
+    margin-right: -30px; 
+    margin-left: -32px;
+    padding-left: 3em;
     height: 50%;
-
+    background-color: rgba(243, 239, 239, 0.7);
 }
 
 .titrePage{
@@ -198,6 +200,26 @@ body, html {
     color: #fff;
     padding: 20px;
   }
+
+  .tacos{
+    margin-top: 3em;
+    margin-bottom: 1em;
+    margin-right: -30px; 
+    margin-left: -32px;
+    padding-left: 3em;
+    height: 50%;
+    background-color: rgba(243, 239, 239, 0.7);
+}
+
+.meat {
+    margin-top: 3em;
+    margin-bottom: 1em;
+    margin-right: -30px; 
+    margin-left: -32px;
+    padding-left: 3em;
+    height: 50%;
+    background-color: rgba(243, 239, 239, 0.7);
+}
   
   
   

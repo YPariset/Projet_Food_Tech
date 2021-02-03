@@ -22,7 +22,7 @@
                                 <div class="overlay">
                                     <div class="text-p"><i class="fas fa-pen pen"></i></div>
                                 </div>
-                                <img src="<?= $dataClient['avatar']; ?>" alt="John Doe">
+                                <img src="<?= $dataClient['avatar']; ?>" />
                             </div>
                         </div>
                         <div class="file-upload-wrapper">
@@ -65,7 +65,7 @@
       <!-- start preview  -->
         <div class="col-sm-9 bloc_edit">  
                 <div class="panel rounded shadow">
-                     <div  style="min-height: 20000px; width:100%;margin-bottom: 200px; padding:20px;">
+                     <div  style="min-height: 725px; width:100%;margin-bottom: 200px; padding:20px;">
                      <?php if(isset($_GET['action']) && $_GET['action'] == 'editer') : ?>
                         <h1>Edit Your informations</h1>
                         <?php if(isset($alertEdit)){echo $alertEdit;} ?>
@@ -206,32 +206,24 @@
 
                         <?php else :?>
                             <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-                            <h1>salut</h1>
+                            
+
                             <div id="chartContainer" style="height: 250px; width: 100%;"></div>
+ 
+                           
 
                             <?php
-                            //phpchart
-                            require_once("phpChart/conf.php");
-                            $pc = new C_PhpChartX(array(array(0, 11, 23, 34, 55)),'basic_chart');
-                            $pc->draw();
-
                             //canevas chart
                             $dataPoints = array(
-                                array("x"=> 10, "y"=> 41),
-                                array("x"=> 20, "y"=> 35, "indexLabel"=> "Lowest"),
-                                array("x"=> 30, "y"=> 50),
-                                array("x"=> 40, "y"=> 45),
-                                array("x"=> 50, "y"=> 52),
-                                array("x"=> 60, "y"=> 68),
-                                array("x"=> 70, "y"=> 38),
-                                array("x"=> 80, "y"=> 71, "indexLabel"=> "Highest"),
-                                array("x"=> 90, "y"=> 52),
-                                array("x"=> 100, "y"=> 60),
-                                array("x"=> 110, "y"=> 36),
-                                array("x"=> 120, "y"=> 49),
-                                array("x"=> 130, "y"=> 41)
-                                );
+                                array("x"=> 10, "y"=> $numberOfOrders['nombreOrder'], "indexLabel"=> "Number of orders"),
+                                array("x"=> 20, "y"=> $numberOfOffers['nombreOffer'], "indexLabel"=> "Number of offers"),
+                                array("x"=> 30, "y"=> $numberOfWish['nombreWish'], "indexLabel"=> "Number of wish")
+                            );
                             ?>
+                            <div style="display:flex; flow-direction: inline;"> 
+                            <div id="donutchart" style="width: 600px; height: 400px; margin-top:35px;"></div>
+                            <div id="columnchart_material" style="width: 500px; height: 300px; margin-top:75px;"></div>
+                            </div>
                     <?php endif; ?>
                     </div>
             </div>
@@ -287,9 +279,9 @@ window.onload = function () {
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	exportEnabled: true,
-	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "Simple Column Chart with Index Labels"
+		text: "Dashboard"
 	},
 	axisY:{
 		includeZero: true
@@ -305,6 +297,58 @@ var chart = new CanvasJS.Chart("chartContainer", {
 chart.render();
  
 }
+</script>
+<script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['JOUR', 'Nombre'],
+          ['Mon',     11],
+          ['Tue',      2],
+          ['Wed',      2],
+          ['Thu',      2],
+          ['Fri',      7],
+        ]);
+
+        var options = {
+          title: 'Most Popular Days',
+          pieHole: 0.4,
+          
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+</script>
+
+
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Hour', 'Times'],
+          ['11am', 3],
+          ['12am', 6],
+          ['1pm', 4],
+          ['6pm', 2],
+          ['7pm', 5],
+          ['8pm', 8]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Most popular time',
+            
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
 </script>
 </body>
 </html>
