@@ -23,23 +23,33 @@
 
 <main style="margin-top:150px;margin-bottom:100px;">
      <!-- result search Bar -->
+
      <?php if(isset($_POST['headerSearchSubmit'])) : ?>
           <?php if(!empty($_POST['headerSearch'])) : ?>
-
-          <div id="resultatSearch" style="display:flex; flex-direction:row; justify-content:space-between">
-
+               
+               <h4 style="text-align:center; padding-top: 50px; margin-bottom: 70px; font-size: 2.2em;">
+                We have found <span><?=$countResultSearch; ?></span> results for <span style="color:#3cb6c9;"><?=$_POST['headerSearch']; ?></span></h4>
+               <div id="resultatSearch" style="display: flex; flex-flow: row wrap; justify-content: center;" >
                <?php foreach ($searchBanniere as $dataSearch) : ?>
-                    <div>
+
+                    <div style="padding-bottom: 100px; position:relative;">
                          <a href="index.php?page=restaurant&resto=<?= $dataSearch['id'] ?>">
-                         <h4><?=$dataSearch['name'] ?></h4>
                          <img class="image" src="<?= $dataSearch['img'] ?>" alt="Alt text"/>
-                                             <div class="text">
+                         <div class="text">
+                         <h4 style="position:absolute; top:4px; padding-left:6px; color:black; font-size:1em;"><?=$dataSearch['name'] ?></h4>
                          </a>
                     </div>
+               </div>
+               
                <?php endforeach; ?>
                </div>
+               <h3 style="text-align:center; margin-bottom: 120px; padding-top:40px; font-size: 2.2em;"> All the restaurants available</h3>
           <?php endif; ?>
      <?php endif; ?>
+     
+     
+     
+     </div>
      <!-- fin de result search -->
 
      
@@ -268,6 +278,9 @@
                                              <span class="addCart">Add to cart</span>
                                              
                                         </button>
+                                   </form>
+                                   <form method="POST" action="" >
+                                        <button type="submit" name="star" styele="border:none;background:transparent; outline:none"><i  class="far fa-star" aria-hidden="true"></i></button>
                                    </form>
                               </span>
                           </div>

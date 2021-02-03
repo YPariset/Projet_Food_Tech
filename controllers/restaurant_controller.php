@@ -7,6 +7,7 @@ if(isset($_POST['headerSearchSubmit'])){
 $searchReq = new Customer();
 $search = strtolower(trim($_POST['headerSearch']));
 $searchBanniere = $searchReq->searchBarre($search); 
+$countResultSearch = count($searchBanniere); // a ajouter
     }
 }
 

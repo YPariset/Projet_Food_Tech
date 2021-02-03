@@ -38,3 +38,5 @@
     <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script> 
+    <!-- canvas chart -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

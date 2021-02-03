@@ -43,6 +43,51 @@ class Order {
             $totalAmount = $total->fetch(PDO::FETCH_ASSOC);
             return $totalAmount;
     }
+
+    public function createOrder($id, $price, $date, $number){
+        global $db;
+        $insertOrder = $db->prepare('INSERT INTO orders (id_customer, total_price, date_order, number)
+                                VALUES (?, ?, ?, ?)');
+        $insertOrder->execute(array($id, $price, $date, $number));
+    }
+
+    public function selectIdOrderByRef($ref){
+        global $db;
+
+        $client = $db->prepare('
+        SELECT id FROM orders 
+        WHERE number = ? ');
+        $client->execute(array($ref));
+        $reqClient = $client->fetch(PDO::FETCH_ASSOC);
+        return $reqClient;
+    }
+    public function selectIdDishByName($name){
+        global $db;
+
+        $client = $db->prepare('
+        SELECT id FROM dishes 
+        WHERE name = ? ');
+        $client->execute(array($name));
+        $reqClient = $client->fetch(PDO::FETCH_ASSOC);
+        return $reqClient;
+    }
+
+    public function createOrderItem($id_order, $quantity, $item_price, $id_dish){
+        global $db;
+        $insertOrder = $db->prepare('INSERT INTO order_item (order_id, item_quantity, item_price, dish_id)
+                                VALUES (?, ?, ?, ?)');
+        $insertOrder->execute(array($id_order, $quantity, $item_price, $id_dish));
+    }
+
+    public function creditPoints($foodie, $id){
+        global $db;
+        $update = $db->prepare('UPDATE customer 
+        SET foodies = :foodie
+        WHERE id = :id');
+        $update->execute(array(':foodie' => $foodie, 
+        ':id' => $id));
+
+    }
   
 
 }

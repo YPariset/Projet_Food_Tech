@@ -46,7 +46,7 @@
                         <li><br><br></li>
                     </ul>
                     <p class="pointLabel"><span class="pointsN">
-                    <?php if(isset($getPoints['points'])){ echo $getPoints['points'];}  ?>
+                    <?php if(isset($getPoints['foodies'])){ echo $getPoints['foodies'];}  ?>
                     </span><br><span class="points">Foodies</span>
                             </span> <span class="award"><i class="fas fa-award "></i></span></p><br>
 
@@ -65,7 +65,7 @@
       <!-- start preview  -->
         <div class="col-sm-9 bloc_edit">  
                 <div class="panel rounded shadow">
-                     <div  style="min-height: 600px; width:100%;margin-bottom: 200px; padding:20px;">
+                     <div  style="min-height: 20000px; width:100%;margin-bottom: 200px; padding:20px;">
                      <?php if(isset($_GET['action']) && $_GET['action'] == 'editer') : ?>
                         <h1>Edit Your informations</h1>
                         <?php if(isset($alertEdit)){echo $alertEdit;} ?>
@@ -203,6 +203,35 @@
                                 </div>
 
                             <?php endforeach; ?>
+
+                        <?php else :?>
+                            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                            <h1>salut</h1>
+                            <div id="chartContainer" style="height: 250px; width: 100%;"></div>
+
+                            <?php
+                            //phpchart
+                            require_once("phpChart/conf.php");
+                            $pc = new C_PhpChartX(array(array(0, 11, 23, 34, 55)),'basic_chart');
+                            $pc->draw();
+
+                            //canevas chart
+                            $dataPoints = array(
+                                array("x"=> 10, "y"=> 41),
+                                array("x"=> 20, "y"=> 35, "indexLabel"=> "Lowest"),
+                                array("x"=> 30, "y"=> 50),
+                                array("x"=> 40, "y"=> 45),
+                                array("x"=> 50, "y"=> 52),
+                                array("x"=> 60, "y"=> 68),
+                                array("x"=> 70, "y"=> 38),
+                                array("x"=> 80, "y"=> 71, "indexLabel"=> "Highest"),
+                                array("x"=> 90, "y"=> 52),
+                                array("x"=> 100, "y"=> 60),
+                                array("x"=> 110, "y"=> 36),
+                                array("x"=> 120, "y"=> 49),
+                                array("x"=> 130, "y"=> 41)
+                                );
+                            ?>
                     <?php endif; ?>
                     </div>
             </div>
@@ -247,6 +276,35 @@ $buttons.on('click', function () {
   }, 50);
 });
 
+</script>
+
+
+
+<script>
+    //script canevas chart
+window.onload = function () {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	exportEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Simple Column Chart with Index Labels"
+	},
+	axisY:{
+		includeZero: true
+	},
+	data: [{
+		type: "column", //change type to bar, line, area, pie, etc
+		//indexLabel: "{y}", //Shows y value on all Data Points
+		indexLabelFontColor: "#5A5757",
+		indexLabelPlacement: "outside",   
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+ 
+}
 </script>
 </body>
 </html>

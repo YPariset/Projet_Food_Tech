@@ -112,7 +112,14 @@
 </script>
 
 <?php
+   //si clear on supprime le panier
    if(isset($_POST['empty'])){
       $delete = new ShoppingCart();
       $clear = $delete->clearCart();
    }
+   //puis création d'un panier vide
+   $cart = new ShoppingCart();
+      if(!isset($_SESSION['panier'])){
+      $cart->createCart();
+   }
+   ?>

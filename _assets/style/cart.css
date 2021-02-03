@@ -1,11 +1,10 @@
 .containerCArt{
-    width:60%;
+    width:80%;
     margin:0 auto;
-    margin-top:180px;
+    margin-top:140px;
 }
 .titleShopCart{
     padding:11px 0;
-    border-top:0.7px solid lightgrey;
     text-align:left;
     border-bottom:0.7px solid lightgrey;
     display:flex;
@@ -21,47 +20,71 @@
     padding:20px 0;
 }
 
-
-.totals-item{
-    display:flex;
-    flex-flow:row wrap;
-    justify-content:flex-end;
-}
-
-
 .remove-product{
     color:lightgrey;
     outline:none;
-    background:
-    transparent;
+    background: transparent;
     border:none;
 }
 .remove-product:hover{
     color:red;
     
 }
-.product-title{
+
+
+.column-labels {
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:flex-end;
+    margin-bottom: -20px;
+}
+
+
+.label-title{
     font-weight:bold;
+    
 }
-.product-price{
-    margin-right:10px;
+
+.label-product{
     color:grey;font-size:18px;
+    padding-left: 4%;
+    padding-top: 20px;
+    
 }
-.product-line-price{
+
+.label-price{
     color:grey;font-size:18px;
+    padding-left: 4%;
+    padding-top: 20px;
+   
+}
+
+
+.label-qty{
+    color:grey;font-size:18px;
+    padding-left: 6%;
+    padding-top: 20px;
+    
+}
+
+.label-line-price{
+    color:grey;font-size:18px;
+    padding-left: 12%;
+    padding-top: 20px;
 }
 
 .containerPrice{
     display:flex;
     flex-flow:row wrap;
     justify-content:flex-end;
-   
 }
+
 .totals-item{
     display:flex;
     flex-flow:row wrap;
     justify-content:space-between;
-    width:400px;
+    width:auto;
+    height: 30px;
    
 }
 .subtotal{
@@ -74,7 +97,7 @@
 
 .backCart{
     border-radius:40px;
-    color:aqua;
+    color:#3cb6c9;
 }
 
 
@@ -82,7 +105,6 @@
     margin-top:180px;
     margin:0 auto;
     height:60px;
-
 }
 .formConfirmGeo .géoloc{
     margin:0 auto;
@@ -95,6 +117,156 @@
     margin-top:210px;
 }
 
-.proceed{
+
+.buttonNav {
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:flex-end;
+    margin-top: 40px;
+}
+
+.buttonNav2 {
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:flex-start;
+    margin-top: 80px;
+}
+
+
+
+#back {
+    background-color: transparent;
+    border-color: grey;
+    color: grey;
+    margin-right: 20px
+}
+
+#back:hover {
+    color: #3cb6c9;
+    border-color: #3cb6c9;
+}
+
+
+ #checkout:hover {
+    color: white;
+    background-color: #3cb6c9;
+    border: none;
+}
+
+#validGeoloc:hover {
+    color: white;
+    background-color: #3cb6c9;
+    border: none;
+
+}
+
+#proceed{
     margin-top:50px;
 }
+
+#proceed:hover{
+    color: white;
+    background-color: #3cb6c9;
+    border: none;
+}
+
+
+
+
+
+
+
+
+/*--------- FORM Location ------------*/
+
+
+.group 			  { 
+    position:relative; 
+    margin-bottom:45px; 
+  }
+  #locInput 				{
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:600px;
+    border:none;
+    border-bottom:1px solid #757575;
+  }
+  #locInput:focus 		{ 
+      border: none;
+      outline:none; 
+    }
+  
+  /* LABEL */
+  #labelInput				 {
+    color:#999; 
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }
+  
+  /* active state */
+  #locInput:focus ~ #labelInput, #locInput:valid ~ #labelInput 		{
+    top:-20px;
+    font-size:14px;
+    color:#3cb6c9;
+  }
+  
+  /* BOTTOM BARS */
+  .bar 	{ position:relative; display:block; width:600px; }
+  .bar:before, .bar:after 	{
+    content:'';
+    height:2px; 
+    width:0;
+    bottom:1px; 
+    position:absolute;
+    background:#3cb6c9; 
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }
+  .bar:before {
+    left:50%;
+  }
+  .bar:after {
+    right:50%; 
+  }
+  
+  /* active state */
+  #locInput:focus ~ .bar:before, #locInput:focus ~ .bar:after {
+    width:50%;
+  }
+  
+  
+  /* active state */
+#locInput:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+  }
+  
+  /* ANIMATIONS */
+  @-webkit-keyframes inputHighlighter {
+      from { background:#3cb6c9; }
+    to 	{ width:0; background:transparent; }
+  }
+  @-moz-keyframes inputHighlighter {
+      from { background:#3cb6c9; }
+    to 	{ width:0; background:transparent; }
+  }
+  @keyframes inputHighlighter {
+      from { background:#3cb6c9; }
+    to 	{ width:0; background:transparent; }
+  }
+
+    
+
+  
+
+  

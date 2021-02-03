@@ -11,6 +11,8 @@ img{
     
 }
 
+
+
 @font-face {                                                            /*fab*/
     font-family: 'fontastiquefontastique';
     src: url('../fonts/fontastique-webfont.eot');
@@ -79,6 +81,7 @@ text-align: center;
     background-position: center;
 }
 
+
 li {
     display: inline;
 }
@@ -108,54 +111,17 @@ li {
     color: white;
 }
 
-.location-search {
-    text-align: center;
-    width: 500px;
-    margin: 0 auto;
-    top:20px;
-    z-index:3;
-}
+
+
 .sticky{
-    text-align: center; /*modif sitcky*/
-    position:fixed;
+    text-align: center; 
+    position: fixed;;
     width:100%;
-    top:20px;
+    top:20px;  
     
 }
 
-.location-search{
-    text-align: center;
-}
 
-.adress-input {
-    width: 400px;
-    height: 50px;
-    border-bottom-left-radius: 20px;
-    border-top-left-radius: 20px;
-    outline: none;
-    border: none;
-}
-
-.adress-input, placeholder { /*déplacement place holder*/
-    padding-left: 20px;
-    
-}
-
-.submit-button {
-    height: 30px;
-    margin-left: 20px;
-    outline: none;
-    padding: 1px 13px;
-    background-color: black;
-    color: white;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
-    border: none;
-}
-
-.submit-button:focus {
-    outline: none;
-}
 
 .geolocalisation {
 
@@ -186,4 +152,29 @@ li {
     margin-top: 60px;
     color: white;
 }
+
+.location-search{   
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: 245px;
+    z-index: 3; 
+    
+}
+
+.location-search.sticky{
+    top: 35px;
+    right: 0;
+    left: 0;
+}
+
+    
+
+
+    
+
+
+
+
+
 

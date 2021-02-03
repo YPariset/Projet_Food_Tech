@@ -26,6 +26,7 @@ if (isset($_POST['valider'])){
                     $_SESSION['street'] = $resultat['street'];
                     $_SESSION['zip'] = $resultat['zip'];
                     $_SESSION['city'] = $resultat['city'];
+                    $_SESSION['foodie'] = $resultat['foodies'];
 
                     header('Location:index.php?page=restaurant');
                 }else{

@@ -22,10 +22,8 @@ class Customer {
         global $db;
 
         $client = $db->prepare('
-            SELECT * FROM awards AS A,
-            customer AS C
-            WHERE A.id_customer = C.id
-            AND C.id = ?');
+            SELECT foodies FROM customer
+            WHERE id = ?');
         $client->execute(array($id));
         $reqClient = $client->fetch(PDO::FETCH_ASSOC);
         return $reqClient;
@@ -56,12 +54,12 @@ class Customer {
     *
     * @return void
     */
-    public function createClient($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $dateCreation, $avatar){
+    public function createClient($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $dateCreation, $avatar, $foodie){
         global $db;
-           $req= " INSERT INTO customer(firstname, lastname, username, email,  password, street, zip, city, birthday, dateCreation, avatar) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+           $req= 'INSERT INTO customer(firstname, lastname, username, email,  password, street, zip, city, birthday, dateCreation, avatar, foodies) 
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
              $newClient = $db->prepare($req);
-        $newClient->execute(array($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $dateCreation, $avatar));
+        $newClient->execute(array($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $dateCreation, $avatar, $foodie));
     }
 
     
@@ -207,15 +205,36 @@ class Customer {
 
     }
 
+    
+
+    //wishlist
+    public function addToFavorite($idDish, $isCustomer){
+        global $db;
+            $req= 'INSERT INTO wishlist_item(id_dish, id_customer) VALUES (?, ?)';
+             $newClient = $db->prepare($req);
+            $newClient->execute(array($idDish, $isCustomer));
+            
+    }
+    public function isWishListed($id){
+        $req= 'SELECT * FROM wishlist_item AS W, customer AS C 
+                WHERE W.id_customer = C.id
+                AND C.id = ?';
+        $newClient = $db->prepare($req);
+        $newClient->execute(array($id));
+        $isWish = $newClient->rowCount();
+        return $isWish;
+    }
+
     //requete search bar
+   
     public function searchBarre($search){
         global $db;
-               $req = $db->prepare('SELECT DISTINCT (R.name), R.img, R.id FROM restaurants AS R, dishes as D where R.id=D.id_restaurant
-                            AND R.name LIKE CONCAT("%", ?, "%")');
-
-                  $req->execute(array($search));
+               $req = $db->prepare('SELECT DISTINCT (D.name), D.img, R.id, D.description
+               FROM dishes as D, restaurants as R where R.id=D.id_restaurant AND D.name LIKE ? '); // a ajouter
+               $req->execute(array('%' .$search. '%'));
                   $requete = $req->fetchAll(PDO::FETCH_ASSOC);
 
                   return $requete;
     }
+    
 }

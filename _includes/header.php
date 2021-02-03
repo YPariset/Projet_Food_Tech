@@ -1,8 +1,8 @@
 
 
  <header class="main-header1">
- 
- <div class="logo-bouton"></div>
+  
+<div class="logo-bouton"></div>
 
 
    <div class="mainTitle">
@@ -13,7 +13,7 @@
          
          <!-- <input id="adress-input" class="adress-input" name="adress-input" type="text" placeholder="Enter your address"> -->
          <div id="map" style="display: none;"></div>
-         <div id="geocoder" class="geocoder" style="position: relative; z-index: 1; width: 50%; left: 45%; margin-left: -19%; top: 10px;">
+         <div id="geocoder" class="geocoder">
             <!-- <button class="submit-button" name="submit-button" type="submit">
                <span class="arrow"><i class="fas fa-arrow-right"></i></span>
             </button> -->
@@ -26,7 +26,7 @@
 <div class="logo-bouton-sticky">
    
    <div>
-      <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="100" height="auto" alt="logo feeling food"></a></span>  
+      <span><a href="index.php?page=home"><img src="./_assets/image/Logo_blanc.png" width="120" height="auto" alt="logo feeling food"></a></span>  
    </div>
 
    

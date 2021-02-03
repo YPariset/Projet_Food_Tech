@@ -17,6 +17,7 @@ if(isset($_POST['signup']) && $_POST['signup'] == 'done'){
             $city = $_POST['citySign'];
             $birthday = $_POST['birthday'];
             $dateCreation = date("Y/m/d");
+            $foodie = 10;
 
         $client = new Customer();
         $clientExist = $client->VerifyMailAvailable($email);
@@ -28,8 +29,9 @@ if(isset($_POST['signup']) && $_POST['signup'] == 'done'){
                $alertSign = Messages::alert("Username déjà utilisé", 'red', '#fab0aa');
         }else{
                $avatarDefault = "_assets/image/avatar/default.jpg";
-               $client->createClient($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $dateCreation, $avatarDefault);
+               $client->createClient($firstname, $lastname, $username, $email, $password, $street, $zip, $city, $birthday, $dateCreation, $avatarDefault, $foodie);
                $alertSign = Messages::alert('Votre compte à été crée avec succès, veuillez vous connecter!', 'green', '#97f7a2');
+               
         }
 
 

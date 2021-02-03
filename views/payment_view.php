@@ -1,17 +1,21 @@
-<div class="wrapper">
+<?php include_once '_includes/head.php' ?>
+
+<div class="wrapper" >
     
-    <?php if(isset($_GET['load'])) : ?>
         <h1>paiement</h1>
-        <div class="gridContainer">
+        <div class="gridContainer" >
+
+      <!-- header de la card -->
         <ul class="topLinks"> 
-        <li>FEELIN' FOOD</li>
-        
-      </ul>
-      <div class="creditCard">
+            <li>FEELIN' FOOD</li>
+       </ul>
+
+       <!-- card -->
+      <div class="creditCard" >
         <div class="visaLogo">
           <span><i>LISA</i></span>
         </div>
-        <div class="chipLogo">
+        <div class="chipLogo" >
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 230 384.4 300.4" width="38" height="70">
 						<path d="M377.2 266.8c0 27.2-22.4 49.6-49.6 49.6H56.4c-27.2 0-49.6-22.4-49.6-49.6V107.6C6.8 80.4 29.2 58 56.4 58H328c27.2 0 49.6 22.4 49.6 49.6v159.2h-.4z" data-original="#FFD66E" data-old_color="#00FF0C" fill="rgb(237,237,237)"/>
 						<path d="M327.6 51.2H56.4C25.2 51.2 0 76.8 0 107.6v158.8c0 31.2 25.2 56.8 56.4 56.8H328c31.2 0 56.4-25.2 56.4-56.4V107.6c-.4-30.8-25.6-56.4-56.8-56.4zm-104 86.8c.4 1.2.4 2 .8 2.4 0 0 0 .4.4.4.4.8.8 1.2 1.6 1.6 14 10.8 22.4 27.2 22.4 44.8s-8 34-22.4 44.8l-.4.4-1.2 1.2c0 .4-.4.4-.4.8-.4.4-.4.8-.8 1.6v74h-62.8v-73.2-.8c0-.8-.4-1.2-.4-1.6 0 0 0-.4-.4-.4-.4-.8-.8-1.2-1.6-1.6-14-10.8-22.4-27.2-22.4-44.8s8-34 22.4-44.8l1.6-1.6s0-.4.4-.4c.4-.4.4-1.2.4-1.6V64.8h62.8v72.4c-.4 0 0 .4 0 .8zm147.2 77.6H255.6c4-8.8 6-18.4 6-28.4 0-9.6-2-18.8-5.6-27.2h114.4v55.6h.4zM13.2 160H128c-3.6 8.4-5.6 17.6-5.6 27.2 0 10 2 19.6 6 28.4H13.2V160zm43.2-95.2h90.8V134c-4.4 4-8.4 8-12 12.8h-122V108c0-24 19.2-43.2 43.2-43.2zm-43.2 202v-37.6H136c3.2 4 6.8 8 10.8 11.6V310H56.4c-24-.4-43.2-19.6-43.2-43.2zm314.4 42.8h-90.8v-69.2c4-3.6 7.6-7.2 10.8-11.6h122.8v37.6c.4 24-18.8 43.2-42.8 43.2zm43.2-162.8h-122c-3.2-4.8-7.2-8.8-12-12.8V64.8h90.8c23.6 0 42.8 19.2 42.8 42.8v39.2h.4z" data-original="#005F75" class="active-path" data-old_color="#005F75" fill="rgba(0,0,0,.4)"/>
@@ -29,13 +33,13 @@
         </div>
         
       </div>
-      <form action="#" id="paymentForm">
+      <form action=""  id="paymentForm">
         <h6>Payment Details</h6>
         <div class="inputCon" id="name" data-top="Name on Card" >
           <input type="text" placeholder="Your name"/>
         </div>
-        <div class="inputCon" id="cardNum" data-top="Card Number" title = "type in the card number without spaces" >
-          <input type="text" placeholder="1234 5678 9101 1213" >
+        <div class="inputCon" id="cardNum" data-top="Card Number" title = "type in the card number without spaces" style="font-size:12px;">
+          <input type="text" placeholder="1234 5678 9101 1213">
         </div>
         <div class="inputCon" id="validYear" data-top="Valid Through" >
           <input type="text" placeholder="00/00"/>
@@ -43,22 +47,12 @@
         <div class="inputCon" id="cvv" data-top="CVV" >
           <input type="text" placeholder="000"/>
         </div>
-        <button>pay<span><?= $_SESSION['panierMontant'] ?></span></button>
+        <button name="pay" >pay<span><?= $_SESSION['panierMontant'] ?></span></button>
       </form>
     </div>
-    <?php else : ?>
-        <div id="loader" class="load"></div>
-    <?php endif; ?>
 </div>
 
 <script>
-    function hide(){
-        document.getElementById('loader').style.display= "none";
-        document.location.href="index.php?page=payment&load"; 
-    }
-    setTimeout(hide,4000);
-
-
 
     window.addEventListener("load", () => {
     // forms
@@ -193,238 +187,27 @@
     }
     btn.addEventListener('click', (e) => {
         e.preventDefault();
-        for(i=0; i < length; i++){
-            if(inputs[i].value == "") {
-                inputs[i].style.borderBottomColor = "red";
-            }
-        }
         if(cList.innerText.length < 16) {
             inputs[1].style.borderBottomColor = "red";
         }
+        for(i=0; i < length; i++){
+            if(inputs[i].value == "") {
+                inputs[i].style.borderBottomColor = "red";
+            }else{
+              document.location.href="index.php?page=confirm&pay";
+            }
+        }
     })
 });
+
+
 </script>
 
 <style>
-#loader{
-  zoom:2;/* Increase this for a bigger symbole*/
-  
-  display:block;
-  
-  width:25px;
-  height:20px;
-  
-  margin:20px auto;
-  
-  animation: wait .80s steps(1, start) infinite;
-  
-  background: linear-gradient(0deg, #f4f5fa 1px, transparent 0, transparent 8px, #f4f5fa 8px),   /* 6  */
-              linear-gradient(90deg, #f4f5fa 1px, #f6f9fb 0, #f6f9fb 3px, #f4f5fa 3px),
-    
-              linear-gradient(0deg, #ececf5 1px, transparent 0, transparent 8px, #ececf5 8px),   /* 5  */
-              linear-gradient(90deg, #ececf5 1px, #f2f3f9 0, #f2f3f9 3px, #ececf5 3px),
-    
-              linear-gradient(0deg, #e7eaf4 1px, transparent 0, transparent 8px, #e7eaf4 8px),   /* 4  */
-              linear-gradient(90deg, #e7eaf4 1px, #eef1f8 0, #eef1f8 3px, #e7eaf4 3px),
-    
-              linear-gradient(0deg, #b9bedd 1px, transparent 0, transparent 10px, #b9bedd 10px), /* 3  */
-              linear-gradient(90deg, #b9bedd 1px, #d0d5e8 0, #d0d5e8 3px, #b9bedd 3px),
-              
-              linear-gradient(0deg, #9fa6d2 1px, transparent 0, transparent 15px, #9fa6d2 15px), /* 2  */
-              linear-gradient(90deg, #9fa6d2 1px, #c0c5e1 0, #c0c5e1 3px, #9fa6d2 3px),
-              
-              linear-gradient(0deg, #8490c6 1px, transparent 0, transparent 15px, #8490c6 15px), /* 1  */
-              linear-gradient(90deg, #8490c6 1px, #aeb5da 0, #aeb5da 3px, #8490c6 3px);  
-  
-  background-repeat: no-repeat;
-  
-  background-size: 4px 9px,   /* 6 */
-                   4px 9px,
-    
-                   4px 9px,   /* 5 */
-                   4px 9px,
-    
-                   4px 9px,   /* 4 */
-                   4px 9px,
-    
-                   4px 11px,  /* 3 */
-                   4px 11px,
-    
-                   4px 16px,  /* 2 */
-                   4px 16px,
-    
-                   4px 16px,  /* 1 */
-                   4px 16px;
-  
-  background-position:-4px 3px, -4px 3px, -4px 3px, -4px 3px, -4px 3px, -4px 3px, -4px 2px, -4px 2px, -4px 0, -4px 0, -4px 0, -4px 0;
-    
-  /****** card *****/
-}
 
-@keyframes wait{
-  12.5%{
-    background-position:   -4px,  /* 6 */
-                           -4px,
-      
-                           -4px,  /* 5 */
-                           -4px,
-                   
-                           -4px,  /* 4 */
-                           -4px,
-                           
-                           -4px,  /* 3 */
-                           -4px,
-      
-                           -4px,  /* 2 */
-                           -4px,
-      
-                              0 ,  /* 1 */
-                              0 ;
-  }
-  25%{
-    background-position: -4px,  /* 6 */
-                           -4px,
-      
-                           -4px,  /* 5 */
-                           -4px,
-                   
-                           -4px,  /* 4 */
-                           -4px,
-                           
-                           -4px,  /* 3 */
-                           -4px,
-      
-                              0,  /* 2 */
-                              0,
-      
-                            6px,  /* 1 */
-                            6px;
-  }
-  37.5%{
-    background-position: -4px,  /* 6 */
-                           -4px,
-      
-                           -4px,  /* 5 */
-                           -4px,
-                   
-                           -4px,  /* 4 */
-                           -4px,
-                           
-                               0,  /* 3 */
-                               0,
-      
-                             6px,  /* 2 */
-                             6px,
-      
-                            12px,  /* 1 */
-                            12px;
-  }
-  50%{
-    background-position: -4px,  /* 6 */
-                           -4px,
-      
-                           -4px,  /* 5 */
-                           -4px,
-                   
-                               0,  /* 4 */
-                               0,
-                           
-                             6px,  /* 3 */
-                             6px,
-      
-                            12px,  /* 2 */
-                            12px,
-      
-                            -4px,  /* 1 */
-                            -4px;
-  }
-  62.5%{
-    background-position: -4px,  /* 6 */
-                           -4px,
-      
-                               0,  /* 5 */
-                               0,
-                   
-                             6px,  /* 4 */
-                             6px,
-                           
-                            12px,  /* 3 */
-                            12px,
-      
-                            -4px,  /* 2 */
-                            -4px,
-      
-                            -4px,  /* 1 */
-                            -4px;
-  }
-  75%{
-    background-position:     0,  /* 6 */
-                               0,
-      
-                             6px,  /* 5 */
-                             6px,
-                   
-                            12px,  /* 4 */
-                            12px,
-                           
-                            -4px,  /* 3 */
-                            -4px,
-      
-                            -4px,  /* 2 */
-                            -4px,
-      
-                            -4px,  /* 1 */
-                            -4px;
-  }
-  87.5%{
-    background-position:   6px,  /* 6 */
-                             6px,
-      
-                            12px,  /* 5 */
-                            12px,
-                   
-                            -4px,  /* 4 */
-                            -4px,
-                           
-                            -4px,  /* 3 */
-                            -4px,
-      
-                            -4px,  /* 2 */
-                            -4px,
-      
-                            -4px,  /* 1 */
-                            -4px;
-  }
-  100%{
-    background-position:    12px,  /* 6 */
-                            12px,
-      
-                            -4px,  /* 5 */
-                            -4px,
-                   
-                            -4px,  /* 4 */
-                            -4px,
-                           
-                            -4px,  /* 3 */
-                            -4px,
-      
-                            -4px,  /* 2 */
-                            -4px,
-      
-                            -4px,  /* 1 */
-                            -4px;
-  }
-}
-
-
-/* Boring body Style */
-
-.wrapper{
+  .wrapper{
   text-align:center;
 }
-
-
-
 
 /*** card ***/
 .gridContainer {
@@ -674,7 +457,7 @@ h6 {
   content: attr(data-top);
   top: -16px;
   left: 0;
-  height: 10px;
+  height: 30px;
   font-size: 10.4px;
   letter-spacing: .5px;
 }

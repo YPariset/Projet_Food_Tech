@@ -4,6 +4,7 @@ $_SESSION['panierMontant'] = array();
 $getFood = new Food();
 
 
+
 $shopCart = new ShoppingCart();
 $totalAmount = $shopCart->montant_panier();
 $_SESSION['panierMontant'] = number_format($totalAmount,2);
@@ -18,7 +19,7 @@ if(isset($_POST['qteValid'])){
 if(isset($_POST['remove'])){
     $nameToDelete = $_POST['nameDelete'];  
     $shopCart-> removeFromCart($nameToDelete);
-    header('Location:index.php?page=shoppingCart');
+    //header('Location:index.php?page=shoppingCart');
 }
 
 if(isset($_POST['validCoupon'])){

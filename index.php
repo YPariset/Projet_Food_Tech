@@ -2,6 +2,8 @@
 ini_set('display_errors','on');
 error_reporting(E_ALL);
 
+
+
 //chargement des classes
 include_once '__classes/autoloader.php';
 include_once '_config/database.php';
