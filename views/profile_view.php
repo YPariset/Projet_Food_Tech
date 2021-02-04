@@ -42,7 +42,7 @@
                             </p>
                         </li>
                     <!-- infos -->
-                        <li style="width:100%;"><a href="index.php?page=restaurant" class="btn btn-success text-center btn-block" style="display:block;margin:0 auto; background-color: #3cb6c9; border: none;">Order</a></li>
+                        <li style="width:100%;"><a href="index.php?page=restaurant" class="btn btn-primary text-center btn-block" style="display:block;margin:0 auto; background-color: #3cb6c9; border: none;">New Order</a></li>
                         <li><br><br></li>
                     </ul>
                     <p class="pointLabel"><span class="pointsN">
@@ -168,14 +168,15 @@
                         <?php foreach($wishlist as $itemList) : ?>
                             
                             <div class="overlay-image">
-                                <a href="index.php?page=restaurant&resto=<?= $itemList['id_restaurant '] ?>">
+                                <a href="index.php?page=restaurant&resto=<?=$itemList['id_restaurant'] ?>">
                                 <img class="image" src="<?= $itemList['img'] ?>" alt="Alt text" />
                                     <div class="text">
                                         <?= $itemList['name']; ?> 
                                     </div>
                                 </a>
                                 <form action="" method="POST">
-                                <button type="submit" class="wish" style="border:none;background:transparent;outline:none;">
+                                <input type='hidden' name='supprWish' value="<?= $itemList['id'];?>">
+                                <button type="submit" name="submitSupprWish" class="wish" style="border:none;background:transparent;outline:none;">
                                     <i class="fas fa-heart"></i>
                                 </button> 
                                 </form>

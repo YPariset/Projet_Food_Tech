@@ -1,24 +1,6 @@
 <?php
 class Food{
 
-	public function getAllProducts(){
-		global $db;
-
-        $prod = $db->prepare('SELECT * FROM product');
-        $prod->execute();
-        $prod = $client->fetchAll(PDO::FETCH_ASSOC);
-        return $prod;
-	}
-
-	public function getProductById($id){
-        global $db;
-
-        $prod = $db->prepare('
-            SELECT * FROM product WHERE id = ?');
-        $prod->execute(array($id));
-        $data = $prod->fetch(PDO::FETCH_ASSOC);
-        return $data;
-    }
     public function gettheDishByname($name){
         global $db;
 
@@ -270,34 +252,6 @@ class Food{
         return $get;
 	}
 	
-	/***************** product par plat *****************/
-	
-	public function getProductByDish($idDish){
-		global $db;
-
-        $prod = $db->prepare('
-            SELECT * FROM product as P, dishes AS D
-            WHERE P.id_dish = D.id
-            ');
-        $prod->execute(array($idDish));
-        $get = $prod->fetchAll(PDO::FETCH_ASSOC);
-        return $get;
-
-    }
-
-    /****** Affiche les informations restaurant ***********/ 
-
-    public function getInfosRestaurant($id){
-        global $db;
-
-        $infosRestaurant = $db->prepare('
-        SELECT * FROM product WHERE id = ?');
-        
-        $infosRestaurant->execute(array($id));
-        $infos = $infosRestaurant->fetch(PDO::FETCH_ASSOC);
-        return $infos;
-        
-    }
 
 }
 	

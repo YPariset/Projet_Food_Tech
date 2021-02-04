@@ -4,21 +4,12 @@
       <span><a href="index.php?page=home"><img src="./_assets/image/Logo_gris.png" width="90" height="auto" alt="logo feeling food"></a></span>
    </div>
 
-   <div class="search">
+   <div style="margin-left: 222px" class="search">
       <form action="index.php?page=restaurant" method="POST">
          <button type="submit" name="headerSearchSubmit" value="searched"><i class="fas fa-search"></i></button>
-         <input type="text" placeholder="search for anything..." name ="headerSearch"/>
+         <input style="width:409px;" type="text" placeholder="search for anything..." name ="headerSearch"/>
       </form>
    </div>
-
- 
-       <!-- <ul class="mainNav">
-           <li><a href="index.php?page=restaurant">Food</a></li>
-           <li><a href="index.php?page=restaurant">Drinks</a></li>
-           <li><a href="index.php?page=restaurant">Categories</a></li>
-           <li><a href="index.php?page=restaurant">Restaurants</a></li>
-           <li><a href="index.php?page=restaurant">Specials</a></li>
-        </ul> -->
 
    <div>
    <?php if(!isset($_SESSION['username'])) : ?>
@@ -82,9 +73,6 @@
                <div style="margin:0 auto;">
                <a class="btn btn-secondary" href="index.php?page=shoppingcart"  style="border-radius:40px;color:white;background-color:#3cb7c8;padding:8px 120px; margin-top:20px">Checkout</a>
               
-               <!-- <form method="POST" action=""> 
-                   <button id="clear" class="btn btn-secondary" name="empty" onclick="javascript:history.go(0)" style="border-radius:40px;color:white;background-color:#3cb7c8;padding:8px 135px;margin-top:10px;">Clear</button>
-               </form> -->
                </div>
                <?php endif ?>
          <?php endif ?>

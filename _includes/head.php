@@ -17,6 +17,7 @@
     <link href="_assets/style/restaurant.css" rel="stylesheet">
     <link href="_assets/style/cart.css" rel="stylesheet">
     <link href="_assets/style/confirm.css" rel="stylesheet">
+    <link href="_assets/style/logout.css" rel="stylesheet">
 
 
 

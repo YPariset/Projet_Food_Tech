@@ -33,9 +33,14 @@ if(isset($_POST['validCoupon'])){
         if($data == 1 ){
             $dataCoupon = $coupon->fetch(PDO::FETCH_ASSOC);
             $_SESSION['panierMontant'] += $dataCoupon['amount'];
+
+            $useCoupon = $db->prepare("DELETE FROM discount 
+                                    WHERE name = ?
+                                    AND id_customer = ? ");
+            $useCoupon->execute(array($_POST['coupon'], $_SESSION['id']));
         }
     }else{
-        echo 'Please enter a coupon!';
+        $alertCoupon = Messages::alert("please enter a valid promo code", "red", "transparent");
     }
 }
 

@@ -1,15 +1,3 @@
-<!-- <!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <title>Your order will arrived soon, enjoy your meal </title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
-</head>
-<body>
-    <h1>Thank you for your order, see you soon </h1> 
-</body>
-</html> -->
 
 <!DOCTYPE html>
 <html lang="en">

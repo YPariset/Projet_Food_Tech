@@ -8,9 +8,11 @@
 <?php include_once '_includes/header-banner.php'; ?>  
 
 <div class="containerCArt" id="containerShop" style="max-height:100%;">
+
      
      <!-- si le panier n'est pas vide, on boucle le nombre d'articles... -->
      <?php if(isset($_SESSION['panier'])) : ?>
+          
           <div class="titleShopCart">
                <div><h2 >My Cart</h2></div>
                <div class="column-labels">
@@ -21,6 +23,7 @@
                </div>
           </div>
           <?php if(count($_SESSION['panier']['nom'])) : ?>
+          
 
           <?php for($i = 0; $i < count($_SESSION['panier']['nom']); $i++) : ?>
                <!-- on recupere les datas des dishes-->
@@ -94,7 +97,7 @@
 <div id="step2" style="border: 1px solid transparent; padding-left: 30%; margin-top: 50px">
      <form>
           <div class="group">      
-               <input id="locInput" type="text" style="margin-top:350px; background-color: transparent;" >
+               <input id="locInput" type="text" style="margin-top:350px; background-color: transparent;" placeholder="<?= $_SESSION['street']; ?> <?= $_SESSION['zip']; ?>  <?= $_SESSION['city']; ?> " >
                <span class="highlight"></span>
                <span class="bar"></span>
                <label id="labelInput">Please confirm your position</label>
@@ -113,7 +116,7 @@
                <div class="panel-card" style="height: auto; padding:20px; padding-left:10%">
                     <h4>Order Summary</h4><br>
                     <strong><p>Mr</strong> <?= $_SESSION['firstname'] ?> <?= $_SESSION['lastname'] ?>
-                    <strong><p>Delivery address : </strong><?= $_SESSION['street'] ?> - <?= $_SESSION['zip'] ?> <?= $_SESSION['city'] ?>
+                    <strong><p>Delivery address : </strong><span id="deliveryAddress"><?= $_SESSION['street'] ?> - <?= $_SESSION['zip'] ?> <?= $_SESSION['city'] ?></span></p>
                     <strong><p>Order date : </strong><?= date("Y/m/d") ?> at <?= date("H:i") ?></p>
                     <?php for($i = 0; $i < count($_SESSION['panier']['nom']); $i++) : ?>
                          <strong><p>Dish n°<?= $i +1 ?> : </strong><?= $_SESSION['panier']['nom'][$i]; ?> X <?= $_SESSION['panier']['quantite'][$i]; ?>  for  <?= $_SESSION['panier']['prix'][$i]; ?>$ </p> 
@@ -138,10 +141,6 @@
 <script>
      const btn = document.getElementById('checkout');
 
-          // btn.addEventListener('click', () => window.scrollTo({
-          // top: 750,
-          // behavior: 'smooth',
-          // }));
           btn.addEventListener('click', function(color){
                if(btn.textContent.value = "Checkout"){
                     btn.style.background = "green";
@@ -150,10 +149,7 @@
                
           });
           const validGeoloc = document.getElementById('validGeoloc');
-          // validGeoloc.addEventListener('click', () => window.scrollTo({
-          // top: 1500,
-          // behavior: 'smooth',
-          // }));
+         
           validGeoloc.addEventListener('click', function(color){
                if(validGeoloc.textContent.value = "confirm your position"){
                     validGeoloc.style.background = "green";
@@ -175,6 +171,14 @@
                
           });
           
+</script>
+
+<script>
+     document.getElementById('validGeoloc').addEventListener('click', function(e){
+               var locInput = document.getElementById('locInput').value
+               document.getElementById('deliveryAddress').textContent = locInput;
+          
+     })
 </script>
 
 

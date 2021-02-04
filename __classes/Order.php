@@ -62,17 +62,6 @@ class Order {
         return $reqClient;
     }
 
-    // public function countOrder($id) {
-    //     global $db;
-
-    //     $client = $db->prepare('
-    //     SELECT count(*) FROM orders AS O
-    //     WHERE id_customer = ? ');
-
-    //     $client->execute(array($id));
-    //     $reqClient = $client->fetch(PDO::FETCH_ASSOC);
-    //     return $reqClient;
-    // }
 
     function getTotalAmount($id){
         global $db;

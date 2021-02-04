@@ -64,6 +64,13 @@ if(isset($_GET['action']) && $_GET['action'] == 'wishlist'){
     $wishlist = $user->getWishList($_SESSION['id']);
 }
 
+//on supprime les elements de la wishlist
+if(isset($_GET['action']) && $_GET['action'] == 'wishlist'){
+   if(isset($_POST['supprWish'])){
+      $supprWish = $user->deleteWishItem($_SESSION['id'], $_POST['supprWish']);
+   }
+}
+
 //on recupere les discount
 if(isset($_GET['action']) && $_GET['action'] == 'promo'){
     $discounts = $user->getDiscountt($_SESSION['id']);

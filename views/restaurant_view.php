@@ -27,8 +27,8 @@
      <?php if(isset($_POST['headerSearchSubmit'])) : ?>
           <?php if(!empty($_POST['headerSearch'])) : ?>
                
-               <h4 style="text-align:center; padding-top: 50px; margin-bottom: 70px; font-size: 2.2em;">
-                We have found <span><?=$countResultSearch; ?></span> results for <span style="color:#3cb6c9;"><?=$_POST['headerSearch']; ?></span></h4>
+               <h4 style="text-align:center; padding-top: 50px; margin-bottom: 70px; font-size: 2.2em;"></h4>
+               <h4 class="countResultatSearch"><?= $messageSearchFood; ?></h4>
                <div id="resultatSearch" style="display: flex; flex-flow: row wrap; justify-content: center;" >
                <?php foreach ($searchBanniere as $dataSearch) : ?>
 
@@ -43,7 +43,7 @@
                
                <?php endforeach; ?>
                </div>
-               <h3 style="text-align:center; margin-bottom: 120px; padding-top:40px; font-size: 2.2em;"> All the restaurants available</h3>
+               <h3 style="text-align:center; margin-bottom: 40px; padding-top:40px; font-size: 1.7em;"> All the restaurants available</h3>
           <?php endif; ?>
      <?php endif; ?>
      
@@ -229,7 +229,6 @@
                     <P style="color:#3cb6c9">FREE DELIVERY</p>
                     <a href="#" class="btn bg-transparent" style="color:lightgrey;border:1px solid lightgrey;border-radius:40px;"><i class="fas fa-clock"></i> 35-45mn</a>
                     <a href="#" class="btn bg-transparent" style="color:lightgrey;border:1px solid lightgrey;border-radius:40px;"><i class="fas fa-map-marker-alt"></i> <?= $data['address']; ?></h3></a>
-                    <a href="#" class="btn bg-transparent" style="color:lightgrey;border:1px solid lightgrey;border-radius:40px;">more infos <i class="fas fa-sort-down"></i></a>
           <!-- carte + infos resto -->
           <br><br><br>
                     <div class="presentationInfos" style="justify-content: space-between;">
@@ -254,7 +253,7 @@
                
                <div class="cardResto">
                     <div style="display:flex; flex-flow:row wrap;">
-                         <div style="width:70%;padding:20px 20px 0 20px;">
+                         <div style="width:70%;padding:20px 20px 0 20px;position:relative;">
                               <h5><strong><?= $datas['name']; ?></strong></h5>
                               <!-- description du produit -->
                               <p style="font-size:12px;"><?= $datas['description']; ?></p>
@@ -272,15 +271,17 @@
                                    <!-- valider -->
                                         <button type="submit" name="cartButton" style="border:none;background-color:#3cb6c9;border-radius:40px;color:white;padding:2px 5px;">
                                              <span class="addCart">Add to cart</span>
-                                             
                                         </button>
                                    </form>
                                    
                                    
                                <!-- bouton ajout aux favoris -->
-                                   <form method="POST" action="">
+                               <form method="POST" action="">
                                         <input type="hidden" name="addWishList" value="<?= $datas['id'];?>" >
-                                        <button type="submit" name="submitWishlist" style="border:none;outline:none;background:transparent;margin-left:200px;"><span><i class="fas fa-heart"></i></span></button>
+                                        <button type="submit" name="submitWishlist" title="Add this item to your wishlist"
+                                             style="border:none;outline:none;background:transparent;width:100%;text-align:right;position:absolute;top:20px;left:-20px;">
+                                             <span><i class="fas fa-heart"></i></span>
+                                        </button>
                                    </form>
                               </span>
                           </div>
@@ -295,7 +296,11 @@
      <!-- end section dish --> 
      <!-- section dessert -->
 
-
+     <?php if(count($dataresto2) == 0) : ?>
+          <H4>OUR SWEET SELECTION</H4>
+          <hr>
+           <p>Le restaurant vous proposera sa selection sucrée très prochainement</p>
+          <?php else : ?>
           <H4>OUR SWEET SELECTION</H4>
           <hr>
           <div style="display:flex;flex-flow:row wrap;justify-content:space-between;margin-top:40px;" class="">
@@ -303,7 +308,7 @@
           <?php foreach($dataresto2 as $datas2) : ?>
                <div class="cardResto">
                     <div style="display:flex; flex-flow:row wrap;">
-                         <div style="width:70%;padding:20px 20px 0 20px;">
+                         <div style="width:70%;padding:20px 20px 0 20px;position:relative;">
                               <h5><strong><?= $datas2['name']; ?></strong></h5>
                               <!-- description du produit -->
                               <p style="font-size:12px;"><?= $datas2['description']; ?></p>
@@ -327,7 +332,10 @@
 
                               <form method="POST" action="">
                                         <input type="hidden" name="addWishList" value="<?= $datas2['id'];?>" >
-                                        <button type="submit" name="submitWishlist" style="border:none;outline:none;background:transparent;margin-left:200px;"><span><i class="fas fa-heart"></i></span></button>
+                                        <button type="submit" name="submitWishlist" title="Add this item to your wishlist"
+                                             style="border:none;outline:none;background:transparent;width:100%;text-align:right;position:absolute;top:20px;left:-20px;">
+                                             <span><i class="fas fa-heart"></i></span>
+                                        </button>
                               </form>
                           </div>
                           <!-- image de la card -->
@@ -336,8 +344,10 @@
                           </div>
                           
                     </div>
-               </div>       
+               </div>      
+               
           <?php endforeach; ?>  
+          <?php endif; ?> 
           </div>
      </div>  
      

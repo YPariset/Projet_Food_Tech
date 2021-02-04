@@ -11,13 +11,8 @@
    </div>
       <div class="location-search" id="location-search">
          
-         <!-- <input id="adress-input" class="adress-input" name="adress-input" type="text" placeholder="Enter your address"> -->
          <div id="map" style="display: none;"></div>
-         <div id="geocoder" class="geocoder">
-            <!-- <button class="submit-button" name="submit-button" type="submit">
-               <span class="arrow"><i class="fas fa-arrow-right"></i></span>
-            </button> -->
-         </div>
+         <div id="geocoder" class="geocoder"></div>
         
       </div>
       <button id="geolocalisation" class="geolocalisation" name="geolocalisation" type="submit"><span><i class="fas fa-location-arrow"></i></span> Find my location</button>

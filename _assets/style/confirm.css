@@ -71,11 +71,14 @@
   margin-right: auto;
   
   color: grey;
-  
-  
-  
-  
+
 }
+
+.labelConfirm {
+  font-size:xx-large;
+}
+
+
 .nomClient{
   color: #3cb6c9;
   font-family: 'fontastiquefontastique';

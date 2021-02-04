@@ -10,7 +10,7 @@
 
   
     <?php if(isset($_GET['load'])) : ?>
-    <div class="titreConfirm"><h1>Thank you and enjoy your meal </br><div class="nomClient"><?= $_SESSION['firstname'] ?></div></h1></div>
+    <div class="titreConfirm"><h1 class="labelConfirm">Thank you and enjoy your meal </br><div class="nomClient"><?= $_SESSION['firstname'] ?></div></h1></div>
   </div>
     <p class="orderNumb">Your order number is  :  <span class="orderBack"><?= $_SESSION['number'] ?></span></p>
   <div class="colFoodies">

@@ -7,7 +7,13 @@ if(isset($_POST['headerSearchSubmit'])){
 $searchReq = new Customer();
 $search = strtolower(trim($_POST['headerSearch']));
 $searchBanniere = $searchReq->searchBarre($search); 
-$countResultSearch = count($searchBanniere); // a ajouter
+$countResultSearch = count($searchBanniere);
+        if (count($searchBanniere) == 0){
+            $messageSearchFood = "Sorry we dont have this kind of food yet, but we work on it";
+        } else {
+            $messageSearchFood = "We found " . $countResultSearch . "results for " . $_POST['headerSearch'];
+        }
+
     }
 }
 
@@ -32,7 +38,7 @@ if(isset($_GET['resto']))
     $datasResto = $resto->getSaltyByrestaurantId($_GET['resto']);
     $dataresto2 = $resto->getSweetByrestaurantId($_GET['resto']);
     $datadejuste1rest = $resto->getRestaurantById($_GET['resto'] );
-    $infosRestaurant = $resto->getInfosRestaurant($_GET['resto']);
+    // $infosRestaurant = $resto->getInfosRestaurant($_GET['resto']);
 
     if(isset($_POST['cartButton'])){
         if(!empty($_POST['qteCart'])){
