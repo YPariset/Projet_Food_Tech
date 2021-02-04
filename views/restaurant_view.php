@@ -244,7 +244,6 @@
                                    <h4 class="infosOuverture1" ><strong>Friday</strong> : <?= $data['horaires']; ?></h4>
                                    <h4 class="infosOuverture1" ><strong>Saturday</strong> : <?= $data['horaires']; ?></h4>
                                    <h4 class="infosOuverture1" ><strong>Sunday</strong> : <?= $data['horaires']; ?></h4>
-
                               </div>
                          </div>
                     </div>

@@ -15,8 +15,7 @@ class Functions{
     }
 
     static function pluriel ($string){
-        $finalString = $string .'s';
-        return $finalString;
+        return $string .'s';;
     }
 
 

@@ -24,15 +24,16 @@
             <li id="buttonPreviewCart"><a class="btn btn-secondary buttonItem" href="index.php?page=shoppingcart" 
                style="background-color:#3cb6c9;border-radius:40px;height:27px;line-height:12px;border:none;">
                      <i class="fas fa-cart-arrow-down logoCart"></i>
-                     <span ><?php 
+                     <span><?php 
                            if(isset($_SESSION['panier'])){
                               $count = count($_SESSION['panier']['nom']);
-                              echo $count;
-                           }else{
-                              $count = 0;
-                              echo $count;
+                              if($count > 1){
+                                  echo $count .' '.functions::pluriel("item");
+                              }else{
+                                 echo $count . ' item';
+                              } 
                            }
-                     ?></span> items
+                     ?></span> 
                </a>
             </li>
       </ul>

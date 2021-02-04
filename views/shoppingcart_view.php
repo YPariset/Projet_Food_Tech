@@ -63,7 +63,7 @@
                <div><p class="totals-value" id="cart-subtotal">$<?= $totalAmount; ?></p></div>
           </div>
           <div class="totals-item">
-               <div><p class="labelCart" style="color:grey">Tax (5%) </p></div>
+               <div><p class="labelCart" style="color:grey">Tax included(5%) </p></div>
                <div><p class="totals-value" id="cart-tax">$<?= $tax; ?></p></div>
           </div>
           <div class="totals-item">
@@ -83,7 +83,7 @@
 
           <div class="totals-item totals-item-total" style="font-size:22px;">
                <strong><span style="font-size:22px; color:grey;">Grand Total</span></strong>
-               <span class="totals-value" id="cart-total">$<?= $_SESSION['panierMontant'] + $tax ?></span>
+               <span class="totals-value" id="cart-total">$<?= $_SESSION['panierMontant']; ?></span>
           </div>
      </div>
 </div>
@@ -119,9 +119,9 @@
                     <strong><p>Delivery address : </strong><span id="deliveryAddress"><?= $_SESSION['street'] ?> - <?= $_SESSION['zip'] ?> <?= $_SESSION['city'] ?></span></p>
                     <strong><p>Order date : </strong><?= date("Y/m/d") ?> at <?= date("H:i") ?></p>
                     <?php for($i = 0; $i < count($_SESSION['panier']['nom']); $i++) : ?>
-                         <strong><p>Dish n°<?= $i +1 ?> : </strong><?= $_SESSION['panier']['nom'][$i]; ?> X <?= $_SESSION['panier']['quantite'][$i]; ?>  for  <?= $_SESSION['panier']['prix'][$i]; ?>$ </p> 
+                         <strong><p>Dish n°<?= $i +1 ?> : </strong><?= $_SESSION['panier']['nom'][$i]; ?> X <?= $_SESSION['panier']['quantite'][$i]; ?>  for  <?= number_format($_SESSION['panier']['prix'][$i],2); ?>$ </p> 
                     <?php endfor; ?>
-                         <strong><p>Total Amount : </strong><?= $_SESSION['panierMontant'] +  $tax; ?>$</p>
+                         <strong><p>Total Amount : </strong><?= $_SESSION['panierMontant']; ?>$</p>
                     <a class=" btn btn-secondary proceed" name="proceed" id="proceed" style="margin-left: 20%;">Order and proceed to payment now</a>
                </div>
           </div>
