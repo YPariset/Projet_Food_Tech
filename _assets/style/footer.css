@@ -10,6 +10,7 @@ footer {
 
 .f-1 {
     padding-top: 50px;
+    margin-left: 50px;
 }
 
 .flex-footer {
@@ -19,27 +20,7 @@ footer {
     align-items: flex-start;
 }
 
-#shopping2 h4 {
-    text-align: center;
-    margin-left: -18px;
-    padding-top: 50px;
-}
 
-#shopping2 ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    line-height: 30px;
-
-}
-
-#shopping2 ul li a {
-    color: white;
-    
-    
-    
-}
 
 
 #codeur-barre {
@@ -89,7 +70,7 @@ footer {
     margin-top: 30px;
 }
 #newsletter h4{
-    padding-top: 50px;
+    padding-top: 80px;
 }
 
 .telechargez h4{
@@ -100,11 +81,13 @@ footer {
     
     color: #3cb6c9;
     font-family: 'fontastiquefontastique';
+    font-size: 40px;
 }
 
 
 .logo h4  {
     color: white;
+    font-size: 30px;
 }    
     
 

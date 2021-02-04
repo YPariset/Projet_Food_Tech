@@ -231,7 +231,7 @@
                     <a href="#" class="btn bg-transparent" style="color:lightgrey;border:1px solid lightgrey;border-radius:40px;"><i class="fas fa-map-marker-alt"></i> <?= $data['address']; ?></h3></a>
           <!-- carte + infos resto -->
           <br><br><br>
-                    <div class="presentationInfos" style="justify-content: space-between;">
+                    <div id="validation"class="presentationInfos" style="justify-content: space-between;">
                          <div>
                          <?= $data['maps']; ?><br>
                          </div>
@@ -252,7 +252,7 @@
           <?php foreach($datasResto as $datas) : ?>
                
                <div class="cardResto">
-                    <div style="display:flex; flex-flow:row wrap;">
+                    <div  style="display:flex; flex-flow:row wrap;">
                          <div style="width:70%;padding:20px 20px 0 20px;position:relative;">
                               <h5><strong><?= $datas['name']; ?></strong></h5>
                               <!-- description du produit -->
@@ -260,7 +260,7 @@
                               <!-- affichage du prix unitaire -->
                               <span style="font-size:12px;font-weight:bold;color:#3cb6c9">$<?= $datas['price']; ?>
                              
-                                   <form method="POST" action="" style="display:inline;margin-left:40px;">
+                                   <form method="POST" action="#validation" style="display:inline;margin-left:40px;">
                                    <!-- ajouter ou supprimer quantité -->
                                          <input type="number" name="qteCart" class="qt" value="1" min="1" 
                                          style="border:none;width:30px;backround-color:grey;outline:none;border:0.5px solid #3cb6c9;"/>
@@ -315,7 +315,7 @@
                               <!-- affichage du prix unitaire -->
                               <span style="font-size:12px;font-weight:bold;color:#3cb6c9">$<?= $datas2['price']; ?>
                              
-                                   <form method="POST" action="" style="display:inline;margin-left:40px;">
+                                   <form method="POST" action="#validation" style="display:inline;margin-left:40px;">
                                         <!-- ajouter ou supprimer quantité -->
                                          <input type="number" name="qteCart" class="qt" value="1" min="1" 
                                          style="border:none;width:30px;backround-color:grey;outline:none;border:0.5px solid #3cb6c9;"/>

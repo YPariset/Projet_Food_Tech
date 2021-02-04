@@ -52,7 +52,8 @@
 
     var geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl
+        mapboxgl: mapboxgl,
+        placeholder:"Enter your position"
     });
 
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));

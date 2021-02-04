@@ -171,8 +171,9 @@
                         <br>
                          <h5 style="text-align:center;">You havent't added any favorite dish yet<h5>
                             <?php else : ?>
-                            <?php $dataresto = $resto->getRestaurant($itemList['id_restaurant'] ); ?>
+                            
                         <?php foreach($wishlist as $itemList) : ?>
+                            <?php $dataresto = $resto->getRestaurant($itemList['id_restaurant'] ); ?>
                                 
                             
                             <div class="accordion-item" style="outline:none;width:65%;margin:0 auto;">

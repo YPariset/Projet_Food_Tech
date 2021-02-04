@@ -66,7 +66,7 @@ class Shoppingcart{
             array_push($panier_tmp['prix'],$_SESSION['panier']['prix'][$i]);
             }
         }
-            $montant -= $_SESSION['panier']['quantite'][$i] * $_SESSION['panier']['prix'][$i];
+            
 
             $_SESSION['panier'] = $panier_tmp;
             /* Option : on peut maintenant supprimer notre panier temporaire: */

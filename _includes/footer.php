@@ -3,24 +3,15 @@
         <div class="f-1">
             <div class="logo">
                <h4><span>Feelin</span>Food.com</h4> <!--fab-->
-               <p>Decouvrir l'esprit Feelin' Food</p>
-               <p>Conditions générales</p>
-               <p>FAQ</p>
-               <p>Recrutement</p>
+               <p>Feelin' Food spirit</p>
+               <p>Terms of Service</p>
+               <p>Customer help</p>
+               <p>Careers</p>
             </div>
             
         </div>  
        
-        <div id="shopping2"> 
-            <h4>Shopping</h4>
-            <ul>
-                <li><a href="#">Conditions générales</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Recrutement</a></li>
-                <li><a href="#">Plan du site</a></li>
-                <li><a href="#">Type de cuisine</a></li>
-            </ul>
-        </div>
+       
         <div id="newsletter">
             <h4>Newsletter</h4>
             <buttom type="submit" name="validMail"><i class="far fa-envelope"></i></button>

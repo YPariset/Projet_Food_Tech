@@ -14,7 +14,9 @@ $tax = number_format(($_SESSION['panierMontant'] * 5 ) / 100, 2);
 if(isset($_POST['qteValid'])){
     if(!empty($_POST['qte'])){
         $shopCart->changeQuantity($_POST['name'], $_POST['qte']);
+        header('location:index.php?page=shoppingcart');
     }
+
 }
 if(isset($_POST['remove'])){
     $nameToDelete = $_POST['nameDelete'];  
