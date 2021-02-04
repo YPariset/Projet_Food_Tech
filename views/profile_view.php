@@ -203,7 +203,6 @@
                                                         <span style="color:black;"><i class="fas fa-heart"></i></span>
                                                     </button> 
                                                 </form>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>

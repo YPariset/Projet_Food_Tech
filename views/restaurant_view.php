@@ -27,8 +27,7 @@
      <?php if(isset($_POST['headerSearchSubmit'])) : ?>
           <?php if(!empty($_POST['headerSearch'])) : ?>
                
-               <h4 style="text-align:center; padding-top: 50px; margin-bottom: 70px; font-size: 2.2em;"></h4>
-               <h4 class="countResultatSearch"><?= $messageSearchFood; ?></h4>
+               <h4 class="countResultatSearch" style="text-align:center; padding-top: 50px; margin-bottom: 70px; font-size: 2.2em;"><?= $messageSearchFood; ?></h4>
                <div id="resultatSearch" style="display: flex; flex-flow: row wrap; justify-content: center;" >
                <?php foreach ($searchBanniere as $dataSearch) : ?>
 
@@ -231,7 +230,7 @@
                     <a href="#" class="btn bg-transparent" style="color:lightgrey;border:1px solid lightgrey;border-radius:40px;"><i class="fas fa-map-marker-alt"></i> <?= $data['address']; ?></h3></a>
           <!-- carte + infos resto -->
           <br><br><br>
-                    <div id="validation"class="presentationInfos" style="justify-content: space-between;">
+                    <div class="presentationInfos" style="justify-content: space-between;">
                          <div>
                          <?= $data['maps']; ?><br>
                          </div>
@@ -254,6 +253,8 @@
           <br><br><br>
 
      <!-- section dish -->
+          <div id="validation"></div>
+          <div style="height:80px;"></div>
           <H4>OUR SALTY SELECTION</H4>
           <hr>
           <div style="display:flex;flex-flow:row wrap;justify-content:space-between;margin:60px 0;">
@@ -285,7 +286,7 @@
                                    
                                    
                                <!-- bouton ajout aux favoris -->
-                               <form method="POST" action="">
+                               <form method="POST" action="#validation">
                                         <input type="hidden" name="addWishList" value="<?= $datas['id'];?>" >
                                         <button type="submit" name="submitWishlist" title="Add this item to your wishlist"
                                              style="border:none;outline:none;background:transparent;width:100%;text-align:right;position:absolute;top:20px;left:-20px;">
@@ -339,7 +340,7 @@
                                    </form>
                               </span>
 
-                              <form method="POST" action="">
+                              <form method="POST" action="#validation">
                                         <input type="hidden" name="addWishList" value="<?= $datas2['id'];?>" >
                                         <button type="submit" name="submitWishlist" title="Add this item to your wishlist"
                                              style="border:none;outline:none;background:transparent;width:100%;text-align:right;position:absolute;top:20px;left:-20px;">

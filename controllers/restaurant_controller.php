@@ -11,7 +11,7 @@ $countResultSearch = count($searchBanniere);
         if (count($searchBanniere) == 0){
             $messageSearchFood = "Sorry we dont have this kind of food yet, but we work on it";
         } else {
-            $messageSearchFood = "We found " . $countResultSearch . "results for " . $_POST['headerSearch'];
+            $messageSearchFood = "We found " . $countResultSearch . " results for " . "<span style=color:#3cb6c9;>" . $_POST['headerSearch'] . "</span>" ;
         }
 
     }
