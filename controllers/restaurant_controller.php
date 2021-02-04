@@ -38,7 +38,7 @@ if(isset($_GET['resto']))
     $datasResto = $resto->getSaltyByrestaurantId($_GET['resto']);
     $dataresto2 = $resto->getSweetByrestaurantId($_GET['resto']);
     $datadejuste1rest = $resto->getRestaurantById($_GET['resto'] );
-    // $infosRestaurant = $resto->getInfosRestaurant($_GET['resto']);
+    $infosRestaurant = $resto->getInfosRestaurant($_GET['resto']);
 
     if(isset($_POST['cartButton'])){
         if(!empty($_POST['qteCart'])){
