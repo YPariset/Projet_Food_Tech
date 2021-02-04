@@ -2,7 +2,7 @@
 ###### Designing an application around food delivery 
 -----------------------------------------------------------------------
 
-Note: This project is no longer being maintained.
+**Note: This project is no longer being maintained.**
 
 A PHP e-commerce web application.
 
