@@ -20,15 +20,14 @@
                </span>
           </div>
           </div>
-
+          <div id="resultatSearch"></div>
 <main style="margin-top:50px;margin-bottom:100px;">
      <!-- result search Bar -->
 
      <?php if(isset($_POST['headerSearchSubmit'])) : ?>
           <?php if(!empty($_POST['headerSearch'])) : ?>
-               
                <h4 class="countResultatSearch" style="text-align:center; padding-top: 50px; margin-bottom: 70px; font-size: 2.2em;"><?= $messageSearchFood; ?></h4>
-               <div id="resultatSearch" style="display: flex; flex-flow: row wrap; justify-content: center;" >
+               <div style="display: flex; flex-flow: row wrap; justify-content: center;" >
                <?php foreach ($searchBanniere as $dataSearch) : ?>
 
                     <div style="padding-bottom: 100px; position:relative;">
@@ -260,7 +259,7 @@
   
           <?php foreach($datasResto as $datas) : ?>
                
-               <div class="cardResto">
+               <div class="cardResto" style="min-height:120px;">
                     <div  style="display:flex; flex-flow:row wrap;">
                          <div style="width:70%;padding:20px 20px 0 20px;position:relative;">
                               <h5><strong><?= $datas['name']; ?></strong> <span style="font-size:10px;font-style:italic;">(<?= $datas['cal']; ?>KCAL)</span></h5>

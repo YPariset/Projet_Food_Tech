@@ -131,6 +131,7 @@
      <?php else: ?>
           
           <h5>Your shopping cart is empty</h5>
+          <a class="btn btn-secondary" href="index.php?page=restaurant" id="back">Back</a>
      <?php endif; ?>
 <?php endif; ?>
 
