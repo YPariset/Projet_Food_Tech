@@ -158,7 +158,7 @@
                                 
                             <?php endforeach; ?>
                             <br><br>
-                                <a href="index.php?page=profile&action=history" class="btn btn-primary backOrder">back</a>
+                                <a href="index.php?page=profile&action=history" class="btn btn-secondary backOrder" id="btnOrder">back</a>
                             <?php endif;?>
                         <!-- end history -->
                     <!-- wishlist -->
