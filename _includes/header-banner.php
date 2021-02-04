@@ -7,7 +7,7 @@
    <div style="margin-left: 222px" class="search">
       <form action="index.php?page=restaurant" method="POST">
          <button type="submit" name="headerSearchSubmit" value="searched"><i class="fas fa-search"></i></button>
-         <input style="width:409px;" type="text" placeholder="search for anything..." name ="headerSearch"/>
+         <input style="width:409px;background-color:transparent;" type="text" placeholder="search for anything..." name ="headerSearch"/>
       </form>
    </div>
 

@@ -236,14 +236,14 @@
                          </div>
                          <div class="infosRestaurantOuv">
                               <div>
-                                   <h3 class="titreHoraire">Horaires</h4>
-                                   <h4 class="infosOuverture1" ><strong>Lundi</strong> : <?= $data['fermeture']; ?></h4>
-                                   <h4 class="infosOuverture1" ><strong>Mardi</strong> : <?= $data['horaires']; ?></h4>
-                                   <h4 class="infosOuverture1" ><strong>Mercredi</strong> : <?= $data['horaires']; ?></h4>
-                                   <h4 class="infosOuverture1" ><strong>Jeudi</strong> : <?= $data['horaires']; ?></h4>
-                                   <h4 class="infosOuverture1" ><strong>Vendredi</strong> : <?= $data['horaires']; ?></h4>
-                                   <h4 class="infosOuverture1" ><strong>Samedi</strong> : <?= $data['horaires']; ?></h4>
-                                   <h4 class="infosOuverture1" ><strong>Dimanche</strong> : <?= $data['horaires']; ?></h4>
+                                   <h3 class="titreHoraire">Opening hours</h3><br>
+                                   <h4 class="infosOuverture1" ><strong>Closed</strong> : <?= $data['fermeture']; ?></h4>
+                                   <h4 class="infosOuverture1" ><strong>Tuesday</strong> : <?= $data['horaires']; ?></h4>
+                                   <h4 class="infosOuverture1" ><strong>Wednesday</strong> : <?= $data['horaires']; ?></h4>
+                                   <h4 class="infosOuverture1" ><strong>Thursday</strong> : <?= $data['horaires']; ?></h4>
+                                   <h4 class="infosOuverture1" ><strong>Friday</strong> : <?= $data['horaires']; ?></h4>
+                                   <h4 class="infosOuverture1" ><strong>Saturday</strong> : <?= $data['horaires']; ?></h4>
+                                   <h4 class="infosOuverture1" ><strong>Sunday</strong> : <?= $data['horaires']; ?></h4>
 
                               </div>
                          </div>
@@ -264,7 +264,7 @@
                <div class="cardResto">
                     <div  style="display:flex; flex-flow:row wrap;">
                          <div style="width:70%;padding:20px 20px 0 20px;position:relative;">
-                              <h5><strong><?= $datas['name']; ?></strong></h5>
+                              <h5><strong><?= $datas['name']; ?></strong> <span style="font-size:10px;font-style:italic;">(<?= $datas['cal']; ?>KCAL)</span></h5>
                               <!-- description du produit -->
                               <p style="font-size:12px;"><?= $datas['description']; ?></p>
                               <!-- affichage du prix unitaire -->
@@ -319,7 +319,7 @@
                <div class="cardResto">
                     <div style="display:flex; flex-flow:row wrap;">
                          <div style="width:70%;padding:20px 20px 0 20px;position:relative;">
-                              <h5><strong><?= $datas2['name']; ?></strong></h5>
+                         <h5><strong><?= $datas2['name']; ?></strong> <span style="font-size:10px;font-style:italic;">(<?= $datas['cal']; ?>KCAL)</span></h5>
                               <!-- description du produit -->
                               <p style="font-size:12px;"><?= $datas2['description']; ?></p>
                               <!-- affichage du prix unitaire -->

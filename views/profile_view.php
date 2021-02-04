@@ -67,7 +67,7 @@
                 <div class="panel rounded shadow">
                      <div  style="min-height: 725px; width:100%;margin-bottom: 200px; padding:20px;">
                      <?php if(isset($_GET['action']) && $_GET['action'] == 'editer') : ?>
-                        <h1>Edit Your informations</h1>
+                        <h3>Edit Your informations</h3><br><br>
                         <?php if(isset($alertEdit)){echo $alertEdit;} ?>
 
             <!-- Alerts messages -->
@@ -163,7 +163,7 @@
                         <!-- end history -->
                     <!-- wishlist -->
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'wishlist') : ?>
-                            <h2 style="text-align:center;">My wishlist</h2>
+                            <h3>My wishlist</h3><br><br>
 
                      <div class="accordion" id="accordionExample" style="margin-top:150px;">
                         

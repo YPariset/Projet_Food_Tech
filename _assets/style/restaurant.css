@@ -226,9 +226,8 @@ a.restaurantDeco{
   }
 
   .titreHoraire{
-    padding-left: 7em;
+    text-align:center;
     padding-top: 1em;
-  
   }
 
   .infosRestaurantOuv{

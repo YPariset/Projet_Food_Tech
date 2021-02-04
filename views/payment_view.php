@@ -41,13 +41,13 @@
         <div class="inputCon" id="cardNum" data-top="Card Number" title = "type in the card number without spaces" style="margin-top:3px;">
           <input type="text" placeholder="1234 5678 9101 1213">
         </div>
-        <div class="inputCon" id="validYear" data-top="Valid Through" >
+        <div class="inputCon" id="validYear" data-top="Valid Through">
           <input type="text" placeholder="00/00"/>
         </div>
         <div class="inputCon" id="cvv" data-top="CVV" >
           <input type="text" placeholder="000"/>
         </div>
-        <button name="pay" >pay<span><?= $_SESSION['panierMontant'] ?></span></button>
+        <button name="pay" >pay<span>$<?= $_SESSION['panierMontant'] ?></span></button>
       </form>
     </div>
 </div>
