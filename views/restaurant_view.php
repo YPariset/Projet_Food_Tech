@@ -235,9 +235,18 @@
                          <div>
                          <?= $data['maps']; ?><br>
                          </div>
-                         <div>
-                              <h4 class="infosOuverture" >Horaires : <?= $data['horaires']; ?></h4><br><br>
-                              <h4 class="infosOuverture1" >Fermeture : <?= $data['fermeture']; ?></h4>
+                         <div class="infosRestaurantOuv">
+                              <div>
+                                   <h3 class="titreHoraire">Horaires</h4>
+                                   <h4 class="infosOuverture1" ><strong>Lundi</strong> : <?= $data['fermeture']; ?></h4>
+                                   <h4 class="infosOuverture1" ><strong>Mardi</strong> : <?= $data['horaires']; ?></h4>
+                                   <h4 class="infosOuverture1" ><strong>Mercredi</strong> : <?= $data['horaires']; ?></h4>
+                                   <h4 class="infosOuverture1" ><strong>Jeudi</strong> : <?= $data['horaires']; ?></h4>
+                                   <h4 class="infosOuverture1" ><strong>Vendredi</strong> : <?= $data['horaires']; ?></h4>
+                                   <h4 class="infosOuverture1" ><strong>Samedi</strong> : <?= $data['horaires']; ?></h4>
+                                   <h4 class="infosOuverture1" ><strong>Dimanche</strong> : <?= $data['horaires']; ?></h4>
+
+                              </div>
                          </div>
                     </div>
           <!-- fin cart -->

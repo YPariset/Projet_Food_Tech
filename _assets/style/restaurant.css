@@ -99,7 +99,7 @@ main{
 
 
 .text{
-    margin-top: -40px;
+    margin-top: -30px;
     z-index: 1;
     position: relative;
     width: 200px;
@@ -144,12 +144,12 @@ div.presentationInfos{
 
 h4.infosOuverture1{
     padding-right: 12em;
-    margin-right: -2em;
+    margin-right: -5em;
     
 }
 
 h4.infosOuverture1{
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 h4.infosOuverture{
@@ -223,7 +223,60 @@ body, html {
     background-color: rgba(243, 239, 239, 0.7);
 }
   
+a.restaurantDeco{
+    width: 200px;
+    height: 200px;
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+
+  .titreHoraire{
+    padding-left: 7em;
+    padding-top: 1em;
   
+  }
+
+  .infosRestaurantOuv{
+    position: relative;
+    background: whitesmoke;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding-left: 2em;
+    color: rgba(0,0,0, .8);
+    line-height: 1;
+    margin-bottom: 5px;
+    margin-left: auto;
+  }
+
+  .infosRestaurantOuv:before, .infosRestaurantOuv:after{
+    z-index: -2;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 10px;
+    width: 70%;
+    top: 80%;
+    max-width:300px;
+    background: rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: 0 15px 10px rgba(0,0,0, 0.7);
+    -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+  }
+
+  .infosRestaurantOuv:after{
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+    right: 10px;
+    left: auto;
+  }
   
   
 
