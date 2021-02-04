@@ -2,7 +2,7 @@
 ###### Designing an application around food delivery 
 -----------------------------------------------------------------------
 
-(https://github.com/mchemlal/Projet_Food_Tech/blob/main/_assets/image/HomePage.png)
+![alt text](https://github.com/mchemlal/Projet_Food_Tech/blob/main/_assets/image/HomePage.png)
 
 **Note: This project is no longer being maintained.**
 
