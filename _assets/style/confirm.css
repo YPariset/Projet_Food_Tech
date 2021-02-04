@@ -13,13 +13,9 @@
   line-height: 1.5;
   margin-left: auto;
   margin-right: auto;
-  
- 
-
 }
 
-.confirmation:before, .confirmation:after
-{
+.confirmation:before, .confirmation:after{
   z-index: -2;
   position: absolute;
   content: "";
@@ -56,10 +52,6 @@
   width:60%;
   margin-left: auto;
   margin-right: auto;
-  
-  
-
-
 }
 .titreConfirm{
   display: flex;
@@ -69,7 +61,6 @@
   padding-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  
   color: grey;
 
 }
