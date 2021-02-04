@@ -163,25 +163,53 @@
                         <!-- end history -->
                     <!-- wishlist -->
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'wishlist') : ?>
-                        <h1>Whishlist</h1>  
-                        <div class="wishlist_container">  
+                            <h2 style="text-align:center;">My wishlist</h2>
+
+                     <div class="accordion" id="accordionExample" style="margin-top:150px;">
+                        
+                     <?php if(count($wishlist) == 0): ?>
+                        <br>
+                         <h5 style="text-align:center;">You havent't added any favorite dish yet<h5>
+                            <?php else : ?>
+                            <?php $dataresto = $resto->getRestaurant($itemList['id_restaurant'] ); ?>
                         <?php foreach($wishlist as $itemList) : ?>
+                                
                             
-                            <div class="overlay-image">
-                                <a href="index.php?page=restaurant&resto=<?=$itemList['id_restaurant'] ?>">
-                                <img class="image" src="<?= $itemList['img'] ?>" alt="Alt text" />
-                                    <div class="text">
-                                        <?= $itemList['name']; ?> 
+                            <div class="accordion-item" style="outline:none;width:65%;margin:0 auto;">
+                                <h2 class="accordion-header" id="heading<?= $itemList['id'] ?>" style="outline:none;">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $itemList['id'] ?>" aria-expanded="true" aria-controls="collapse<?= $itemList['id'] ?>" >
+                                    <?= $itemList['name']; ?>
+                                </button>
+                                </h2>
+                                <div id="collapse<?= $itemList['id'] ?>" class="accordion-collapse collapse" aria-labelledby="heading<?= $itemList['id'] ?>" data-bs-parent="#accordionExample">
+                                     <div class="accordion-body" style="display:flex;flex-flow:row wrap; justify-content:space-between;">
+                                         <div >
+                                            <a href="index.php?page=restaurant&resto=<?= $itemList['id_restaurant'] ?>">
+                                            <img class="wishImg" src="<?= $itemList['img'] ?>" alt="Alt text" height="100" width="100"/>
+                                            </a>
+                                        </div>
+                                         <div>
+                                            <p><strong>From <?= $dataresto['name']; ?>  - <?= $dataresto['city']; ?> </strong></p>
+                                            <p>$<?= $itemList['price']; ?> </p>
+                                            <a class="btn btn-secondary" href="index.php?page=restaurant&resto=<?= $itemList['id_restaurant'] ?>"
+                                                style="border:none;outline:none;background-color:#3cb6c9;color:white;"><?= $dataresto['name']; ?>'s page</a>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <form action="" method="POST">
+                                                    <input type='hidden' name='supprWish' value="<?= $itemList['id'];?>">
+                                                    <button type="submit" name="submitSupprWish" class="wish" style="border:none;background:transparent;outline:none;">
+                                                        <span style="color:black;"><i class="fas fa-heart"></i></span>
+                                                    </button> 
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
-                                </a>
-                                <form action="" method="POST">
-                                <input type='hidden' name='supprWish' value="<?= $itemList['id'];?>">
-                                <button type="submit" name="submitSupprWish" class="wish" style="border:none;background:transparent;outline:none;">
-                                    <i class="fas fa-heart"></i>
-                                </button> 
-                                </form>
+                                </div>
                             </div>
+                        </div>
                         <?php endforeach; ?>
+                        <?php endif; ?>
                         </div>
                 <!--  promotions  -->
                         <?php elseif(isset($_GET['action']) && $_GET['action'] == 'promo') : ?>

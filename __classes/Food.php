@@ -47,6 +47,15 @@ class Food{
         $data = $prod->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
+    public function getRestaurant($id){
+        global $db;
+
+        $prod = $db->prepare('
+            SELECT * FROM restaurants WHERE id = ?');
+        $prod->execute(array($id));
+        $get = $prod->fetch(PDO::FETCH_ASSOC);
+        return $get;
+    }
 
     public function getRestaurantById($id){
         global $db;

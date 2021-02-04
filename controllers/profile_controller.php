@@ -3,6 +3,7 @@ session_start();
 
 $user = new Customer();
 $count = new Order();
+$resto = new Food();
 
 //on recupere le nombre de commandes effectués par le client
 $numberOfOrders = $count->countOrder($_SESSION['id']);
@@ -68,6 +69,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'wishlist'){
 if(isset($_GET['action']) && $_GET['action'] == 'wishlist'){
    if(isset($_POST['supprWish'])){
       $supprWish = $user->deleteWishItem($_SESSION['id'], $_POST['supprWish']);
+      header('Location:index.php?page=profile&action=wishlist');
    }
 }
 
